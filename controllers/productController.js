@@ -22,20 +22,32 @@ export class ProductController {
         const categories =  await fetchJsonApi("/moseholm/api/getCategories.php");
 
         this.productView.renderCategories(categories, this.categoryFilter);
+
+        if (this.categoryFilter?.length > 0 ) {
+            this.productView.displayFilterButton(true);
+        }
+
         this.productView.bindCategoryButton(this.setFilter);
+        this.productView.bindResetFilterButton(this.deselectCategories);
+    }
+
+    deselectCategories = () => {
+        this.productView.clearCategorySelection();
+        this.productView.displayFilterButton(false);
+        this.categoryFilter = [];
+        this.populateProducts();
     }
 
     populateProducts = async () => {
         const fetchtedProducts =  await fetchJsonApi(`/moseholm/api/getProducts.php${this.categoryFilter?.length > 0 ? "?categories=" + this.categoryFilter.join(",") : ""}`);
-
         this.productModel.setProducts(fetchtedProducts);
-        
         this.productView.renderProducts(this.productModel.state.products);
 
     }
 
     setFilter = (filter) => {
        this.categoryFilter = updateList(this.categoryFilter, filter);
+       this.productView.displayFilterButton(this.categoryFilter?.length > 0);
        this.populateProducts();
     }
 

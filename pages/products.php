@@ -44,6 +44,7 @@ foreach ($blogs as $blog){
 </div>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
     </div>
+    
     <script type="module" src="/moseholm/js/products.js"></script>
 
 </body>

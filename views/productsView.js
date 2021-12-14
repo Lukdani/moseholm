@@ -4,12 +4,14 @@ export class ProductsView {
     constructor(categoryRoot, productRoot) {
         this.categoryRoot = categoryRoot;
         this.productRoot = productRoot;
+
+
     }
 
     renderCategories = (categories, selectedCategories) => {
+        this.clearCategories();
         if (categories?.length > 0) {
             categories.forEach(categoryItem => {
-                console.log(categoryItem);
                 const categoryButton = createElement("button", ["btn", "product-category-button"], null);
                 if (selectedCategories.includes(categoryItem.catKey)) {
                     categoryButton.classList.add("selected");
@@ -24,13 +26,15 @@ export class ProductsView {
      
             })
         }
+        const resetFilterButton = createElement("button", ["btn", "hidden"], "clearFilterButton");
+        resetFilterButton.textContent = "Nulstil filter";
+        this.categoryRoot.appendChild(resetFilterButton)
     }
 
     renderProducts = (products) => {
         this.clearProducts();
         if (products?.length > 0) {
             products.forEach(productItem => {
-                console.log(productItem);
             const productContainer = createElement("div", ["col-6", "col-lg-3", "product-container"], null);
             const productElement = createElement("div", ["product-item"], null);
             productContainer.appendChild(productElement);
@@ -60,8 +64,20 @@ export class ProductsView {
     }
 }
 
+
+clearCategories = () => {
+    this.categoryRoot.innerHTML = "";
+}
+
 clearProducts = () => {
     this.productRoot.innerHTML = "";
+}
+
+clearCategorySelection = () => {
+    const categoryButtons = document.querySelectorAll(".product-category-button");
+    categoryButtons?.forEach(categoryButtonItem => {
+        categoryButtonItem.classList.remove("selected");
+    })
 }
 
     categoryButtonClicked = (categoryButton, callback) => {
@@ -73,11 +89,34 @@ clearProducts = () => {
 
     bindCategoryButton = (callback) => {
         const categoryButtons = document.querySelectorAll(".product-category-button");
-        categoryButtons.forEach(categoryButtonItem => {
+        categoryButtons?.forEach(categoryButtonItem => {
             categoryButtonItem.removeEventListener("click", () => this.categoryButtonClicked(categoryButtonItem, callback));
             categoryButtonItem.addEventListener("click", () => this.categoryButtonClicked(categoryButtonItem, callback));
         })
     }
 
+    resetFilterButtonClicked = (callback, buttonElement) => {
+        if (callback) {
+            callback();
+        }
+    }
 
+    displayFilterButton = shown => {
+        console.log(shown);
+        const resetFilterButton = document.getElementById("clearFilterButton");
+        if (shown) {
+            resetFilterButton.classList.remove("hidden");
+            resetFilterButton.classList.add("shown");
+        }
+        else if (!shown) {
+                resetFilterButton.classList.remove("shown");
+                resetFilterButton.classList.add("hidden");
+        }
+    }
+
+    bindResetFilterButton = (callback) => {
+        const resetFilterButton = document.getElementById("clearFilterButton");
+        resetFilterButton.removeEventListener("click", () => this.resetFilterButtonClicked(callback, resetFilterButton));
+        resetFilterButton.addEventListener("click", () => this.resetFilterButtonClicked(callback, resetFilterButton));
+    }
 }
