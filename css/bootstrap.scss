@@ -1,0 +1,33 @@
+// DENNE FIL ER KUN TIL BOOTSTRAP RETTELSER
+
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+
+//Tilføj eller ret farver i Bootstrap. Herunder er primary blot sat til den normale primary
+/*
+Eksempel på farver
+$custom-colors: (
+        "primary": #0000ff,
+        "minFarve": #ffff00
+);
+ */
+
+ $customSecondary: #30422E;
+ $customPrimary: #B99309;
+ $customLight: #EBE5DB;
+ $custom-brown: #CECBAB;
+ $custom-gray:#bfbfbf;
+ $custom-gray--darken:#b3b3b3;
+
+ $font-family: 'Poiret One', cursive;
+ $header-font: 'Poiret One', cursive;
+
+$custom-colors: (
+  "primary": $customPrimary,
+  "secondary": $customSecondary,
+  "light": $customLight,
+);
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "../node_modules/bootstrap/scss/bootstrap";
