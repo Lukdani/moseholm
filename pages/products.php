@@ -35,8 +35,11 @@ foreach ($blogs as $blog){
 
             </div>
             <div class="col-12 col-lg-10">
-                <div id="productsContainer" class="row" >
-                     
+                <div id="productsContainer" class="row">                    
+                </div>
+                
+                <div class="spinner hidden" id="productSpinner">
+                    <i class="fas fa-tractor fa-spin "></i>
                 </div>
             </div>
         </div>

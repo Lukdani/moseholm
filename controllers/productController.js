@@ -39,7 +39,9 @@ export class ProductController {
     }
 
     populateProducts = async () => {
+        this.setSpinner(true);
         const fetchtedProducts =  await fetchJsonApi(`/moseholm/api/getProducts.php${this.categoryFilter?.length > 0 ? "?categories=" + this.categoryFilter.join(",") : ""}`);
+        this.setSpinner(false);
         this.productModel.setProducts(fetchtedProducts);
         this.productView.renderProducts(this.productModel.state.products);
 
@@ -49,6 +51,25 @@ export class ProductController {
        this.categoryFilter = updateList(this.categoryFilter, filter);
        this.productView.displayFilterButton(this.categoryFilter?.length > 0);
        this.populateProducts();
+    }
+
+    setSpinner = show => {
+        const spinner = document.getElementById("productSpinner");
+
+        if (show && !spinner.classList.contains("shown")) {
+
+            spinner.classList.toggle("shown");
+            if (spinner.classList.contains("hidden")) {
+                spinner.classList.remove("hidden")
+            }
+            console.log(spinner.classList);
+        }
+        else if (!show && !spinner.classList.contains("hidden")) {
+            spinner.classList.toggle("hidden");
+            if (spinner.classList.contains("shown")) {
+                spinner.classList.remove("shown")
+            }
+        }
     }
 
 }

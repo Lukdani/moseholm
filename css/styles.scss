@@ -142,6 +142,16 @@ img {
   }
 }
 
+// UTIL;
+
+.spinner {
+  text-align: center;
+  i {
+    font-size: 2rem;
+    color: $customPrimary;
+  }
+}
+
 // HJÆLPEKLASSER;
 
 .centerAlign {

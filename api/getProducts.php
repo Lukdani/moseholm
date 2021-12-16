@@ -1,8 +1,6 @@
 <?php
 require $_SERVER['DOCUMENT_ROOT'] . "/moseholm/settings/init.php";
 
-$queryParams = $_SERVER['QUERY_STRING'];
-
 $sql = "SELECT * FROM products P LEFT JOIN categories C on P.prodCategoryId = C.catId WHERE 1=1 ";
 $bind = [];
 
