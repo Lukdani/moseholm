@@ -134,35 +134,12 @@ foreach ($blogs as $blog){
         <div class="container-lg">
 
   
-        <div class="row">
-            <div class="col-12 col-lg-4">
-                <div class="event-item">
-                <img src="/moseholm/images/events/baking.png" alt="" class="event-item-image">
-                <p class="event-item-date">12/12/2021</p>
-                <h3 class="event-item-title">Bag dit eget brød fra bunden</h3>
-                <p>Mal dit eget mel, hent vand i brønden, ælt din dej og bag det i vores stenovn</p>
-            <button class="btn btn-secondary mt-2">Tilmeld dig nu</button>
-            </div>
-</div>
-            <div class="col-12 col-lg-4">
-                <div class="event-item">
-                <img src="/moseholm/images/events/christmas.png" alt="" class="event-item-image">
-                <p class="event-item-date">18/12/2021</p>
-                <h3 class="event-item-title">Jul på Moseholm</h3>
-                <p>Tag på nissejagt, tag med hundeslæde, smag vores hjemmelavede økologiske æbleskiver.</p>
-                <button class="btn btn-secondary mt-2">Tilmeld dig nu</button>
-            </div>
-</div>
-            <div class="col-12 col-lg-4">
-                <div class="event-item">
-                    <img src="/moseholm/images/events/baking.png" alt="" class="event-item-image">
-                <p class="event-item-date">20/12/2021</p>
-                <h3 class="event-item-title">Bag dit eget brød fra bunden</h3>
-                <p>Mal dit eget mel, hent vand i brønden, ælt din dej og bag det i vores stenovn</p>
-                <button class="btn btn-secondary mt-2">Tilmeld dig nu</button>
-            </div>
-</div>
+        <div id="eventsContainer" class="row">
+
         </div>
+        <div class="spinner hidden" id="eventSpinner">
+                    <i class="fas fa-tractor fa-spin "></i>
+                </div>
     </div>
     </div>
     </div>  
@@ -170,6 +147,10 @@ foreach ($blogs as $blog){
     
 </div>
 
+<script type="module">
+       import { EventInitializer  } from "/moseholm/js/eventInitializer.js";
+       const eventInitializer = new EventInitializer("4");
+   </script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
