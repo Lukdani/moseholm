@@ -9,5 +9,3 @@ const productsModel = new ProductModel();
 const productsView = new ProductsView(categoryRoot, productsRoot)
 
 const productsController = new ProductController(productsModel, productsView);
-
-productsController.populateProducts();

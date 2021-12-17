@@ -32,17 +32,25 @@ foreach ($blogs as $blog){
 
 
     <?php include "./includes/navbar.html" ?>
-    <div class="hero overlay">
+    <header class="heroContainer" role="banner">
+  <video id="heroVideo" loop muted autoplay>
+	<source src="/moseholm/videos/hero_desktop.mp4" type="video/mp4" />
+  </video>
+
+  <div class="hero overlay">
         <div class="overlay-text">
             <h1 class="mb-2">Landoplevelse for hele familien</h1>
-            <p class="mb-3">Moseholm er en 100% økologisk gårdbutik med tilhørende økologisk café
+            <p class="mb-3">Moseholm er en 100% økologisk gårdbutik.
                 <br>
-                Besøg 
+                Besøg vores café og hils på vores skønne dyr.
 
             </p>
             <button class="btn btn-primary">Find vej</button>
         </div>
     </div>
+
+</header>
+
 
     <div class="section">
         <div class="container-lg">

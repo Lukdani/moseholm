@@ -15,6 +15,7 @@ export class ProductController {
         }
 
         this.populateCategories();
+        this.populateProducts(true);
     }
 
     populateCategories = async () => {
@@ -38,10 +39,15 @@ export class ProductController {
         this.populateProducts();
     }
 
-    populateProducts = async () => {
-        this.setSpinner(true);
+    populateProducts = async (initialLoad = false) => {
+        if (initialLoad) {
+            this.setSpinner(true);
+        }
         const fetchtedProducts =  await fetchJsonApi(`/moseholm/api/getProducts.php${this.categoryFilter?.length > 0 ? "?categories=" + this.categoryFilter.join(",") : ""}`);
+        if (initialLoad) {
         this.setSpinner(false);
+        }
+
         this.productModel.setProducts(fetchtedProducts);
         this.productView.renderProducts(this.productModel.state.products);
 

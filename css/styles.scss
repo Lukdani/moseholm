@@ -1,4 +1,6 @@
 @import "./bootstrap.scss";
+$heroHeightMobile: 400px;
+$heroHeightDesktop: 600px;
 
 * {
   box-sizing: border-box;
@@ -49,7 +51,7 @@ img {
 }
 .btn-primary {
   font-family: $header-font;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: $customLight;
   &:hover {
@@ -128,9 +130,8 @@ img {
 // HERO;
 
 .hero {
-  background-image: url("../images/hero.jpg");
-  background-size: cover;
-  height: 600px;
+
+ height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -139,6 +140,38 @@ img {
   color: $customLight;
   p {
     font-size: 1.2rem;
+  }
+}
+
+
+header.heroContainer {
+  position: relative;
+ height: $heroHeightMobile;
+  width: 100%;
+  overflow: hidden;
+  @media (min-width: 992px) {
+    height: $heroHeightDesktop;
+  }
+}
+
+header.heroContainer .container {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+}
+
+header.heroContainer video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: 600px;
+  object-fit: cover;
+  z-index: 0;
+  @media (min-width: 992px) {
+    height: $heroHeightDesktop;
   }
 }
 
@@ -166,6 +199,7 @@ img {
 
 .overlay {
   position: relative;
+  width: 100%;
 }
 .overlay::after {
   content: "";
@@ -295,13 +329,32 @@ align-items: center;
 }
 
 .product-category-button {
-  display: block;
+  display: inline-block;
   background-color: $custom-gray;
   padding: .25rem;
   font-size: .9rem;
-  width: 100%;
+  width: 49%;
   margin-bottom: .25rem;
   text-align: left;
+  &:nth-child(even) {
+    margin-left: .5%;
+  }
+  &:nth-child(odd) {
+    margin-right: .5%;
+  }
+
+  @media (min-width: 992px) {
+    display: block;
+    width: 100%;
+    padding: .5rem .25rem;
+    &:nth-child(even) {
+      margin-left: 0;
+    }
+    &:nth-child(odd) {
+      margin-right: 0;
+    }
+
+  }
 
   &:focus {
     box-shadow: none !important;
@@ -323,6 +376,7 @@ align-items: center;
   padding: 1rem;
   margin-bottom: .5rem;
   height: 100%;
+  box-shadow: $boxShadow;
   i {
     font-size: 2rem;
     color: $customSecondary;
@@ -358,7 +412,7 @@ align-items: center;
 .event-item {
   background-color: $custom-brown;
   padding: 1rem;
-
+  box-shadow: $boxShadow;
   margin-bottom: .5rem;
   @media (min-width: 992px) {
     height: 100%;

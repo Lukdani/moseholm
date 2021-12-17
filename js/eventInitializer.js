@@ -9,7 +9,7 @@ export class EventInitializer {
         this.eventModel = new EventModel();
         this.eventView = new EventView(this.eventRoot, widthOnLarge)
 
-        this.eventController = new EventController(this.eventModel, this.eventView, widthOnLarge);
+        this.eventController = new EventController(this.eventModel, this.eventView, showOrderBy);
 
     }
 }
