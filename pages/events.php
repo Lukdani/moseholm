@@ -20,6 +20,16 @@
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/navbar.html" ?>
     <div class="container-lg">
         <div class="row section" >
+        <div class="col-12">
+        <h3 class="section-header">
+            Giv familien en rigtig landoplevelse.
+            <br>
+            Bag et brød af mel, I selv har malet.
+            <br>
+            Rør smør af mælk, I selv har malket.
+        </h3>
+        </div>
+    
             <div id="orderByContainer" class="col-12 col-lg-2">
 
             </div>

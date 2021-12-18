@@ -40,7 +40,8 @@ foreach ($blogs as $blog){
   <div class="hero overlay">
         <div class="overlay-text">
             <h1 class="mb-2">Landoplevelse for hele familien</h1>
-            <p class="mb-3">Moseholm er en 100% økologisk gårdbutik.
+            <p class="mb-3">
+                Moseholm er en 100% økologisk gårdbutik.
                 <br>
                 Besøg vores café og hils på vores skønne dyr.
 
@@ -148,6 +149,12 @@ foreach ($blogs as $blog){
         <div class="spinner hidden" id="eventSpinner">
                     <i class="fas fa-tractor fa-spin "></i>
                 </div>
+                <div class="row">
+                    <div class="col-12" style="text-align: center;">
+                    <button class="btn-secondary btn">Se alle events</button>
+                    </div>
+                </div>
+        
     </div>
     </div>
     </div>  
@@ -157,7 +164,7 @@ foreach ($blogs as $blog){
 
 <script type="module">
        import { EventInitializer  } from "/moseholm/js/eventInitializer.js";
-       const eventInitializer = new EventInitializer("4");
+       const eventInitializer = new EventInitializer("4", false, "ASC");
    </script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>

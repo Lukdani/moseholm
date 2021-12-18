@@ -47,17 +47,26 @@ img {
 
 .btn {
   border-radius: 0;
-  transition: all .05s ease-in-out;
+  transition: all 0.05s ease-in-out;
+
+  font-weight: 500;
+}
+
+.btn-primary,
+.btn-secondary {
+  font-family: $header-font;
+  font-size: 1.25rem;
 }
 .btn-primary {
-  font-family: $header-font;
-  font-size: 1.5rem;
-  font-weight: 500;
   color: $customLight;
   &:hover {
     color: $customLight;
   }
+  &:focus {
+    color: $customLight;
+  }
 }
+
 .btn:hover {
   transform: scale(1.05);
 }
@@ -65,13 +74,13 @@ img {
 
 .navbar {
   background-color: $customSecondary;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .navbar-brand img {
   max-height: 120px;
   width: auto;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 .navbar-dekstop {
   align-items: center;
@@ -104,6 +113,9 @@ img {
     color: $custom-brown;
     border-bottom: 2px solid $custom-brown;
   }
+  &:focus {
+    color: $custom-brown;
+  }
 }
 
 // PAGE
@@ -130,8 +142,7 @@ img {
 // HERO;
 
 .hero {
-
- height: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,10 +154,9 @@ img {
   }
 }
 
-
 header.heroContainer {
   position: relative;
- height: $heroHeightMobile;
+  height: $heroHeightMobile;
   width: 100%;
   overflow: hidden;
   @media (min-width: 992px) {
@@ -216,7 +226,6 @@ header.heroContainer video {
   background-color: $custom-brown !important;
 }
 
-
 .overlay-text {
   z-index: 1;
 }
@@ -240,7 +249,7 @@ header.heroContainer video {
   align-items: center;
   i {
     width: 24px;
-    margin-right: .25rem;
+    margin-right: 0.25rem;
     color: $customPrimary;
   }
 }
@@ -253,7 +262,6 @@ header.heroContainer video {
   visibility: hidden !important;
 }
 
-
 // FEATURES;
 
 .features {
@@ -261,17 +269,16 @@ header.heroContainer video {
   background-color: $custom-brown;
 }
 .features .col-lg-3 {
-padding-right: .25rem;
+  padding-right: 0.25rem;
 }
 
 .features-item p {
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .features table td {
   vertical-align: top;
-
 }
 
 .features table td:first-child {
@@ -285,7 +292,7 @@ align-items: center;
   font-size: 1.25rem;
 }
 
-//CATEGORY-OVERVIEW 
+//CATEGORY-OVERVIEW
 
 .category-overview-container {
   a {
@@ -296,7 +303,7 @@ align-items: center;
 .category-overview-item {
   background-color: $custom-brown;
   padding: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,42 +325,42 @@ align-items: center;
 
 #clearFilterButton {
   padding: 0;
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: $custom-gray--darken;
 }
 // PRODUCTS;
 
 .product-container {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
 .product-category-button {
   display: inline-block;
+  font-family: $font-family;
   background-color: $custom-gray;
-  padding: .25rem;
-  font-size: .9rem;
+  padding: 0.25rem;
+  font-size: 0.9rem;
   width: 49%;
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
   text-align: left;
   &:nth-child(even) {
-    margin-left: .5%;
+    margin-left: 0.5%;
   }
   &:nth-child(odd) {
-    margin-right: .5%;
+    margin-right: 0.5%;
   }
 
   @media (min-width: 992px) {
     display: block;
     width: 100%;
-    padding: .5rem .25rem;
+    padding: 0.5rem 0.25rem;
     &:nth-child(even) {
       margin-left: 0;
     }
     &:nth-child(odd) {
       margin-right: 0;
     }
-
   }
 
   &:focus {
@@ -361,20 +368,21 @@ align-items: center;
   }
   i {
     color: transparent;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
   &.selected i {
     color: $customSecondary;
   }
   &:hover {
-    background-color: $custom-gray--darken;
+    background-color: $customPrimary;
+    color: $customLight;
   }
 }
 
 .product-item {
   background-color: $custom-brown;
   padding: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   height: 100%;
   box-shadow: $boxShadow;
   i {
@@ -384,9 +392,9 @@ align-items: center;
   .product-item-category {
     display: inline-block;
     background-color: $custom-gray;
-    padding: .25rem .5rem;
-    font-size: .9rem;
-    margin-bottom: .5rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 
   .product-item-image {
@@ -395,11 +403,11 @@ align-items: center;
     object-fit: cover;
   }
   .product-item-title {
-    margin: .5rem 0;
+    margin: 0.5rem 0;
   }
   .product-item-price {
     font-weight: 500;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
   }
 }
 
@@ -413,20 +421,23 @@ align-items: center;
   background-color: $custom-brown;
   padding: 1rem;
   box-shadow: $boxShadow;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   @media (min-width: 992px) {
     height: 100%;
-.event-item-image {
-  max-height: 150px;
-  width: 100%;
-  object-fit: cover;
-}
+    .event-item-image {
+      max-height: 150px;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 }
 
+.sortIcon {
+  margin-left: 0.5rem;
+  color: $customSecondary !important;
 }
 
 // FOOTER
-
 
 .footer {
   width: 100%;
@@ -434,12 +445,10 @@ align-items: center;
   color: $customLight;
   padding: 2.5rem 0;
 
-  .col-12:not(:first-of-type){  
+  .col-12:not(:first-of-type) {
     @media (max-width: 991px) {
-
-        margin-top: 1rem;
-
-  }
+      margin-top: 1rem;
+    }
   }
 
   .footer-openingHours-container {
@@ -449,21 +458,21 @@ align-items: center;
     }
 
     td:first-child {
-      padding-right: .5rem;
+      padding-right: 0.5rem;
     }
   }
 
   .footer-some {
-      @media (min-width: 992px) {
-        text-align: right;
-      }
+    @media (min-width: 992px) {
+      text-align: right;
+    }
 
     i {
       font-size: 4rem;
       color: $custom-brown;
-      transition: .25s ease-in-out all;
+      transition: 0.25s ease-in-out all;
       &:not(:last-child) {
-        margin-right: .5rem;
+        margin-right: 0.5rem;
       }
       &:hover {
         color: $customPrimary;
@@ -471,18 +480,13 @@ align-items: center;
         cursor: pointer;
       }
     }
-
-}
+  }
 
   h3 {
     color: $customPrimary;
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
     @media (min-width: 992px) {
       font-size: 1.5rem;
     }
-    }
-
-
-
+  }
 }
-

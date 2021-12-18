@@ -35,32 +35,22 @@ foreach ($blogs as $blog){
     
         <div class="col-12">
         <h2 class="section-header">
-            Vores produkter er 100 % økologiske
+            Kom og mød vores dejlige dyr.
             <br>
-            og er fremstillet lokalt på vores gård.</h2>
+            De er nysgerrige og elsker børn.</h2>
         </div>
     
   
 
-            <div id="categoriesContainer" class="col-12 col-lg-2 pt-2">
 
-            </div>
-            <div class="col-12 col-lg-10">
-                <div id="productsContainer" class="row">                    
-                </div>
-                
-                <div class="spinner hidden" id="productSpinner">
-                    <i class="fas fa-tractor fa-spin "></i>
-                </div>
+            <div class="col-12">
+  <img  src="/moseholm/images/animals/animal.png" alt="Et at vores dejlige dyr her på gården">
             </div>
         </div>
     </div>
 </div>
     <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
     </div>
-    
-    <script type="module" src="/moseholm/js/products.js"></script>
-
 </body>
 
 </html>
