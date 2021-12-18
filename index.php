@@ -46,7 +46,7 @@ foreach ($blogs as $blog){
                 Besøg vores café og hils på vores skønne dyr.
 
             </p>
-            <button class="btn btn-primary">Find vej</button>
+            <button class="btn btn-primary"><i class="fas fa-map-pin"></i>Find vej</button>
         </div>
     </div>
 
@@ -151,7 +151,7 @@ foreach ($blogs as $blog){
                 </div>
                 <div class="row">
                     <div class="col-12" style="text-align: center;">
-                    <a href="/moseholm/pages/events.php" class="btn-secondary btn">Se alle events</a>
+                    <a href="/moseholm/pages/events.php" class="btn-secondary btn"><i class="fas fa-calendar-week"></i>Se alle events</a>
                     </div>
                 </div>
         
