@@ -44,6 +44,15 @@ export class EventView {
         eventPrice.textContent = `${formatCurrency(eventItem.eventPrice)} kr.`;
         eventElement.appendChild(eventPrice);
 
+        const eventLink = createElement(
+          "a",
+          ["event-item-link", "btn", "btn-primary"],
+          null
+        );
+        eventLink.href = `/moseholm/pages/eventDetails?eventId=${eventItem.eventId}`;
+        eventLink.textContent = "Læs mere";
+        eventElement.appendChild(eventLink);
+
         this.rootElement.appendChild(eventContainer);
       });
     }
