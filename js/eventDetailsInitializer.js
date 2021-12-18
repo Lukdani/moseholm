@@ -1,6 +1,6 @@
-import { EventDetailsController } from "../controllers/eventDetailsController";
-import { EventDetailsModel } from "../models/eventDetailsModel";
-import { EventDetailsView } from "../views/eventDetailsView";
+import { EventDetailsController } from "../controllers/eventDetailsController.js";
+import { EventDetailsModel } from "../models/eventDetailsModel.js";
+import { EventDetailsView } from "../views/eventDetailsView.js";
 
 export class EventDetailsInitializer {
   constructor() {

@@ -49,7 +49,7 @@ export class EventView {
           ["event-item-link", "btn", "btn-primary"],
           null
         );
-        eventLink.href = `/moseholm/pages/eventDetails?eventId=${eventItem.eventId}`;
+        eventLink.href = `/moseholm/pages/eventDetails.php?eventId=${eventItem.eventId}`;
         eventLink.textContent = "Læs mere";
         eventElement.appendChild(eventLink);
 

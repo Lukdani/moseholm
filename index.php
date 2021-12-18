@@ -151,7 +151,7 @@ foreach ($blogs as $blog){
                 </div>
                 <div class="row">
                     <div class="col-12" style="text-align: center;">
-                    <button class="btn-secondary btn">Se alle events</button>
+                    <a href="/moseholm/pages/events.php" class="btn-secondary btn">Se alle events</a>
                     </div>
                 </div>
         

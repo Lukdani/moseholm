@@ -7,21 +7,17 @@ $sql;
 if (isset($_GET["eventId"])) {
     // Setup query and join relevant comments;
     $eventSql = (
-        "SELECT 
-          *
-            FROM events e 
-            WHERE (e.eventDate > CURRENT_DATE 
-            OR e.eventDate = CURRENT_DATE) "
-            );
+        "SELECT * FROM events e WHERE (e.eventDate > CURRENT_DATE OR e.eventDate = CURRENT_DATE) "
+);
 
     // Add eventId to the query;
-    $eventSql .= "AND E.eventId = " . $_GET["eventId"];
+    $eventSql .= "AND e.eventId = " . $_GET["eventId"];
 
     // Fetch the events;
     $events = $db->sql($eventSql);
 
     // Create query to get eventComments and fetch the comments;;
-    $eventCommentsSql = "SELECT * from eventsComments e WHERE e.ecomEventId = " . $_GET["eventId"] . " ORDER BY ecomDate DESC"; 
+    $eventCommentsSql = "SELECT * from eventscomments e WHERE e.ecomEventId = " . $_GET["eventId"] . " ORDER BY ecomDate DESC"; 
     $eventComments = $db->sql($eventCommentsSql);
 
     // Add the comments to the event result;
