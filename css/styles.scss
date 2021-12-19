@@ -383,12 +383,14 @@ header.heroContainer video {
   width: 49%;
   margin-bottom: 0.25rem;
   text-align: left;
+  /*
   &:nth-child(even) {
     margin-left: 0.5%;
   }
   &:nth-child(odd) {
     margin-right: 0.5%;
   }
+  */
 
   @media (min-width: 992px) {
     display: block;

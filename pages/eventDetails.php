@@ -37,7 +37,7 @@
 </div>
 
 <div class="row">
-<h3 class="mb-2 text-secondary">Lad os høre, hvad du synes</h3>
+<h3 class="mb-2 text-secondary">Fortæl, hvad du synes</h3>
     <div class="col-12 col-lg-4">
 
     <form id="eventDetails-commentForm">
@@ -49,7 +49,7 @@
     <label for="commentComment">Din kommmentar</label>
     <textarea type="text" name="ecomComment" required class="form-control" id="eventDetails-commentForm-comment" placeholder="Indtast din kommentar"></textarea>
   </div>
-  <button class="btn btn-primary commentSubmitButton"><i class="fas fa-comments"></i>Send kommentar</button>
+  <button class="btn btn-primary commentSubmitButton"><i class="fas fa-comments"></i>Del kommentar</button>
             </form>
     </div>
 
