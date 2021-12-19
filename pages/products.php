@@ -34,7 +34,7 @@
 
                     <div class="col-10 offset-lg-2">
                         <h2 class="page-feature-header">
-                            Økologi og lokalt
+                            Økologisk og lokalt
 
                         </h2>
                         <p class="page-feature-teaser">

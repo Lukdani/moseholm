@@ -68,6 +68,7 @@ export class ProductsView {
         flexItemContainer.appendChild(productCategory);
 
         const productImage = createElement("img", ["product-item-image"], null);
+        productImage.alt = productItem.prodImageName;
         productImage.setAttribute("itemprop", "image");
         productImage.src = `/moseholm/images/products/${productItem.prodImageName}`;
         flexItemContainer.appendChild(productImage);

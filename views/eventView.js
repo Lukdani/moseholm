@@ -24,16 +24,22 @@ export class EventView {
         eventElement.setAttribute("itemtype", "https://schema.org/Event");
         eventContainer.appendChild(eventElement);
 
-        const flexItem = createElement("div", ["flexItem"], null);
+        const flexItem = createElement("div", ["flexItem", "flexItem--inline"], null);
         eventElement.appendChild(flexItem);
         const eventImage = createElement("img", ["event-item-image"], null);
+        eventImage.alt = eventItem.eventImageName;
         eventImage.setAttribute("itemprop", "image");
         eventImage.src = `/moseholm/images/events/${eventItem.eventImageName}`;
         flexItem.appendChild(eventImage);
 
         const eventDate = createElement("p", ["event-item-date"], null);
         eventDate.setAttribute("itemprop", "startDate");
-        eventDate.textContent = formatDate(eventItem.eventDate, true);
+        const eventDateIcon = createElement("i", ["far", "fa-calendar"], null);
+        eventDate.appendChild(eventDateIcon);
+        const eventDateText = createElement("span", null, null);
+        eventDateText.textContent =formatDate(eventItem.eventDate, true);
+        eventDate.appendChild(eventDateText);
+ 
         flexItem.appendChild(eventDate);
 
         const eventTitle = createElement("h3", ["event-item-title"], null);
@@ -48,7 +54,7 @@ export class EventView {
         eventDescription.setAttribute("itemprop", "about");
         eventDescription.textContent = truncateString(
           removeLineBreaks(eventItem.eventDescription),
-          80 * this.widthOnLarge
+          60 * this.widthOnLarge
         );
         flexItem.appendChild(eventDescription);
 

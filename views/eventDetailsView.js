@@ -128,7 +128,15 @@ export class EventDetailsView {
           ["eventComment-item-author"],
           null
         );
-        eventCommentAuthor.textContent = `Skrevet af ${commentItem.ecomAuthor}`;
+
+        const eventCommentAuthorPrefix = createElement("span", null, null);
+        eventCommentAuthorPrefix.textContent = "Skrevet af ";
+        eventCommentAuthor.appendChild(eventCommentAuthorPrefix);
+
+        const eventCommentAuthorName = createElement("span", ["eventComent-item-author-name"], null);
+        eventCommentAuthorName.textContent = `${commentItem.ecomAuthor}`;
+
+        eventCommentAuthor.appendChild(eventCommentAuthorName);
         eventCommentElement.appendChild(eventCommentAuthor);
 
         const eventComment = createElement(

@@ -47,7 +47,7 @@ img {
 
 .btn {
   border-radius: 0;
-  transition: all 0.05s ease-in-out;
+  transition: all $transitionTime ease-in-out;
   font-weight: 500;
   i {
     margin-right: 0.5rem; // Adding margin to icon buttons;
@@ -146,8 +146,7 @@ img {
 .page-feature-header {
   text-align: left;
   color: $customPrimary;
-
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .page-feature-teaser {
@@ -289,6 +288,9 @@ header.heroContainer video {
   display: flex;
   flex-direction: column;
 }
+.flexItem--inline {
+  align-items: flex-start;
+}
 
 // FEATURES;
 
@@ -347,7 +349,7 @@ header.heroContainer video {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  transition: 0.15s ease-in-out transform;
+  transition: $transitionTime ease-in-out transform;
   &:hover {
     background-color: $customPrimary;
     color: $customLight;
@@ -497,7 +499,14 @@ header.heroContainer video {
   }
   .event-item-date {
     display: inline-block;
-    padding: 0.25rem 0;
+    padding: 0 0.25rem;
+    margin: .5rem 0;
+    background-color: $customLight;
+    font-size: .9rem;
+    i {
+      margin-right: .25rem;
+      color: $customSecondary;
+    }
   }
   @media (min-width: 992px) {
     height: 100%;
@@ -525,7 +534,8 @@ header.heroContainer video {
   @media (min-width: 992px) {
     height: 100%;
     .eventDetails-item-image {
-      height: 500px;
+      //height: 500px;
+      padding: 2rem 0;
       width: 100%;
       background-size: cover;
       object-fit: scale-down;
@@ -583,6 +593,9 @@ header.heroContainer video {
 .eventComment-item-author {
   font-size: 0.9rem;
   color: $customSecondary;
+  .eventComent-item-author-name {
+    font-weight: bold;
+  }
 }
 
 .eventComment-item-comment {
@@ -630,7 +643,7 @@ header.heroContainer video {
     i {
       font-size: 4rem;
       color: $custom-brown;
-      transition: 0.25s ease-in-out all;
+      transition: $transitionTime ease-in-out all;
       &:not(:last-child) {
         margin-right: 0.5rem;
       }

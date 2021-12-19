@@ -122,15 +122,19 @@
                                 <tbody>
                                     <tr>
                                         <td><i class="fas fa-check-square"></td>
-                                        <td>Vores gårdbutik er 100% økologisk</td>
+                                        <td>100% økologisk og lokalt fremstillede produkter</td>
                                     </tr>
                                     <tr>
                                         <td><i class="fas fa-check-square"></td>
-                                        <td>Slap af i vores atmosfæriske café</td>
+                                        <td>Nyd en hyggelig stund i vores atmosfæriske café</td>
                                     </tr>
                                     <tr>
                                         <td><i class="fas fa-check-square"></td>
-                                        <td>Få mulighed for at besøge vores søde og nysgerrige dyr</td>
+                                        <td>Besøg vores søde og nysgerrige dyr</td>
+                                    </tr>
+                                    <tr>
+                                        <td><i class="fas fa-check-square"></td>
+                                        <td>Deltag i et event og få en autentisk landoplevelse</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -165,9 +169,11 @@
     </div>
 
     <script type="module">
-        import { EventInitializer  } from "/moseholm/js/eventInitializer.js";
-       const eventInitializer = new EventInitializer("4", false, "ASC");
-   </script>
+    import {
+        EventInitializer
+    } from "/moseholm/js/eventInitializer.js";
+    const eventInitializer = new EventInitializer("4", false, "ASC");
+    </script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
