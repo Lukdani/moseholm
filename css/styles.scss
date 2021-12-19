@@ -1,6 +1,6 @@
 @import "./bootstrap.scss";
 $heroHeightMobile: 400px;
-$heroHeightDesktop: 600px;
+$heroHeightDesktop: 500px;
 
 * {
   box-sizing: border-box;
@@ -193,7 +193,7 @@ header.heroContainer video {
   min-width: 100%;
   min-height: 100%;
   width: auto;
-  height: 600px;
+  height: $heroHeightDesktop;
   object-fit: cover;
   z-index: 0;
   @media (min-width: 992px) {
@@ -237,6 +237,12 @@ header.heroContainer video {
   opacity: 0.8;
 }
 
+.overlay.overlay--primary::after {
+  content: "";
+  opacity: 0.95 !important;
+  background-color: $customSecondary !important;
+}
+
 .overlay--light::after {
   background-color: $custom-brown !important;
 }
@@ -276,6 +282,11 @@ header.heroContainer video {
 
 .hidden {
   visibility: hidden !important;
+}
+
+.flexItem {
+  display: flex;
+  flex-direction: column;
 }
 
 // FEATURES;
@@ -469,19 +480,20 @@ header.heroContainer video {
     }
   }
 }
-
-.sortIcon {
-  margin-left: 0.5rem;
-  color: $customSecondary !important;
+.order-by-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .sortIcon {
+    margin-left: 0.5rem;
+    color: $customSecondary !important;
+  }
 }
 
 // EVENT DETAILS;
 
 .eventDetails-item {
-  background-color: $custom-brown;
-  padding: 1rem;
   box-shadow: $boxShadow;
-  margin-bottom: 0.5rem;
   @media (min-width: 992px) {
     height: 100%;
     .eventDetails-item-image {
@@ -496,6 +508,32 @@ header.heroContainer video {
       padding-left: 3rem;
       color: $customLight;
     }
+  }
+}
+
+.eventDetails-item-header {
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  padding: 0.5rem;
+}
+
+.eventDetails-item-date {
+  color: $customPrimary;
+  font-size: 1.4rem;
+  padding: 0.5rem 0;
+  font-weight: 500;
+  i {
+    margin-right: 0.5rem;
+  }
+}
+.eventDetails-item-details {
+  margin-top: 0.5rem;
+  display: inline-block;
+  padding: 0.5rem;
+  .eventDetails-item-price {
+    text-align: right;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
   }
 }
 

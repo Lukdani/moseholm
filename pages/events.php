@@ -54,7 +54,7 @@
     import {
         EventInitializer
     } from "/moseholm/js/eventInitializer.js";
-    const eventInitializer = new EventInitializer("3", true);
+    const eventInitializer = new EventInitializer("4", true);
     </script>
 
 </body>

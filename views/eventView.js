@@ -1,6 +1,8 @@
 import { createElement } from "../utils/createElement.js";
 import { formatCurrency } from "../utils/formatCurrency.js";
 import { formatDate } from "../utils/formatDate.js";
+import { removeLineBreaks } from "../utils/removeLineBreaks.js";
+import { truncateString } from "../utils/truncateString.js";
 
 export class EventView {
   constructor(rootElement, widthOnLarge) {
@@ -20,29 +22,35 @@ export class EventView {
         const eventElement = createElement("div", ["event-item"], null);
         eventContainer.appendChild(eventElement);
 
+        const flexItem = createElement("div", ["flexItem"], null);
+        eventElement.appendChild(flexItem);
         const eventImage = createElement("img", ["event-item-image"], null);
         eventImage.src = `/moseholm/images/events/${eventItem.eventImageName}`;
-        eventElement.appendChild(eventImage);
+        flexItem.appendChild(eventImage);
 
         const eventDate = createElement("p", ["event-item-date"], null);
         eventDate.textContent = formatDate(eventItem.eventDate, true);
-        console.log(formatDate(eventItem.eventDate));
-        eventElement.appendChild(eventDate);
+        flexItem.appendChild(eventDate);
 
         const eventTitle = createElement("h3", ["event-item-title"], null);
         eventTitle.textContent = eventItem.eventTitle;
-        eventElement.appendChild(eventTitle);
+        flexItem.appendChild(eventTitle);
 
         const eventDescription = createElement("p", [
           "event-item-description",
           null,
         ]);
-        eventDescription.textContent = eventItem.eventDescription;
-        eventElement.appendChild(eventDescription);
+        eventDescription.textContent = truncateString(
+          removeLineBreaks(eventItem.eventDescription),
+          80 * this.widthOnLarge
+        );
+        flexItem.appendChild(eventDescription);
 
+        const flexItem2 = createElement("div", ["flexItem"], null);
+        eventElement.appendChild(flexItem2);
         const eventPrice = createElement("p", ["event-item-price", null]);
         eventPrice.textContent = `${formatCurrency(eventItem.eventPrice)} kr.`;
-        eventElement.appendChild(eventPrice);
+        flexItem2.appendChild(eventPrice);
 
         const eventLink = createElement(
           "a",
@@ -51,7 +59,7 @@ export class EventView {
         );
         eventLink.href = `/moseholm/pages/eventDetails.php?eventId=${eventItem.eventId}`;
         eventLink.textContent = "Læs mere";
-        eventElement.appendChild(eventLink);
+        flexItem2.appendChild(eventLink);
 
         this.rootElement.appendChild(eventContainer);
       });

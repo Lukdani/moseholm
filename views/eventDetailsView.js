@@ -1,6 +1,7 @@
 import { createElement } from "../utils/createElement.js";
 import { formatCurrency } from "../utils/formatCurrency.js";
 import { formatDate } from "../utils/formatDate.js";
+import { insertLineBreak } from "../utils/insertLineBreaks.js";
 
 export class EventDetailsView {
   constructor(rootElement, commentsRoot) {
@@ -37,7 +38,15 @@ export class EventDetailsView {
         ["eventDetails-item-date", "overlay-text"],
         null
       );
-      eventDate.textContent = formatDate(event.eventDate, true);
+      const eventDateIcon = createElement(
+        "i",
+        ["fas", "fa-calendar-week"],
+        null
+      );
+      eventDate.appendChild(eventDateIcon);
+      const eventDateText = createElement("span", null, null);
+      eventDateText.textContent = formatDate(event.eventDate, true);
+      eventDate.appendChild(eventDateText);
       headerContainer.appendChild(eventDate);
 
       const eventTitle = createElement(
@@ -48,16 +57,24 @@ export class EventDetailsView {
       eventTitle.textContent = event.eventTitle;
       headerContainer.appendChild(eventTitle);
 
-      const eventDescription = createElement("p", [
-        "eventDetails-item-description",
-        null,
-      ]);
-      eventDescription.textContent = event.eventDescription;
-      eventElement.appendChild(eventDescription);
+      const detailsContainer = createElement(
+        "div",
+        ["eventDetails-item-details", "overlay", "overlay--primary"],
+        null
+      );
+      eventImage.appendChild(detailsContainer);
 
-      const eventPrice = createElement("p", ["eventDetails-item-price", null]);
+      const eventDescription = createElement("p", ["overlay-text"], null);
+      eventDescription.innerHTML = insertLineBreak(event.eventDescription);
+      detailsContainer.appendChild(eventDescription);
+
+      const eventPrice = createElement(
+        "p",
+        ["eventDetails-item-price", "overlay-text"],
+        null
+      );
       eventPrice.textContent = `${formatCurrency(event.eventPrice)} kr.`;
-      eventElement.appendChild(eventPrice);
+      detailsContainer.appendChild(eventPrice);
 
       this.rootElement.appendChild(eventContainer);
     }
