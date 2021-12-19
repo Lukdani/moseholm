@@ -7,7 +7,7 @@ export class ProductsView {
     this.productRoot = productRoot;
   }
 
-  renderCategories = (categories, selectedCategories) => {
+  renderCategories = (categories, selectedCategories) => {  
     this.clearCategories();
     if (categories?.length > 0) {
       categories.forEach((categoryItem) => {

@@ -1,14 +1,3 @@
-<!--<?php
-/*require "settings/init.php";
-
-$blogs = $db->sql("SELECT * FROM blogs");
-
-foreach ($blogs as $blog){
-    echo $blog->blogName . "<br>";
-}
-*/
-?>-->
-
 <!DOCTYPE html>
 <html lang="da">
 
@@ -16,24 +5,22 @@ foreach ($blogs as $blog){
     <meta charset="utf-8" />
 
     <title>Moseholm - økologisk gårdbutik</title>
-    
+
     <!--META -->
     <meta name="robots" content="All" />
     <meta name="author" content="Udgiver" />
     <meta name="copyright" content="Information om copyright" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-     content="Oversigt over produkter, som sælges i Moseholms gårdbutik" />
+    <meta name="description" content="Oversigt over produkter, som sælges i Moseholms gårdbutik" />
     <meta name="keywords" content="økologi, gårdbutik, familie, shopping" />
     <meta name="robots" content="index,follow" />
     <meta property="og:title" content="Moseholm - økologisk gårdbutik" />
     <meta property="og:image" content="" />
-    <meta property="og:description"
-        content="Oversigt over produkter, som sælges i Moseholms gårdbutik" />
+    <meta property="og:description" content="Oversigt over produkter, som sælges i Moseholms gårdbutik" />
     <?php include $_SERVER['DOCUMENT_ROOT'] .
       "/moseholm/includes/dependencies.html"; ?>
 
-    
+
 </head>
 
 <body>
@@ -60,7 +47,7 @@ foreach ($blogs as $blog){
 
                     <div id="categoriesContainer" class="col-12 col-lg-2 pt-2">
                     </div>
-                    
+
                     <div class="col-12 col-lg-10">
                         <div id="productsContainer" class="row">
                         </div>
