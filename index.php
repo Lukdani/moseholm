@@ -108,6 +108,11 @@ foreach ($blogs as $blog){
           
 
             </div>
+            <div class="row">
+                    <div class="col-12" style="text-align: center;">
+                    <a href="/moseholm/pages/products.php" class="btn-secondary btn mt-4"><i class="fas fa-shopping-cart"></i>Se alle produkter</a>
+                    </div>
+                </div>
         </div>
         </div>
         <div class="section features overlay overlay--light">

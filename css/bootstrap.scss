@@ -13,17 +13,18 @@ $custom-colors: (
 );
  */
 
- $customSecondary: #30422E;
- $customPrimary: #B99309;
- $customLight: #EBE5DB;
- $custom-brown: #CECBAB;
- $custom-gray:#bfbfbf;
- $custom-gray--darken:#b3b3b3;
+$customSecondary: #30422e;
+$customPrimary: #b99309;
+$customLight: #ebe5db;
+$customDark: #2c2c2c;
+$custom-brown: #cecbab;
+$custom-gray: #bfbfbf;
+$custom-gray--darken: #b3b3b3;
 
- $font-family: 'Open Sans', sans-serif;
- $header-font: 'Josefin Sans', sans-serif;
+$font-family: "Open Sans", sans-serif;
+$header-font: "Josefin Sans", sans-serif;
 
- $boxShadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+$boxShadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
 $custom-colors: (
   "primary": $customPrimary,

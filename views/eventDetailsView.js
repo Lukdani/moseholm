@@ -27,12 +27,13 @@ export class EventDetailsView {
       eventImage.style.backgroundImage = `url(/moseholm/images/events/${event.eventImageName})`;
       eventElement.appendChild(eventImage);
 
-      const headerContainer = createElement(
+      const dateContainer = createElement(
         "div",
-        ["eventDetails-item-header", "overlay"],
+        ["eventDetails-item-details", "overlay", "overlay--primary"],
         null
       );
-      eventImage.appendChild(headerContainer);
+      eventImage.appendChild(dateContainer);
+
       const eventDate = createElement(
         "p",
         ["eventDetails-item-date", "overlay-text"],
@@ -47,7 +48,13 @@ export class EventDetailsView {
       const eventDateText = createElement("span", null, null);
       eventDateText.textContent = formatDate(event.eventDate, true);
       eventDate.appendChild(eventDateText);
-      headerContainer.appendChild(eventDate);
+      dateContainer.appendChild(eventDate);
+      const headerContainer = createElement(
+        "div",
+        ["eventDetails-item-header", "overlay", "overlay--primary"],
+        null
+      );
+      eventImage.appendChild(headerContainer);
 
       const eventTitle = createElement(
         "h3",
@@ -66,7 +73,7 @@ export class EventDetailsView {
 
       const eventDescription = createElement("p", ["overlay-text"], null);
       eventDescription.innerHTML = insertLineBreak(event.eventDescription);
-      detailsContainer.appendChild(eventDescription);
+      headerContainer.appendChild(eventDescription);
 
       const eventPrice = createElement(
         "p",
@@ -75,6 +82,14 @@ export class EventDetailsView {
       );
       eventPrice.textContent = `${formatCurrency(event.eventPrice)} kr.`;
       detailsContainer.appendChild(eventPrice);
+
+      const enrollButton = createElement(
+        "button",
+        ["btn", "btn-primary"],
+        null
+      );
+      enrollButton.textContent = "Tilmeld dig nu";
+      eventImage.appendChild(enrollButton);
 
       this.rootElement.appendChild(eventContainer);
     }

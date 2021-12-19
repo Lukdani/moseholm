@@ -35,10 +35,13 @@
         
     </div>
 </div>
+
 <div class="row">
+<h3 class="mb-2 text-secondary">Lad os høre, hvad du synes</h3>
     <div class="col-12 col-lg-4">
+
     <form id="eventDetails-commentForm">
-            <div class="form-group">
+            <div class="form-group mb-2">
     <label for="commentAuthor">Dit navn</label>
     <input name="ecomAuthor" type="text" required class="form-control" id="eventDetails-commentForm-author" placeholder="Indtast dit navn">
   </div>
@@ -46,7 +49,7 @@
     <label for="commentComment">Din kommmentar</label>
     <textarea type="text" name="ecomComment" required class="form-control" id="eventDetails-commentForm-comment" placeholder="Indtast din kommentar"></textarea>
   </div>
-  <button class="btn btn-primary commentSubmitButton">Send kommentar</button>
+  <button class="btn btn-primary commentSubmitButton"><i class="fas fa-comments"></i>Send kommentar</button>
             </form>
     </div>
 
