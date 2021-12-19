@@ -51,6 +51,8 @@ export class ProductsView {
           null
         );
         const productElement = createElement("div", ["product-item"], null);
+        productElement.setAttribute("itemscope", "");
+        productElement.setAttribute("itemtype", "https://schema.org/Product");
         productContainer.appendChild(productElement);
 
         const flexItemContainer = createElement("span", null, null);
@@ -61,14 +63,17 @@ export class ProductsView {
           ["product-item-category"],
           null
         );
+        productCategory.setAttribute("itemprop", "category");
         productCategory.textContent = productItem.catLabel;
         flexItemContainer.appendChild(productCategory);
 
         const productImage = createElement("img", ["product-item-image"], null);
+        productImage.setAttribute("itemprop", "image");
         productImage.src = `/moseholm/images/products/${productItem.prodImageName}`;
         flexItemContainer.appendChild(productImage);
 
         const productTitle = createElement("h3", ["product-item-title"], null);
+        productTitle.setAttribute("itemprop", "name");
         productTitle.textContent = productItem.prodTitle;
         flexItemContainer.appendChild(productTitle);
 
@@ -76,26 +81,40 @@ export class ProductsView {
           "product-item-description",
           null,
         ]);
+        productDescription.setAttribute("itemprop", "description");
         productDescription.textContent = productItem.prodDescription;
         flexItemContainer.appendChild(productDescription);
 
         const priceContainer = createElement("span", [
           "product-item-priceContainer",
         ]);
+        priceContainer.setAttribute("itemprop", "Offer");
+        priceContainer.setAttribute("itemscope", "");
+        priceContainer.setAttribute("itemtype", "https://schema.org/Offer");
         productElement.appendChild(priceContainer);
 
         const shopNotification = createElement("span", [
           "product-item-shopNotification",
         ]);
+        shopNotification.textContent = "Købes i gårdbutikken";
         priceContainer.appendChild(shopNotification);
 
         const productPrice = createElement("p", ["product-item-price", null]);
-        productPrice.textContent = `${formatCurrency(
-          productItem.prodPrice
-        )} kr.`;
-        priceContainer.appendChild(productPrice);
 
-        shopNotification.textContent = "Købes i gårdbutikken";
+        const productPriceAmount = createElement("span", null, null);
+        productPriceAmount.setAttribute("itemprop", "price");
+        productPriceAmount.textContent = `${formatCurrency(
+          productItem.prodPrice
+        )} `;
+        productPrice.appendChild(productPriceAmount);
+
+        const productPriceCurrency= createElement("span", null, null);
+        productPriceCurrency.setAttribute("itemprop", "priceCurrency");
+        productPriceCurrency.textContent = "kr";
+        priceContainer.appendChild(productPrice);
+        productPrice.appendChild(productPriceCurrency);
+
+
 
         this.productRoot.appendChild(productContainer);
       });
