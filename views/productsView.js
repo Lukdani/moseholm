@@ -79,11 +79,23 @@ export class ProductsView {
         productDescription.textContent = productItem.prodDescription;
         flexItemContainer.appendChild(productDescription);
 
+        const priceContainer = createElement("span", [
+          "product-item-priceContainer",
+        ]);
+        productElement.appendChild(priceContainer);
+
+        const shopNotification = createElement("span", [
+          "product-item-shopNotification",
+        ]);
+        priceContainer.appendChild(shopNotification);
+
         const productPrice = createElement("p", ["product-item-price", null]);
         productPrice.textContent = `${formatCurrency(
           productItem.prodPrice
         )} kr.`;
-        productElement.appendChild(productPrice);
+        priceContainer.appendChild(productPrice);
+
+        shopNotification.textContent = "Købes i gårdbutikken";
 
         this.productRoot.appendChild(productContainer);
       });

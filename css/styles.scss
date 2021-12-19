@@ -438,9 +438,23 @@ header.heroContainer video {
   }
   .product-item-price {
     padding: 0.5rem 0;
+    padding-top: 0;
     font-size: 1.4rem;
     font-weight: 500;
     text-align: right;
+  }
+
+  .product-item-priceContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    .product-item-shopNotification {
+      background-color: $customLight;
+      margin-bottom: 0.15rem;
+      padding: 0 0.25rem;
+      font-size: 0.85rem;
+    }
   }
 }
 
@@ -542,9 +556,14 @@ header.heroContainer video {
   padding: 0.5rem;
 }
 
+.eventComments-container:not(:last-of-type) {
+  margin-bottom: 0.5rem;
+}
 .eventComment-item {
   background-color: $custom-brown;
-  margin: 0.5rem 0;
+  &:not(:last-of-type) {
+    margin-bottom: 0.5rem;
+  }
   padding: 0.5rem;
 }
 
@@ -565,6 +584,7 @@ header.heroContainer video {
 #eventDetails-commentForm {
   background-color: $custom-brown;
   padding: 0.5rem;
+
   button {
     margin-top: 0.5rem;
   }

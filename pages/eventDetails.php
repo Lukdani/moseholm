@@ -35,7 +35,9 @@
         
     </div>
 </div>
-            <form id="eventDetails-commentForm">
+<div class="row">
+    <div class="col-12 col-lg-4">
+    <form id="eventDetails-commentForm">
             <div class="form-group">
     <label for="commentAuthor">Dit navn</label>
     <input name="ecomAuthor" type="text" required class="form-control" id="eventDetails-commentForm-author" placeholder="Indtast dit navn">
@@ -46,11 +48,15 @@
   </div>
   <button class="btn btn-primary commentSubmitButton">Send kommentar</button>
             </form>
+    </div>
+
+    <div class="col-12 col-lg-8">
         
                 <div id="eventCommentsContainer" class="row">                    
-                </div>                
+                </div>     
+                </div>            
             </div>
-        
+            </div>
     </div>
 </div>
 </div>
