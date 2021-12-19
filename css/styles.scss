@@ -80,7 +80,7 @@ img {
 }
 
 .navbar-brand img {
-  max-height: 120px;
+  max-height: 80px;
   width: auto;
   padding: 0.5rem 0;
 }
@@ -139,6 +139,20 @@ img {
   text-align: center;
   color: $customPrimary;
   padding-bottom: 1rem;
+}
+
+// PAGE LAYOUT
+
+.page-feature-header {
+  text-align: left;
+  color: $customPrimary;
+
+  font-size: 1.2rem;
+}
+
+.page-feature-teaser {
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 // HERO;
@@ -387,6 +401,9 @@ header.heroContainer video {
   margin-bottom: 0.5rem;
   height: 100%;
   box-shadow: $boxShadow;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   i {
     font-size: 2rem;
     color: $customSecondary;
@@ -406,10 +423,13 @@ header.heroContainer video {
   }
   .product-item-title {
     margin: 0.5rem 0;
+    font-size: 1.2rem;
   }
   .product-item-price {
+    padding: 0.5rem 0;
+    font-size: 1.4rem;
     font-weight: 500;
-    margin: 0.5rem 0;
+    text-align: right;
   }
 }
 
@@ -432,6 +452,9 @@ header.heroContainer video {
   }
   .event-item-price {
     padding: 0.5rem 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: right;
   }
   .event-item-date {
     display: inline-block;

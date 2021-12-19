@@ -53,28 +53,31 @@ export class ProductsView {
         const productElement = createElement("div", ["product-item"], null);
         productContainer.appendChild(productElement);
 
+        const flexItemContainer = createElement("span", null, null);
+        productElement.appendChild(flexItemContainer);
+
         const productCategory = createElement(
           "span",
           ["product-item-category"],
           null
         );
         productCategory.textContent = productItem.catLabel;
-        productElement.appendChild(productCategory);
+        flexItemContainer.appendChild(productCategory);
 
         const productImage = createElement("img", ["product-item-image"], null);
         productImage.src = `/moseholm/images/products/${productItem.prodImageName}`;
-        productElement.appendChild(productImage);
+        flexItemContainer.appendChild(productImage);
 
         const productTitle = createElement("h3", ["product-item-title"], null);
         productTitle.textContent = productItem.prodTitle;
-        productElement.appendChild(productTitle);
+        flexItemContainer.appendChild(productTitle);
 
         const productDescription = createElement("p", [
           "product-item-description",
           null,
         ]);
         productDescription.textContent = productItem.prodDescription;
-        productElement.appendChild(productDescription);
+        flexItemContainer.appendChild(productDescription);
 
         const productPrice = createElement("p", ["product-item-price", null]);
         productPrice.textContent = `${formatCurrency(

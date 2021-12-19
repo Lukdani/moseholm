@@ -11,7 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "bootstrap": "^5.1.0"
-
   },
   "devDependencies": {
     "node-sass": "^7.0.0",
