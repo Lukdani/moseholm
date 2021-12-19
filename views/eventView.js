@@ -20,19 +20,24 @@ export class EventView {
           null
         );
         const eventElement = createElement("div", ["event-item"], null);
+        eventElement.setAttribute("itemscope", "");
+        eventElement.setAttribute("itemtype", "https://schema.org/Event");
         eventContainer.appendChild(eventElement);
 
         const flexItem = createElement("div", ["flexItem"], null);
         eventElement.appendChild(flexItem);
         const eventImage = createElement("img", ["event-item-image"], null);
+        eventImage.setAttribute("itemprop", "image");
         eventImage.src = `/moseholm/images/events/${eventItem.eventImageName}`;
         flexItem.appendChild(eventImage);
 
         const eventDate = createElement("p", ["event-item-date"], null);
+        eventDate.setAttribute("itemprop", "startDate");
         eventDate.textContent = formatDate(eventItem.eventDate, true);
         flexItem.appendChild(eventDate);
 
         const eventTitle = createElement("h3", ["event-item-title"], null);
+        eventTitle.setAttribute("itemprop", "name");
         eventTitle.textContent = eventItem.eventTitle;
         flexItem.appendChild(eventTitle);
 
@@ -40,6 +45,7 @@ export class EventView {
           "event-item-description",
           null,
         ]);
+        eventDescription.setAttribute("itemprop", "about");
         eventDescription.textContent = truncateString(
           removeLineBreaks(eventItem.eventDescription),
           80 * this.widthOnLarge
@@ -48,8 +54,21 @@ export class EventView {
 
         const flexItem2 = createElement("div", ["flexItem"], null);
         eventElement.appendChild(flexItem2);
-        const eventPrice = createElement("p", ["event-item-price", null]);
-        eventPrice.textContent = `${formatCurrency(eventItem.eventPrice)} kr.`;
+        const eventPrice = createElement("p", ["event-item-price"], null);
+        eventPrice.setAttribute("itemprop", "offers");
+        eventPrice.setAttribute("itemscope", "");
+        eventPrice.setAttribute("itemtype", "https://schema.org/Offer");
+
+        const eventPriceAmount = createElement("span", null, null);
+        eventPriceAmount.setAttribute("itemprop", "price");
+        eventPriceAmount.textContent = `${formatCurrency(
+          eventItem.eventPrice
+        )} `;
+        eventPrice.appendChild(eventPriceAmount);
+        const eventPriceCurrency = createElement("span", null, null);
+        eventPriceCurrency.setAttribute("itemprop", "priceCurrency");
+        eventPrice.appendChild(eventPriceCurrency);
+        eventPriceCurrency.textContent = "kr";
         flexItem2.appendChild(eventPrice);
 
         const eventLink = createElement(
