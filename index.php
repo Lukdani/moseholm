@@ -56,13 +56,25 @@
                             <a href="/moseholm/pages/products.php?categories=colonial">
                                 <div class="category-overview-item">
                                     <i class="fas fa-seedling"></i>
-                                    <p>Kolonialt</p>
+                                    <i class="fas fa-seedling"></i>
+                                    <i class="fas fa-seedling"></i>
+                                    <i class="fas fa-seedling"></i>
+                                    <i class="fas fa-seedling"></i>
+                                    <i class="fas fa-seedling"></i>
+                                    <i class="fas fa-seedling"></i>
+                                    <p>Kolonial</p>
                                 </div>
                             </a>
                         </div>
                         <div class="col-12 col-lg-4 col-space category-overview-container">
                             <a href="/moseholm/pages/products.php?categories=dairy">
                                 <div class="category-overview-item">
+                                    <i class="fas fa-egg"></i>
+                                    <i class="fas fa-egg"></i>
+                                    <i class="fas fa-egg"></i>
+                                    <i class="fas fa-egg"></i>
+                                    <i class="fas fa-egg"></i>
+                                    <i class="fas fa-egg"></i>
                                     <i class="fas fa-egg"></i>
                                     <p>Mejeri</p>
                                 </div>
@@ -72,6 +84,12 @@
                             <a href="/moseholm/pages/products.php?categories=bread">
                                 <div class="category-overview-item">
                                     <i class="fas fa-bread-slice"></i>
+                                    <i class="fas fa-bread-slice"></i>
+                                    <i class="fas fa-bread-slice"></i>
+                                    <i class="fas fa-bread-slice"></i>
+                                    <i class="fas fa-bread-slice"></i>
+                                    <i class="fas fa-bread-slice"></i>
+                                    <i class="fas fa-bread-slice"></i>
                                     <p>Brød</p>
                                 </div>
                             </a>
@@ -79,6 +97,12 @@
                         <div class="col-12 col-lg-4 col-space category-overview-container">
                             <a href="/moseholm/pages/products.php?categories=fruit">
                                 <div class="category-overview-item">
+                                    <i class="fas fa-apple-alt"></i>
+                                    <i class="fas fa-apple-alt"></i>
+                                    <i class="fas fa-apple-alt"></i>
+                                    <i class="fas fa-apple-alt"></i>
+                                    <i class="fas fa-apple-alt"></i>
+                                    <i class="fas fa-apple-alt"></i>
                                     <i class="fas fa-apple-alt"></i>
                                     <p>Frugt</p>
                                 </div>
@@ -88,6 +112,12 @@
                             <a href="/moseholm/pages/products.php?categories=vegetables">
                                 <div class="category-overview-item">
                                     <i class="fas fa-carrot"></i>
+                                    <i class="fas fa-carrot"></i>
+                                    <i class="fas fa-carrot"></i>
+                                    <i class="fas fa-carrot"></i>
+                                    <i class="fas fa-carrot"></i>
+                                    <i class="fas fa-carrot"></i>
+                                    <i class="fas fa-carrot"></i>
                                     <p>Grøntsager</p>
                                 </div>
                             </a>
@@ -95,6 +125,12 @@
                         <div class="col-12 col-lg-4 col-space category-overview-container">
                             <a href="/moseholm/pages/products.php?categories=meat">
                                 <div class="category-overview-item">
+                                    <i class="fas fa-drumstick-bite"></i>
+                                    <i class="fas fa-drumstick-bite"></i>
+                                    <i class="fas fa-drumstick-bite"></i>
+                                    <i class="fas fa-drumstick-bite"></i>
+                                    <i class="fas fa-drumstick-bite"></i>
+                                    <i class="fas fa-drumstick-bite"></i>
                                     <i class="fas fa-drumstick-bite"></i>
                                     <p>Kød</p>
                                 </div>

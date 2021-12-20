@@ -1,6 +1,39 @@
 @import "./bootstrap.scss";
 $heroHeightMobile: 400px;
 $heroHeightDesktop: 500px;
+$randomInt: percentage(random(100)/100);
+
+// ANIMATIONS
+
+@keyframes spread-1 {
+  0%   {left: 50%; top:50%; opacity: .4;}  
+  100%  {left: 40%; top:0%; opacity: 0; visibility:hidden}
+}
+
+@keyframes spread-2 {
+  0%   {left: 50%;  top: 50%; opacity: .4;}  
+  100%  {left: 75%; top: 50%; visibility:hidden; opacity: 0}
+}
+
+@keyframes spread-3 {
+  0%   {left: 50%; top:50%; opacity: .4}  
+  100%  {left: 40%; top:100%; visibility:hidden; opacity: 0}
+}
+
+@keyframes whirlwind-right-1 {
+  0%   {right: 50%; top:50%;  opacity: .4}  
+  100%  {right: 40%; top:0%; visibility:hidden; opacity: 0}
+}
+
+@keyframes whirlwind-right-2 {
+  0%   {right: 50%; top:50%; opacity: .4}  
+  100%  {right: 75%; top:50%; visibility:hidden; opacity: 0}
+}
+
+@keyframes whirlwind-right-3 {
+  0%   {right: 50%; top:50%; opacity: .4}  
+  100%  {right: 40%; top:100%; visibility:hidden; opacity: 0}
+}
 
 * {
   box-sizing: border-box;
@@ -343,6 +376,7 @@ header.heroContainer video {
 }
 .category-overview-item {
   background-color: $custom-brown;
+  position: relative;
   padding: 1rem;
   margin-bottom: 0.5rem;
   display: flex;
@@ -350,10 +384,17 @@ header.heroContainer video {
   justify-content: center;
   flex-direction: column;
   transition: $transitionTime ease-in-out transform;
+
   &:hover {
     background-color: $customPrimary;
     color: $customLight;
     transform: scale(1.025);
+    i:not(:first-of-type) {
+      color: $customLight;
+      display: unset;
+      position:absolute;
+      top: .5rem;
+    }
     i {
       color: $customLight;
     }
@@ -362,6 +403,46 @@ header.heroContainer video {
     font-size: 2rem;
     color: $customSecondary;
   }
+  i:not(:first-of-type) {
+    color: red;
+    display: none;
+    position:absolute;
+    top: 50%;
+    animation-fill-mode:forwards !important;
+    animation-duration: .75s !important;
+  }
+  i:nth-child(2) {
+    animation: spread-1;
+    transform:translate(-50%, -50%);
+    left: 50%;
+  }
+  i:nth-child(3) {
+    animation: spread-2;
+    transform:translate(-50%, -50%);
+    left: 50%;
+  }
+  i:nth-child(4) {
+    animation: spread-3;
+    transform:translate(-50%, -50%);
+    left: 50%;
+  }
+  i:nth-child(5) {
+    animation: whirlwind-right-1;
+    transform:translate(50%, -50%);
+    right: 50%;
+  }
+  i:nth-child(6) {
+    animation: whirlwind-right-2;
+    transform:translate(50%, -50%);
+    right: 50%;
+  }
+  i:nth-child(7) {
+    animation: whirlwind-right-3;
+    transform:translate(50%, -50%);
+    color: purple;
+    right: 50%;
+  }
+  
 }
 
 #clearFilterButton {

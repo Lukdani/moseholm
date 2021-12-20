@@ -8,6 +8,7 @@ export class ProductsView {
   }
 
   renderCategories = (categories, selectedCategories) => {  
+    console.log("renders")
     this.clearCategories();
     if (categories?.length > 0) {
       categories.forEach((categoryItem) => {
@@ -28,7 +29,7 @@ export class ProductsView {
           null
         );
         categoryButton.appendChild(selectedIcon);
-        categoryButtonText.textContent = categoryItem.catLabel;
+        categoryButtonText.textContent = `${categoryItem.catLabel} (${categoryItem.count})`;
         categoryButton.appendChild(categoryButtonText);
       });
     }
@@ -167,7 +168,6 @@ export class ProductsView {
   };
 
   displayFilterButton = (shown) => {
-    console.log(shown);
     const resetFilterButton = document.getElementById("clearFilterButton");
     if (shown) {
       resetFilterButton.classList.remove("hidden");

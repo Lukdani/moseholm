@@ -14,15 +14,17 @@ export class ProductController {
             listOfCategories.forEach(categoryItem => this.categoryFilter.push(categoryItem));
         }
 
-        this.populateCategories();
-        this.populateProducts(true);
+        this.populateCategories(true, () => this.populateProducts(true));
+       ;
     }
 
-    populateCategories = async () => {
+    populateCategories = async (initialLoad, callback) => {
+        if (initialLoad) {
+            const categories =  await fetchJsonApi("/moseholm/api/getCategories.php");
+            this.productModel.setCategories(categories);
+        }
 
-        const categories =  await fetchJsonApi("/moseholm/api/getCategories.php");
-
-        this.productView.renderCategories(categories, this.categoryFilter);
+        this.productView.renderCategories(this.productModel.getCategories(), this.categoryFilter);
 
         if (this.categoryFilter?.length > 0 ) {
             this.productView.displayFilterButton(true);
@@ -30,6 +32,9 @@ export class ProductController {
 
         this.productView.bindCategoryButton(this.setFilter);
         this.productView.bindResetFilterButton(this.deselectCategories);
+        if (callback) {
+            callback();
+        }
     }
 
     deselectCategories = () => {
@@ -44,12 +49,16 @@ export class ProductController {
             this.setSpinner(true);
         }
         const fetchtedProducts =  await fetchJsonApi(`/moseholm/api/getProducts.php${this.categoryFilter?.length > 0 ? "?categories=" + this.categoryFilter.join(",") : ""}`);
-        if (initialLoad) {
-        this.setSpinner(false);
-        }
-
+      
         this.productModel.setProducts(fetchtedProducts);
         this.productView.renderProducts(this.productModel.state.products);
+
+        if (initialLoad) {
+            this.setSpinner(false);
+            this.productModel.updateCategoriesCount();
+            this.populateCategories();
+            }
+          
 
     }
 
@@ -68,7 +77,6 @@ export class ProductController {
             if (spinner.classList.contains("hidden")) {
                 spinner.classList.remove("hidden")
             }
-            console.log(spinner.classList);
         }
         else if (!show && !spinner.classList.contains("hidden")) {
             spinner.classList.toggle("hidden");
