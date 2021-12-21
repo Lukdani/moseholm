@@ -24,7 +24,6 @@ export class ShoppingCartModel {
 
             this.state.totalPrice = Object.values(this.state.products)?.reduce(
                 (total, currentProduct) => {
-                    console.log(currentProduct);
                     const currentCount = (currentProduct?.count || 0) * currentProduct.product.prodPrice;
                     return +total + currentCount
                 }, 0);
@@ -37,6 +36,33 @@ export class ShoppingCartModel {
         }
         this.state.itemsCount++;
         this.state.products[product.prodId].count++;
+    }
+
+    updateProductAmount = (type, productId) => {
+        if (type === "decrease") {
+            const product = this.state.products[productId];
+            if (product?.count > 0) {
+                product.count--;
+                return product.count;
+            }
+        }
+        else if (type === "increase") {
+            const product = this.state.products[productId];
+            if (product && product.count != null) {
+                product.count++;
+                return product.count;
+            }
+        }
+    }
+
+    removeProduct = (productId) => {
+        console.log(Object.keys(this.state.products).length < 2)
+        if (Object.keys(this.state.products).length < 2) {
+            this.state.products = {};
+            console.log(this.state.products)
+            return;
+        }
+        delete this.state.products[productId];
     }
 
     getProducts = () => this.state.products;

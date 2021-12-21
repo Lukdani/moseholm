@@ -8,14 +8,36 @@ export class ShoppingCartController {
         this.products = products;
         this.getShoppingCartFromCache();    
         if (loadSummary) {
-           this.shoppingCartView.generateCartSummary(this.shoppingCartModel.state.products, this.shoppingCartModel.state.totalPrice,);
+            this.generateCartSummary()
         }
+    }
+
+    generateCartSummary = () => {
+        this.shoppingCartView.generateCartSummary(this.shoppingCartModel.state.products, this.shoppingCartModel.state.totalPrice);
+        this.shoppingCartView.bindDecreaseButtons((type, productId) => this.handleProductAmountChanged(type, productId));
+        this.shoppingCartView.bindIncreaseButtons((type, productId) => this.handleProductAmountChanged(type, productId));
+    }
+
+    handleProductAmountChanged = (type, productId) => {
+        if (type === "decrease") {
+            const newAmount = this.shoppingCartModel.updateProductAmount(type, productId);
+            if (newAmount === 0) {
+                this.shoppingCartModel.removeProduct(productId);
+            }
+        }
+        else if (type === "increase") {
+            this.shoppingCartModel.updateProductAmount(type, productId);
+        }
+
+        this.cacheShoppingCart();
+        this.updateShoppingCart();
+        this.generateCartSummary();
     }
 
     getShoppingCartFromCache = () => {
         const items = localStorage.getItem("shoppingCart");
         let parsedItems = null;
-        if (items) {
+        if (items != null) {
             this.shoppingCartView.toggleActivateCart(true);
             parsedItems = tryJsonParse(items);
             this.shoppingCartModel.setProducts({... parsedItems});
@@ -26,8 +48,11 @@ export class ShoppingCartController {
 
     cacheShoppingCart = () => {
         const items = this.shoppingCartModel.getProducts();
-        if (items && Object.values(items)?.length > 0 ){
-            this.shoppingCartView.toggleActivateCart(true);
+        if (items != null){
+            if ( Object.values(items)?.length > 0 ) {
+                this.shoppingCartView.toggleActivateCart(true);
+            }
+
             const stringifiedItems = tryJsonStringify(items);
             localStorage.setItem("shoppingCart", stringifiedItems);
             return;
@@ -36,7 +61,9 @@ export class ShoppingCartController {
 
     updateShoppingCart = (product) => {
         this.getShoppingCartFromCache();
-        this.shoppingCartModel.updateProducts(product);
+        if (product) {
+            this.shoppingCartModel.updateProducts(product);
+        }
         this.shoppingCartView.updateCartCounter(this.shoppingCartModel.state.itemsCount)
         this.cacheShoppingCart();
     }

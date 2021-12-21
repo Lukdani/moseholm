@@ -22,7 +22,9 @@ export class ShoppingCartView {
     }
 
     generateCartSummary = (productLines, totalPrice) => {
+        this.cartSummaryRoot.innerHTML = "";
         const productSummaryContainer = createElement("div", ["product-summary"], null);
+
         this.cartSummaryRoot.appendChild(productSummaryContainer);
         if (Object.values(productLines)?.length > 0) {
             const summaryTable = createElement("table", ["table", "product-summary-table"], null);
@@ -56,6 +58,7 @@ export class ShoppingCartView {
 
         Object.values(productLines).forEach(productLine => {
             const productRow = createElement("tr");
+            productRow.setAttribute("data-productId", productLine.product.prodId);
             summaryTableBody.appendChild(productRow);
 
             const productName = createElement("td");
@@ -63,7 +66,23 @@ export class ShoppingCartView {
             productRow.appendChild(productName);
 
             const productAmount = createElement("td");
-            productAmount.textContent = productLine.count;
+
+            const productAmountDecrease = createElement("button", ["btn","product-amount-button", "product-amount-decrease"], null);
+            productAmountDecrease.setAttribute("data-productId", productLine.product.prodId);
+            productAmountDecrease.textContent = "-"
+            productAmount.appendChild(productAmountDecrease);
+
+            const productAmountState = createElement("span", ["product-amount-tag"], null);
+            productAmountState.setAttribute("data-productId", productLine.product.prodId);
+            productAmountState.textContent = productLine.count;
+            productAmount.appendChild(productAmountState);
+
+            const productAmountIncrease = createElement("button", ["btn", "product-amount-button", "product-amount-increase"], null);
+            productAmountIncrease.setAttribute("data-productId", productLine.product.prodId);
+            productAmountIncrease.textContent = "+"
+            productAmount.appendChild(productAmountIncrease);
+
+
             productRow.appendChild(productAmount);
 
             const productPrice = createElement("td");
@@ -80,7 +99,7 @@ export class ShoppingCartView {
              const productName = createElement("td");
              productName.textContent = ""
              summaryRow.appendChild(productName);
- 
+          
              const productAmount = createElement("td");
              productAmount.textContent = "";
              summaryRow.appendChild(productAmount);
@@ -96,6 +115,26 @@ export class ShoppingCartView {
 
              summaryRow.appendChild(productTotalPrice);
      
+         }
+         else if (!Object.values(productLines)?.length) {
+
+            const noItemsContainer = createElement("div", ["no-data-warning-container"], null);
+            productSummaryContainer.appendChild(noItemsContainer);
+
+            const noItems = createElement("p", ["no-data-warning"], null);
+            const noItemsText = createElement("span", null, null);
+            noItemsText.textContent = "Ingen varer i kurven";
+            noItems.appendChild(noItemsText);
+            noItemsContainer.appendChild(noItems);
+
+            const productsLink = createElement("a", ["btn", "btn-primary", "mt-2"], null);
+            productsLink.href = "/moseholm/pages/products.php";
+            productsLink.textContent = "Gå til produkter";
+
+            noItemsContainer.appendChild(productsLink);
+
+   
+
          }
 
 
@@ -124,6 +163,34 @@ export class ShoppingCartView {
                 const productId = buttonItem.getAttribute("data-productId");
                 buttonItem.removeEventListener("click", () => this.buyButtonClicked(callback, productId));
                 buttonItem.addEventListener("click", () => this.buyButtonClicked(callback, productId))
+            })
+        }
+    }
+
+    amountButtonClicked = (callback, type, productId) => {
+        if (callback && type && productId) {
+            callback(type, productId);
+        }
+    }
+
+    bindDecreaseButtons = (callback) => {
+        const buttons = document.querySelectorAll(".product-amount-decrease");
+        if (buttons && buttons.length > 0) {
+            buttons.forEach(buttonItem => {
+                const productId = buttonItem.getAttribute("data-productId");
+                buttonItem.removeEventListener("click", () => this.amountButtonClicked(callback, "decrease", productId));
+                buttonItem.addEventListener("click", () => this.amountButtonClicked(callback, "decrease", productId))
+            })
+        }
+    }
+
+    bindIncreaseButtons = (callback) => {
+        const buttons = document.querySelectorAll(".product-amount-increase");
+        if (buttons && buttons.length > 0) {
+            buttons.forEach(buttonItem => {
+                const productId = buttonItem.getAttribute("data-productId");
+                buttonItem.removeEventListener("click", () => this.amountButtonClicked(callback, "increase", productId));
+                buttonItem.addEventListener("click", () => this.amountButtonClicked(callback, "increase", productId))
             })
         }
     }
