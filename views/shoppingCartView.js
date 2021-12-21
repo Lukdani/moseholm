@@ -46,11 +46,11 @@ export class ShoppingCartView {
         headRow.appendChild(productAmountHead);
 
         const productPriceHead = createElement("th");
-        productPriceHead.textContent = "Pris pr. stk."
+        productPriceHead.textContent = "Stykpris"
         headRow.appendChild(productPriceHead);
 
         const ProductTotalPriceHead = createElement("th");
-        ProductTotalPriceHead.textContent = "Pris i alt"
+        ProductTotalPriceHead.textContent = "I alt"
         headRow.appendChild(ProductTotalPriceHead);
 
         const summaryTableBody = createElement("tbody", null, null);

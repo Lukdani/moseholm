@@ -38,8 +38,12 @@ export class ShoppingCartController {
         const items = localStorage.getItem("shoppingCart");
         let parsedItems = null;
         if (items != null) {
-            this.shoppingCartView.toggleActivateCart(true);
+       
             parsedItems = tryJsonParse(items);
+            if (Object.keys(parsedItems)?.length > 0 ){
+                console.log(parsedItems);
+                this.shoppingCartView.toggleActivateCart(true);
+            }
             this.shoppingCartModel.setProducts({... parsedItems});
             this.shoppingCartView.updateCartCounter(this.shoppingCartModel.state.itemsCount)
             return;
@@ -51,6 +55,9 @@ export class ShoppingCartController {
         if (items != null){
             if ( Object.values(items)?.length > 0 ) {
                 this.shoppingCartView.toggleActivateCart(true);
+            }
+            else {
+                this.shoppingCartView.toggleActivateCart(false);
             }
 
             const stringifiedItems = tryJsonStringify(items);
