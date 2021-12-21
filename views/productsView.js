@@ -97,7 +97,6 @@ export class ProductsView {
 
         const flexItem = createElement("span", ["flexItem"], null);
         priceContainer.appendChild(flexItem);
-console.log(productItem.inStock);
         if (productItem.inStock === "0") {
           const shopNotification = createElement("span", [
             "product-item-shopNotification",
@@ -122,10 +121,12 @@ console.log(productItem.inStock);
         priceContainer.appendChild(productPrice);
         productPrice.appendChild(productPriceCurrency);
         const buyButton = generateBuyButton(productItem.prodId);
+  
+        if (productItem.inStock === "0") {
+          buyButton.disabled = true;
+        }
+
         priceContainer.appendChild(buyButton);
-        
-
-
         this.productRoot.appendChild(productContainer);
       });
     }

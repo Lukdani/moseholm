@@ -10,7 +10,7 @@ export class ShoppingCartView {
     }
 
     generateBuyButton = (productId) => {
-        const button = createElement("btn", ["btn", "btn-primary", "shopping-cart-buy-button"], null);
+        const button = createElement("button", ["btn", "btn-primary", "shopping-cart-buy-button"], null);
         const buttonIcon = createElement("i", ["fas", "fa-shopping-cart"], null);
         button.appendChild(buttonIcon);
         const buttonText = createElement("span", null, null);
