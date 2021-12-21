@@ -33,28 +33,15 @@
                 <div class="row section">
 
 
-                    <div class="col-10 offset-lg-2">
+                    <div class="col-12">
                         <h2 class="page-feature-header">
-                            Økologisk og lokalt
+                            Din indkøbsvogn
 
                         </h2>
-                        <p class="page-feature-teaser">
-                            Alle produkter i vores gårdbutik er fremstillet på vores gård og er 100 % økologiske.
-                            <br>
-                            Vi ønsker at bekæmpe madspil, så hos os finder du krumme agurker og
-                            skæve løg.
-                        </p>
                     </div>
 
-                    <div id="categoriesContainer" class="col-12 col-lg-2 pt-2">
-                    </div>
-
-                    <div class="col-12 col-lg-10">
-                        <div id="productsContainer" class="row">
-                        </div>
-
-                        <div class="spinner hidden" id="productSpinner">
-                            <i class="fas fa-tractor fa-spin "></i>
+                    <div class="col-12">
+                        <div id="shoppingCartContainer" class="row">
                         </div>
                     </div>
                 </div>
@@ -64,7 +51,7 @@
           "/moseholm/includes/footer.html"; ?>
     </div>
 
-    <script type="module" src="/moseholm/js/products.js"></script>
+    <!--<script type="module" src="/moseholm/js/products.js"></script>-->
 
 </body>
 

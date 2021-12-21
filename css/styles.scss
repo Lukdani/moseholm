@@ -5,6 +5,12 @@ $randomInt: percentage(random(100)/100);
 
 // ANIMATIONS
 
+@keyframes wheel-up {
+  0%   {}  
+  25%   {transform: rotate(-10deg);}  
+  100%  {transform: rotate(0);}
+}
+
 @keyframes spread-1 {
   0%   {left: 50%; top:50%; opacity: .4;}  
   100%  {left: 40%; top:0%; opacity: 0; visibility:hidden}
@@ -105,11 +111,22 @@ img {
 .btn:hover {
   transform: scale(1.05);
 }
+
+.shopping-cart-buy-button:hover i {
+  animation: wheel-up .25s ease-in;
+}
 // NAVBAR
 
 .navbar {
   background-color: $customSecondary;
-  padding: 0.5rem;
+  padding: 0;
+  @media (min-width: 992px) {
+    height: $headerHeight--desktop;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+  }
 }
 
 .navbar-brand img {
@@ -160,6 +177,10 @@ img {
   min-height: 100vh;
   flex-direction: column;
   justify-content: space-between;
+}
+
+#pageContent {
+  padding-top: $headerHeight--desktop;
 }
 
 // SECTION
@@ -512,10 +533,7 @@ header.heroContainer video {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  i {
-    font-size: 2rem;
-    color: $customSecondary;
-  }
+
   .product-item-category {
     display: inline-block;
     background-color: $custom-gray;
@@ -542,15 +560,14 @@ header.heroContainer video {
   }
 
   .product-item-priceContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
 
     .product-item-shopNotification {
       background-color: $customLight;
       margin-bottom: 0.15rem;
       padding: 0 0.25rem;
       font-size: 0.85rem;
+      text-align: right;
+      color: $danger;
     }
   }
 }

@@ -8,7 +8,6 @@ export class ProductsView {
   }
 
   renderCategories = (categories, selectedCategories) => {  
-    console.log("renders")
     this.clearCategories();
     if (categories?.length > 0) {
       categories.forEach((categoryItem) => {
@@ -42,7 +41,7 @@ export class ProductsView {
     this.categoryRoot.appendChild(resetFilterButton);
   };
 
-  renderProducts = (products) => {
+  renderProducts = (products, generateBuyButton) => {
     this.clearProducts();
     if (products?.length > 0) {
       products.forEach((productItem) => {
@@ -88,18 +87,25 @@ export class ProductsView {
         flexItemContainer.appendChild(productDescription);
 
         const priceContainer = createElement("span", [
-          "product-item-priceContainer",
+          "product-item-priceContainer", "flexItem"
         ]);
         priceContainer.setAttribute("itemprop", "Offer");
         priceContainer.setAttribute("itemscope", "");
         priceContainer.setAttribute("itemtype", "https://schema.org/Offer");
         productElement.appendChild(priceContainer);
 
-        const shopNotification = createElement("span", [
-          "product-item-shopNotification",
-        ]);
-        shopNotification.textContent = "Købes i gårdbutikken";
-        priceContainer.appendChild(shopNotification);
+
+        const flexItem = createElement("span", ["flexItem"], null);
+        priceContainer.appendChild(flexItem);
+console.log(productItem.inStock);
+        if (productItem.inStock === "0") {
+          const shopNotification = createElement("span", [
+            "product-item-shopNotification",
+          ]);
+          shopNotification.textContent = "Ikke på lager";
+          flexItem.appendChild(shopNotification);
+        }
+      
 
         const productPrice = createElement("p", ["product-item-price", null]);
 
@@ -115,7 +121,9 @@ export class ProductsView {
         productPriceCurrency.textContent = "kr";
         priceContainer.appendChild(productPrice);
         productPrice.appendChild(productPriceCurrency);
-
+        const buyButton = generateBuyButton(productItem.prodId);
+        priceContainer.appendChild(buyButton);
+        
 
 
         this.productRoot.appendChild(productContainer);

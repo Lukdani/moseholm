@@ -26,9 +26,10 @@
 
 <body>
     <div id="pageContainer">
+        <?php include "./includes/navbar.html"; ?>
         <div id="pageContent">
 
-            <?php include "./includes/navbar.html"; ?>
+
             <header class="heroContainer" role="banner">
                 <video id="heroVideo" loop muted autoplay>
                     <source src="/moseholm/videos/hero_desktop.mp4" type="video/mp4" />
@@ -209,6 +210,9 @@
         EventInitializer
     } from "/moseholm/js/eventInitializer.js";
     const eventInitializer = new EventInitializer("4", false, "ASC");
+    </script>
+    <script type="module" src="/moseholm/js/setShoppingCartCount.js">
+
     </script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>

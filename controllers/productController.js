@@ -1,11 +1,20 @@
+import { ShoppingCartModel } from "../models/shoppingCartModel.js";
 import { fetchJsonApi } from "../utils/fetchJsonApi.js";
 import { updateList } from "../utils/updateList.js";
+import { ShoppingCartView } from "../views/shoppingCartView.js";
+import { ShoppingCartController } from "./shoppingCartController.js";
 
 export class ProductController {
     constructor(productModel, productView) {
         this.productModel = productModel;
         this.productView = productView;
         this.categoryFilter = [];
+
+        const shoppingCartCountRoot = document.getElementById("shoppingCartCount");
+        this.shoppingCartModel = new ShoppingCartModel();
+        this.shoppingCartView = new ShoppingCartView(null, shoppingCartCountRoot);
+        this.shoppingCartController = new ShoppingCartController(this.shoppingCartModel, this.shoppingCartView, this.productModel.state.products);
+
 
         const queryParams = new URLSearchParams(window.location.search);
         const parameters = Object.fromEntries(queryParams.entries()).categories;
@@ -15,7 +24,7 @@ export class ProductController {
         }
 
         this.populateCategories(true, () => this.populateProducts(true));
-       ;
+        
     }
 
     populateCategories = async (initialLoad, callback) => {
@@ -51,15 +60,15 @@ export class ProductController {
         const fetchtedProducts =  await fetchJsonApi(`/moseholm/api/getProducts.php${this.categoryFilter?.length > 0 ? "?categories=" + this.categoryFilter.join(",") : ""}`);
       
         this.productModel.setProducts(fetchtedProducts);
-        this.productView.renderProducts(this.productModel.state.products);
+        this.shoppingCartController.setProducts([... this.productModel.state.products]);
+        this.productView.renderProducts([...this.productModel.state.products], this.shoppingCartView.generateBuyButton);
+        this.shoppingCartController.bindBuyButtons();
 
         if (initialLoad) {
             this.setSpinner(false);
             this.productModel.updateCategoriesCount();
             this.populateCategories();
             }
-          
-
     }
 
     setFilter = (filter) => {
