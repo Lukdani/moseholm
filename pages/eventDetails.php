@@ -82,9 +82,14 @@
 
     </div>
     <script type="module">
-        import { EventDetailsInitializer  } from "/moseholm/js/eventDetailsInitializer.js";
-       const eventInitializer = new EventDetailsInitializer("3", true);
-   </script>
+    import {
+        EventDetailsInitializer
+    } from "/moseholm/js/eventDetailsInitializer.js";
+    const eventInitializer = new EventDetailsInitializer("3", true);
+    </script>
+    <script type="module" src="/moseholm/js/setShoppingCartCount.js">
+
+    </script>
 
 </body>
 

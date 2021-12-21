@@ -26,31 +26,35 @@ foreach ($blogs as $blog){
 </head>
 
 <body>
-<div id="pageContainer">
+    <div id="pageContainer">
         <div id="pageContent">
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/navbar.html" ?>
-    <div class="container-lg">
-        <div class="row section">
-
-    
-        <div class="col-12">
-        <h2 class="section-header">
-            Kom og mød vores dejlige dyr.
-            <br>
-            De er nysgerrige og elsker børn.</h2>
-        </div>
-    
-  
+            <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/navbar.html" ?>
+            <div class="container-lg">
+                <div class="row section">
 
 
-            <div class="col-12">
-  <img  src="/moseholm/images/animals/animal.png" alt="Et at vores dejlige dyr her på gården">
+                    <div class="col-12">
+                        <h2 class="section-header">
+                            Kom og mød vores dejlige dyr.
+                            <br>
+                            De er nysgerrige og elsker børn.
+                        </h2>
+                    </div>
+
+
+
+
+                    <div class="col-12">
+                        <img src="/moseholm/images/animals/animal.png" alt="Et at vores dejlige dyr her på gården">
+                    </div>
+                </div>
             </div>
         </div>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
     </div>
-</div>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
-    </div>
+    <script type="module" src="/moseholm/js/setShoppingCartCount.js">
+
+    </script>
 </body>
 
 </html>

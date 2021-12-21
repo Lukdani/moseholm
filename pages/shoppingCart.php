@@ -32,16 +32,14 @@
             <div class="container-lg">
                 <div class="row section">
 
-
                     <div class="col-12">
                         <h2 class="page-feature-header">
                             Din indkøbsvogn
-
                         </h2>
                     </div>
 
                     <div class="col-12">
-                        <div id="shoppingCartContainer" class="row">
+                        <div id="shoppingCartContainer">
                         </div>
                     </div>
                 </div>
@@ -51,7 +49,7 @@
           "/moseholm/includes/footer.html"; ?>
     </div>
 
-    <!--<script type="module" src="/moseholm/js/products.js"></script>-->
+    <script type="module" src="/moseholm/js/shoppingCartInitializer.js"></script>
 
 </body>
 

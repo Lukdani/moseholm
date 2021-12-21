@@ -56,6 +56,9 @@
     } from "/moseholm/js/eventInitializer.js";
     const eventInitializer = new EventInitializer("4", true);
     </script>
+    <script type="module" src="/moseholm/js/setShoppingCartCount.js">
+
+    </script>
 
 </body>
 

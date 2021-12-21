@@ -1,3 +1,5 @@
+import { formatCurrency } from "../utils/formatCurrency.js";
+
 export class ShoppingCartModel {
     constructor() {
         this.state = {
@@ -19,6 +21,13 @@ export class ShoppingCartModel {
                 const currentCount = currentProduct?.count || 0;
                 return total + currentCount;
             }, 0);
+
+            this.state.totalPrice = Object.values(this.state.products)?.reduce(
+                (total, currentProduct) => {
+                    console.log(currentProduct);
+                    const currentCount = (currentProduct?.count || 0) * currentProduct.product.prodPrice;
+                    return +total + currentCount
+                }, 0);
     }
     updateProducts = (product) => {
         if (!this.state.products[product.prodId]) {

@@ -11,8 +11,10 @@ export class ProductController {
         this.categoryFilter = [];
 
         const shoppingCartCountRoot = document.getElementById("shoppingCartCount");
+        const shoppingCartRoot = document.getElementById("shoppingCart");
+
         this.shoppingCartModel = new ShoppingCartModel();
-        this.shoppingCartView = new ShoppingCartView(null, shoppingCartCountRoot);
+        this.shoppingCartView = new ShoppingCartView(null, shoppingCartCountRoot, shoppingCartRoot);
         this.shoppingCartController = new ShoppingCartController(this.shoppingCartModel, this.shoppingCartView, this.productModel.state.products);
 
 

@@ -34,6 +34,6 @@ $custom-colors: (
   "light": $customLight,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
-$headerHeight--desktop: 80px;
+$headerHeight--desktop: 120px;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
