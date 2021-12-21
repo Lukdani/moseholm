@@ -171,6 +171,10 @@ img {
 }
 
 .nav-item--shopping-cart {
+  .nav-link {
+    display: flex;
+    align-items: center;
+  }
   .active {
     color: $customLight;
     #shoppingCartCount {
@@ -192,7 +196,8 @@ img {
     }
   }
   #shoppingCartCount {
-    display: none;
+    opacity: 0;
+    transition: opacity $transitionTime linear;
   }
   i {
     position:relative;
