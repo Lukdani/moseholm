@@ -303,39 +303,51 @@ export class ShoppingCartView {
       const orderConfirmationContainer = createElement("div", ["row"], null);
       this.cartSummaryRoot.appendChild(orderConfirmationContainer);
 
-      const orderConfirmationCol = createElement("div", ["col", "p-4", "bg-white"], null);
+      const orderConfirmationCol = createElement(
+        "div",
+        ["col", "p-4", "bg-white"],
+        null
+      );
       orderConfirmationContainer.appendChild(orderConfirmationCol);
 
       const orderConfirmationHeader = createElement("h3", ["d-flex"], null);
       orderConfirmationCol.appendChild(orderConfirmationHeader);
 
-      const orderConfirmationHeaderIcon = createElement("i", ["fas", "fa-check", "text-success", ["mr-2"]], null);
+      const orderConfirmationHeaderIcon = createElement(
+        "i",
+        ["fas", "fa-check", "text-success", ["mr-2"]],
+        null
+      );
       orderConfirmationHeaderIcon.style.marginRight = "1rem";
       orderConfirmationHeader.appendChild(orderConfirmationHeaderIcon);
 
       const orderConfirmationHeaderText = createElement("span", ["ml-2"], null);
       orderConfirmationHeaderText.textContent = "Ordre modtaget!";
       orderConfirmationHeader.appendChild(orderConfirmationHeaderText);
- 
 
       const orderConfirmationText = createElement("p", null, null);
       orderConfirmationText.innerHTML = `
       <br>
-      Tak for din ordre. Den har fået ordrenr. <strong>${order.orderId}</strong>. 
+      Tak for din ordre. Den har fået ordrenr. <strong>${
+        order.orderId
+      }</strong>. 
       <br>
       <br>
       Du kan nu glæde dig til at modtage 
-      ${order.products?.map((productItem, index) => 
-        {
-          if (order.products.length < 2 || index === order.products.length -  2  ) {
-            return `${productItem.prodTitle}`
+      ${order.products
+        ?.map((productItem, index) => {
+          if (
+            order.products.length < 2 ||
+            index === order.products.length - 2
+          ) {
+            return `${productItem.prodTitle}`;
+          } else if (index === order.products.length - 1) {
+            return ` og ${productItem.prodTitle}`;
+          } else {
+            return `${productItem.prodTitle}, `;
           }
-          else if (index === order.products.length - 1) {
-          return ` og ${productItem.prodTitle}`
-        }
-        else {
-          return `${productItem.prodTitle}, `
-        }}).join(" ")} med posten ;-)
+        })
+        .join(" ")} med posten ;-)
         <br>
         <br>
         Vi glæder os i hvert fald til at sende pakken af sted til dig ;-)
@@ -357,7 +369,7 @@ export class ShoppingCartView {
       productLink.textContent = "Se flere produkter";
       orderConfirmationCol.appendChild(productLink);
     }
-  }
+  };
 
   buyButtonClicked = (callback, productId) => {
     if (callback && productId) {
@@ -367,10 +379,12 @@ export class ShoppingCartView {
 
   updateCartCounter = (count) => {
     if (count > 0) {
-      this.cartIconCountRoot.textContent = count;
+      this.cartIconCountRoot?.forEach(
+        (iconRoot) => (iconRoot.textContent = count)
+      );
       return;
     }
-    this.cartIconCountRoot.textContent = "";
+    this.cartIconCountRoot?.forEach((iconRoot) => (iconRoot.textContent = ""));
   };
 
   bindBuyButtons = (callback) => {
@@ -426,11 +440,19 @@ export class ShoppingCartView {
   };
 
   toggleActivateCart = (active) => {
-    if (active && !this.cartRoot.classList.contains("active")) {
-      this.cartRoot.classList.add("active");
+    if (
+      active &&
+      this.cartRoot &&
+      !this.cartRoot[0]?.classList.contains("active")
+    ) {
+      this.cartRoot.forEach((cartRootItem) =>
+        cartRootItem.classList.add("active")
+      );
       return;
     } else if (!active) {
-      this.cartRoot.classList.remove("active");
+      this.cartRoot.forEach((cartRootItem) =>
+        cartRootItem.classList.remove("active")
+      );
       return;
     }
   };

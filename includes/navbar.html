@@ -1,29 +1,40 @@
 <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid navbar-container">
+  <div class="navbar-container">
     <!-- Mobil nav-->
-    <div class="col hideOnLarge">
+    <div class="col hideOnLarge mobileNav">
       <a class="navbar-brand" href="/moseholm/index.php"
         ><img width="150px" src="/moseholm/images/logo.png"
       /></a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <span class="mobileNav-buttonContainer">
+        <span class="nav-item--shopping-cart">
+          <a
+            class="nav-link shoppingCart"
+            href="/moseholm/pages/shoppingCart.php"
+            ><i class="fas fa-shopping-cart"
+              ><span class="shoppingCartCount"> </span>
+            </i>
+          </a>
+        </span>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </span>
     </div>
 
     <!-- Desktop nav-->
     <div class="col">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="container-fluid">
-          <div class="row navbar-dekstop">
-            <div class="col col-auto navbar-desktop-imageCol">
+          <div class="row navbar-desktop">
+            <div class="col col-auto navbar-desktop-imageCol hideOnSmall">
               <a class="navbar-brand" href="/moseholm/index.php"
                 ><img width="150px" src="/moseholm/images/logo.png"
               /></a>
@@ -55,9 +66,14 @@
                     >Praktisk info</a
                   >
                 </li>
-                <li class="nav-item nav-item--shopping-cart">
-                  <a class="nav-link " href="/moseholm/pages/shoppingCart.php" id="shoppingCart"><i class="fas fa-shopping-cart"><span id="shoppingCartCount"></span></i> </a
-                  >
+                <li class="nav-item nav-item--shopping-cart hideOnSmall">
+                  <a
+                    class="nav-link shoppingCart"
+                    href="/moseholm/pages/shoppingCart.php"
+                    ><i class="fas fa-shopping-cart"
+                      ><span class="shoppingCartCount"></span
+                    ></i>
+                  </a>
                 </li>
               </ul>
             </div>

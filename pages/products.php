@@ -26,7 +26,7 @@
 <body>
     <div id="pageContainer">
         <?php include $_SERVER['DOCUMENT_ROOT'] .
-              "/moseholm/includes/navbar.html"; ?>
+          "/moseholm/includes/navbar.html"; ?>
         <div id="pageContent">
 
             <div class="container-lg">
@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="col-12 col-lg-10">
-                        <div id="productsContainer" class="row">
+                        <div id="productsContainer" class="row g-2">
                         </div>
 
                         <div class="spinner hidden" id="productSpinner">
