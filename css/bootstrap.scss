@@ -26,7 +26,7 @@ $header-font: "Josefin Sans", sans-serif;
 
 $boxShadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 
-$transitionTime: .05s;
+$transitionTime: 0.05s;
 
 $custom-colors: (
   "primary": $customPrimary,
@@ -34,6 +34,7 @@ $custom-colors: (
   "light": $customLight,
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
-$headerHeight--desktop: 120px;
+$headerHeight--mobile: 90px;
+$headerHeight--desktop: 100px;
 
 @import "../node_modules/bootstrap/scss/bootstrap";

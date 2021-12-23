@@ -28,8 +28,6 @@
     <div id="pageContainer">
         <?php include "./includes/navbar.html"; ?>
         <div id="pageContent">
-
-
             <header class="heroContainer" role="banner">
                 <video id="heroVideo" loop muted autoplay>
                     <source src="/moseholm/videos/hero_desktop.mp4" type="video/mp4" />
@@ -193,7 +191,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12" style="text-align: center;">
-                            <a href="/moseholm/pages/events.php" class="btn-secondary btn"><i
+                            <a href="/moseholm/pages/events.php" class="btn-secondary btn mt-4"><i
                                     class="fas fa-calendar-week"></i>Se alle events</a>
                         </div>
                     </div>
