@@ -1,44 +1,103 @@
 @import "./bootstrap.scss";
 $heroHeightMobile: 400px;
 $heroHeightDesktop: 500px;
-$randomInt: percentage(random(100)/100);
+$randomInt: percentage(random(100) / 100);
 
 // ANIMATIONS
 
 @keyframes wheel-up {
-  0%   {}  
-  25%   {transform: rotate(-10deg);}  
-  100%  {transform: rotate(0);}
+  0% {
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
 }
 
 @keyframes spread-1 {
-  0%   {left: 50%; top:50%; opacity: .4;}  
-  100%  {left: 40%; top:0%; opacity: 0; visibility:hidden}
+  0% {
+    left: 50%;
+    top: 50%;
+    opacity: 0.4;
+  }
+  100% {
+    left: 40%;
+    top: 0%;
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 
 @keyframes spread-2 {
-  0%   {left: 50%;  top: 50%; opacity: .4;}  
-  100%  {left: 75%; top: 50%; visibility:hidden; opacity: 0}
+  0% {
+    left: 50%;
+    top: 50%;
+    opacity: 0.4;
+  }
+  100% {
+    left: 75%;
+    top: 50%;
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 @keyframes spread-3 {
-  0%   {left: 50%; top:50%; opacity: .4}  
-  100%  {left: 40%; top:100%; visibility:hidden; opacity: 0}
+  0% {
+    left: 50%;
+    top: 50%;
+    opacity: 0.4;
+  }
+  100% {
+    left: 40%;
+    top: 100%;
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 @keyframes whirlwind-right-1 {
-  0%   {right: 50%; top:50%;  opacity: .4}  
-  100%  {right: 40%; top:0%; visibility:hidden; opacity: 0}
+  0% {
+    right: 50%;
+    top: 50%;
+    opacity: 0.4;
+  }
+  100% {
+    right: 40%;
+    top: 0%;
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 @keyframes whirlwind-right-2 {
-  0%   {right: 50%; top:50%; opacity: .4}  
-  100%  {right: 75%; top:50%; visibility:hidden; opacity: 0}
+  0% {
+    right: 50%;
+    top: 50%;
+    opacity: 0.4;
+  }
+  100% {
+    right: 75%;
+    top: 50%;
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 @keyframes whirlwind-right-3 {
-  0%   {right: 50%; top:50%; opacity: .4}  
-  100%  {right: 40%; top:100%; visibility:hidden; opacity: 0}
+  0% {
+    right: 50%;
+    top: 50%;
+    opacity: 0.4;
+  }
+  100% {
+    right: 40%;
+    top: 100%;
+    visibility: hidden;
+    opacity: 0;
+  }
 }
 
 * {
@@ -113,7 +172,7 @@ img {
 }
 
 .shopping-cart-buy-button:hover i {
-  animation: wheel-up .25s ease-in;
+  animation: wheel-up 0.25s ease-in;
 }
 // NAVBAR
 
@@ -191,8 +250,8 @@ img {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: .8rem;
-      opacity: .9;
+      font-size: 0.8rem;
+      opacity: 0.9;
     }
   }
   #shoppingCartCount {
@@ -200,13 +259,10 @@ img {
     transition: opacity $transitionTime linear;
   }
   i {
-    position:relative;
+    position: relative;
     font-size: 2rem;
   }
- 
-
 }
-
 
 // PAGE
 
@@ -451,8 +507,8 @@ header.heroContainer video {
     i:not(:first-of-type) {
       color: $customLight;
       display: unset;
-      position:absolute;
-      top: .5rem;
+      position: absolute;
+      top: 0.5rem;
     }
     i {
       color: $customLight;
@@ -465,43 +521,42 @@ header.heroContainer video {
   i:not(:first-of-type) {
     color: red;
     display: none;
-    position:absolute;
+    position: absolute;
     top: 50%;
-    animation-fill-mode:forwards !important;
-    animation-duration: .75s !important;
+    animation-fill-mode: forwards !important;
+    animation-duration: 0.75s !important;
   }
   i:nth-child(2) {
     animation: spread-1;
-    transform:translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     left: 50%;
   }
   i:nth-child(3) {
     animation: spread-2;
-    transform:translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     left: 50%;
   }
   i:nth-child(4) {
     animation: spread-3;
-    transform:translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     left: 50%;
   }
   i:nth-child(5) {
     animation: whirlwind-right-1;
-    transform:translate(50%, -50%);
+    transform: translate(50%, -50%);
     right: 50%;
   }
   i:nth-child(6) {
     animation: whirlwind-right-2;
-    transform:translate(50%, -50%);
+    transform: translate(50%, -50%);
     right: 50%;
   }
   i:nth-child(7) {
     animation: whirlwind-right-3;
-    transform:translate(50%, -50%);
+    transform: translate(50%, -50%);
     color: purple;
     right: 50%;
   }
-  
 }
 
 #clearFilterButton {
@@ -598,7 +653,6 @@ header.heroContainer video {
   }
 
   .product-item-priceContainer {
-
     .product-item-shopNotification {
       background-color: $customLight;
       margin-bottom: 0.15rem;
@@ -636,11 +690,11 @@ header.heroContainer video {
   .event-item-date {
     display: inline-block;
     padding: 0 0.25rem;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     background-color: $customLight;
-    font-size: .9rem;
+    font-size: 0.9rem;
     i {
-      margin-right: .25rem;
+      margin-right: 0.25rem;
       color: $customSecondary;
     }
   }
@@ -757,21 +811,20 @@ header.heroContainer video {
   justify-content: center;
 }
 .product-amount-decrease {
-
   @media (min-width: 992px) {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
   background-color: $custom-gray;
 }
 .product-amount-increase {
   @media (min-width: 992px) {
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
   background-color: $customPrimary;
 }
 .product-summary {
   background-color: #fff;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 .product-amount-tag {
@@ -779,14 +832,15 @@ header.heroContainer video {
   width: 40px;
 }
 .product-summary-table {
-td {
-  padding: .25rem;
-  @media (min-width: 992px) {
-    padding: .5rem;
+  td {
+    padding: 0.25rem;
+    @media (min-width: 992px) {
+      padding: 0.5rem;
+    }
   }
-}
-  thead, tbody {
-font-size: .8rem;
+  thead,
+  tbody {
+    font-size: 0.8rem;
     @media (min-width: 992px) {
       font-size: 1rem;
     }
@@ -805,7 +859,7 @@ font-size: .8rem;
   td:nth-child(1) {
     width: 30%;
   }
-  td:nth-child(2) {
+  td:nth-child(2):not(:last-of-type) {
     width: 20%;
     text-align: center;
     display: flex;
@@ -814,9 +868,13 @@ font-size: .8rem;
     align-items: center;
     width: 100%;
     @media (min-width: 992px) {
-      font-size: .9rem;
+      font-size: 0.9rem;
       flex-direction: row;
     }
+  }
+  td:nth-child(2):last-of-type {
+    width: 10%;
+    text-align: right;
   }
   td:nth-child(3) {
     width: 15%;
@@ -827,11 +885,10 @@ font-size: .8rem;
     text-align: right;
   }
 
-
   tr:last-of-type td {
     border-bottom: 0;
     span {
-      display:block;
+      display: block;
       font-weight: bold;
       border-bottom: 1px solid grey;
       &::after {
@@ -840,7 +897,6 @@ font-size: .8rem;
         border-bottom: 1px solid grey;
       }
     }
-
   }
 }
 
@@ -851,8 +907,12 @@ font-size: .8rem;
 .no-data-warning span {
   background-color: $custom-gray;
   display: inline-block;
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
+}
 
+#order-submission-form {
+  background-color: white;
+  padding: 1rem;
 }
 // FOOTER
 

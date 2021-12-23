@@ -26,11 +26,11 @@
 <body>
     <div id="pageContainer">
         <?php include $_SERVER['DOCUMENT_ROOT'] .
-              "/moseholm/includes/navbar.html"; ?>
+          "/moseholm/includes/navbar.html"; ?>
         <div id="pageContent">
 
             <div class="container-lg">
-                <div class="row section">
+                <div class="row section" id="shoppingCartRow">
 
                     <div class="col-12">
                         <h2 class="page-feature-header">
@@ -38,7 +38,7 @@
                         </h2>
                     </div>
 
-                    <div class="col-12">
+                    <div class="col-12" id="shoppingCartContainer-col">
                         <div id="shoppingCartContainer">
                         </div>
                     </div>
