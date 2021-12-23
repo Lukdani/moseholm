@@ -6,7 +6,6 @@ export class ShoppingCartView {
     this.cartSummaryRoot = cartSummaryRoot;
     this.cartIconCountRoot = cartIconCountRoot;
     this.cartRoot = cartRoot;
-    console.log(cartRoot);
   }
 
   generateBuyButton = (productId) => {
@@ -250,6 +249,7 @@ export class ShoppingCartView {
       inputContainer.appendChild(label);
 
       const input = createElement("input", ["form-control"], null);
+      input.required = true;
       input.name = inputField.name;
       input.addEventListener("input", handleChange);
       inputContainer.appendChild(input);
@@ -263,6 +263,7 @@ export class ShoppingCartView {
     form.appendChild(paymentContainer);
 
     const paymentCheckBox = createElement("input", ["form-check-input"], null);
+    paymentCheckBox.required = true;
     paymentCheckBox.name = "paymentOption";
     paymentCheckBox.type = "checkbox";
     paymentCheckBox.addEventListener("change", handleCheckChange);
@@ -278,9 +279,85 @@ export class ShoppingCartView {
       "payButton"
     );
     payButton.textContent = "Gennemfør køb";
-    payButton.type = "button";
     form.appendChild(payButton);
   };
+
+  generateOrderConfirmation = (order) => {
+    if (order) {
+      this.cartSummaryRoot.innerHTML = "";
+      const formContainer = document.getElementById("formContainer");
+      if (formContainer) {
+        formContainer.remove();
+      }
+      this.cartSummaryRoot.innerHTML = "";
+      const pageHeader = document.getElementById("shopping-cart-header");
+      if (pageHeader) {
+        pageHeader.remove();
+      }
+      const containerCol = document.getElementById("shoppingCartContainer-col");
+      if (containerCol) {
+        containerCol.classList.remove("col-lg-3");
+        containerCol.classList.add("col-lg-6");
+        containerCol.classList.add("offset-lg-3");
+      }
+      const orderConfirmationContainer = createElement("div", ["row"], null);
+      this.cartSummaryRoot.appendChild(orderConfirmationContainer);
+
+      const orderConfirmationCol = createElement("div", ["col", "p-4", "bg-white"], null);
+      orderConfirmationContainer.appendChild(orderConfirmationCol);
+
+      const orderConfirmationHeader = createElement("h3", ["d-flex"], null);
+      orderConfirmationCol.appendChild(orderConfirmationHeader);
+
+      const orderConfirmationHeaderIcon = createElement("i", ["fas", "fa-check", "text-success", ["mr-2"]], null);
+      orderConfirmationHeaderIcon.style.marginRight = "1rem";
+      orderConfirmationHeader.appendChild(orderConfirmationHeaderIcon);
+
+      const orderConfirmationHeaderText = createElement("span", ["ml-2"], null);
+      orderConfirmationHeaderText.textContent = "Ordre modtaget!";
+      orderConfirmationHeader.appendChild(orderConfirmationHeaderText);
+ 
+
+      const orderConfirmationText = createElement("p", null, null);
+      orderConfirmationText.innerHTML = `
+      <br>
+      Tak for din ordre. Den har fået ordrenr. <strong>${order.orderId}</strong>. 
+      <br>
+      <br>
+      Du kan nu glæde dig til at modtage 
+      ${order.products?.map((productItem, index) => 
+        {
+          if (order.products.length < 2 || index === order.products.length -  2  ) {
+            return `${productItem.prodTitle}`
+          }
+          else if (index === order.products.length - 1) {
+          return ` og ${productItem.prodTitle}`
+        }
+        else {
+          return `${productItem.prodTitle}, `
+        }}).join(" ")} med posten ;-)
+        <br>
+        <br>
+        Vi glæder os i hvert fald til at sende pakken af sted til dig ;-)
+        <br>
+        <br>
+        Med landlig hilsen
+        <br>
+        <br>
+        <strong>Moseholm<strong>
+      `;
+      orderConfirmationCol.appendChild(orderConfirmationText);
+
+      const productLink = createElement(
+        "a",
+        ["btn", "btn-primary", "mt-4"],
+        "productsButton"
+      );
+      productLink.href = "/moseholm/pages/products.php";
+      productLink.textContent = "Se flere produkter";
+      orderConfirmationCol.appendChild(productLink);
+    }
+  }
 
   buyButtonClicked = (callback, productId) => {
     if (callback && productId) {

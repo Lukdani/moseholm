@@ -32,7 +32,7 @@ export class ShoppingCartController {
             products: this.shoppingCartModel.state.products,
             totalPrice: this.shoppingCartModel.state.totalPrice,
           },
-          (e) => console.log(e?.target.name, "test 1"),
+          (e) => {console.log(e); this.completeOrder(); e.preventDefault(); },
           (e) => {
             this.shoppingCartModel.updateCustomer(
               e?.target.name,
@@ -42,27 +42,7 @@ export class ShoppingCartController {
           },
           (e) => console.log(e?.target.name, "test 3")
         );
-        this.shoppingCartView.bindPayButton(async () => {
-          const response = await postRequest("/moseholm/api/postOrder", {
-            products: Object.values(
-              this.shoppingCartModel.state.products
-            ).map((x) => ({ product: x.product, quantity: x.count })),
-            customer: this.shoppingCartModel.state.customer,
-          });
-          if (response) {
-            const order = await fetchJsonApi(
-              `/moseholm/api/getOrder?orderId=${response}`
-            );
-            console.log(order);
-          }
-          console.log(response);
-          /*onsole.log({
-            products: Object.values(
-              this.shoppingCartModel.state.products
-            ).map((x) => ({ product: x.product, quantity: x.count })),
-            customer: this.shoppingCartModel.state.customer,
-          });*/
-        });
+        this.shoppingCartView.bindPayButton(() => console.log("click"))
       });
     }
   };
@@ -143,4 +123,31 @@ export class ShoppingCartController {
   bindBuyButtons = () => {
     this.shoppingCartView.bindBuyButtons(this.addToCart);
   };
+
+  completeOrder = (async () => {
+    const response = await postRequest("/moseholm/api/postOrder.php", {
+      products: Object.values(
+        this.shoppingCartModel.state.products
+      ).map((x) => ({ product: x.product, quantity: x.count })),
+      customer: this.shoppingCartModel.state.customer,
+    });
+    if (response) {
+      const order = await fetchJsonApi(
+        `/moseholm/api/getOrder.php?orderId=${response}`
+      );
+      if (order) {
+       this.shoppingCartView.generateOrderConfirmation(order);
+       this.clearCart();
+      }
+      console.log(order);
+    }
+    console.log(response);
+  });
+
+  clearCart = () => {
+    this.shoppingCartModel.emptyCart();
+    this.cacheShoppingCart();
+    this.shoppingCartView.updateCartCounter(0);
+    this.shoppingCartView.toggleActivateCart(false);
+  }
 }

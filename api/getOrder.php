@@ -22,7 +22,7 @@ if (isset($_GET["orderId"])) {
   $orders[0]->products = $products;
 
   // Return the result;
-  echo json_encode($orders);
+  echo json_encode($orders[0]);
 }
 
 ?>

@@ -1,18 +1,20 @@
 import { formatCurrency } from "../utils/formatCurrency.js";
 
+const initialData = {
+    products: {},
+    itemsCount: 0,
+    totalPrice: 0,
+    customer: {
+      name: "",
+      email: "",
+      address: "",
+      city: "",
+    },
+  };
+
 export class ShoppingCartModel {
   constructor() {
-    this.state = {
-      products: {},
-      itemsCount: 0,
-      totalPrice: 0,
-      customer: {
-        name: "",
-        email: "",
-        address: "",
-        city: "",
-      },
-    };
+    this.state = {... initialData};
   }
 
   setProducts = (products) => {
@@ -81,4 +83,8 @@ export class ShoppingCartModel {
   };
 
   getProducts = () => this.state.products;
+
+  emptyCart = () => {
+    this.state = {...initialData}
+  }
 }

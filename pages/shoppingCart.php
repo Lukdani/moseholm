@@ -32,7 +32,7 @@
             <div class="container-lg">
                 <div class="row section" id="shoppingCartRow">
 
-                    <div class="col-12">
+                    <div class="col-12" id="shopping-cart-header">
                         <h2 class="page-feature-header">
                             Din indkøbsvogn
                         </h2>
