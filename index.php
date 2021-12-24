@@ -42,7 +42,7 @@
                             Besøg vores café og hils på vores skønne dyr.
 
                         </p>
-                        <button class="btn btn-primary"><i class="fas fa-map-pin"></i>Find vej</button>
+                        <a href="/moseholm/pages/products.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>Se vores produkter</a>
                     </div>
                 </div>
             </header>
@@ -151,7 +151,7 @@
 
                 <div class="container-lg">
                     <div class="row overlay-text">
-                        <h1 class="section-header overlay-text">Besøs os fordi...</h1>
+                        <h1 class="section-header overlay-text">Besøg os fordi...</h1>
                         <div class="col-12 offset-lg-2 col-lg-8 features-points-container overlay-text">
                             <table>
                                 <tbody>

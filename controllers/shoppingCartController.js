@@ -32,7 +32,11 @@ export class ShoppingCartController {
             products: this.shoppingCartModel.state.products,
             totalPrice: this.shoppingCartModel.state.totalPrice,
           },
-          (e) => {console.log(e); this.completeOrder(); e.preventDefault(); },
+          (e) => {
+            console.log(e);
+            this.completeOrder();
+            e.preventDefault();
+          },
           (e) => {
             this.shoppingCartModel.updateCustomer(
               e?.target.name,
@@ -42,7 +46,14 @@ export class ShoppingCartController {
           },
           (e) => console.log(e?.target.name, "test 3")
         );
-        this.shoppingCartView.bindPayButton(() => console.log("click"))
+        this.shoppingCartView.bindPayButton(() => console.log("click"));
+      });
+      this.shoppingCartView.bindClearCartButton(() => {
+        this.clearCart();
+        this.shoppingCartView.generateCartSummary(
+          this.shoppingCartModel.state.products,
+          this.shoppingCartModel.state.totalPrice
+        );
       });
     }
   };
@@ -124,7 +135,7 @@ export class ShoppingCartController {
     this.shoppingCartView.bindBuyButtons(this.addToCart);
   };
 
-  completeOrder = (async () => {
+  completeOrder = async () => {
     const response = await postRequest("/moseholm/api/postOrder.php", {
       products: Object.values(
         this.shoppingCartModel.state.products
@@ -136,18 +147,18 @@ export class ShoppingCartController {
         `/moseholm/api/getOrder.php?orderId=${response}`
       );
       if (order) {
-       this.shoppingCartView.generateOrderConfirmation(order);
-       this.clearCart();
+        this.shoppingCartView.generateOrderConfirmation(order);
+        this.clearCart();
       }
       console.log(order);
     }
     console.log(response);
-  });
+  };
 
   clearCart = () => {
     this.shoppingCartModel.emptyCart();
     this.cacheShoppingCart();
     this.shoppingCartView.updateCartCounter(0);
     this.shoppingCartView.toggleActivateCart(false);
-  }
+  };
 }

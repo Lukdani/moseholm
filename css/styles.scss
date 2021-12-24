@@ -5,6 +5,19 @@ $randomInt: percentage(random(100) / 100);
 
 // ANIMATIONS
 
+@keyframes scale-up {
+  0% {
+  }
+  25% {
+    transform: scale(1.5);
+    color: $success;
+  }
+  100% {
+    transform: scale(1);
+    color: inherit;
+  }
+}
+
 @keyframes wheel-up {
   0% {
   }
@@ -155,7 +168,10 @@ img {
 .btn-primary,
 .btn-secondary {
   font-family: $header-font;
-  font-size: 1.25rem;
+  font-size: 1rem;
+  @media (min-width: 992px) {
+    font-size: 1.25rem;
+  }
 }
 .btn-primary {
   color: $customLight;
@@ -177,6 +193,11 @@ img {
 
 .shopping-cart-buy-button {
   font-size: 1rem;
+  &:focus {
+    i {
+      animation: scale-up 0.5s ease-in;
+    }
+  }
 }
 // NAVBAR
 
@@ -352,8 +373,18 @@ img {
   flex-direction: column;
   text-align: center;
   color: $customLight;
+  padding: 1rem;
+  h1 {
+    font-size: 1.5rem;
+    @media (min-width: 992px) {
+      font-size: 2rem;
+    }
+  }
   p {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    @media (min-width: 992px) {
+      font-size: 1.2rem;
+    }
   }
 }
 
@@ -525,8 +556,11 @@ header.heroContainer video {
 .features-points-container {
   display: flex;
   align-items: center;
-  font-size: 1.25rem;
   color: $customDark;
+  font-size: 1rem;
+  @media (min-width: 992px) {
+    font-size: 1.2rem;
+  }
 }
 
 //CATEGORY-OVERVIEW
@@ -720,17 +754,17 @@ header.heroContainer video {
   background-color: $customPrimary;
 }
 
+.event-container:not(:last-of-type) .event-item {
+  margin-bottom: 0.5rem !important;
+}
 .event-item {
   background-color: $custom-brown;
   padding: 1rem;
   box-shadow: $boxShadow;
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  &:not(:last-of-type) {
-    margin-bottom: 0.5rem;
-  }
+
   button {
     margin-top: 0.5rem;
   }

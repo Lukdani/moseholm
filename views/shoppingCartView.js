@@ -165,6 +165,14 @@ export class ShoppingCartView {
       summaryRow.appendChild(productTotalPrice);
 
       if (!restrictedView) {
+        const clearCartButton = createElement(
+          "button",
+          ["btn", "btn-secondary", "mt-2"],
+          "clearCartButton"
+        );
+        clearCartButton.textContent = "Tøm kurv";
+        productSummaryContainer.appendChild(clearCartButton);
+
         const checkOutButton = createElement(
           "button",
           ["btn", "btn-primary", "mt-2"],
@@ -459,6 +467,11 @@ export class ShoppingCartView {
 
   bindCheckoutButton = (callback) => {
     const button = document.getElementById("checkOutButton");
+    button.addEventListener("click", callback);
+  };
+
+  bindClearCartButton = (callback) => {
+    const button = document.getElementById("clearCartButton");
     button.addEventListener("click", callback);
   };
 
