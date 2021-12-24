@@ -166,7 +166,8 @@ img {
 }
 
 .btn-primary,
-.btn-secondary {
+.btn-secondary,
+.btnGray {
   font-family: $header-font;
   font-size: 1rem;
   @media (min-width: 992px) {
@@ -183,6 +184,12 @@ img {
   }
 }
 
+.btnGray {
+  background-color: $custom-gray;
+  &:hover {
+    background-color: $custom-gray--darken;
+  }
+}
 .btn:hover {
   transform: scale(1.05);
 }

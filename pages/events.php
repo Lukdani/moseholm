@@ -9,7 +9,8 @@
     <meta name="robots" content="All" />
     <meta name="author" content="Udgiver" />
     <meta name="copyright" content="Information om copyright" />
-    <?php include  $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/dependencies.html" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] .
+      "/moseholm/includes/dependencies.html"; ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
@@ -17,7 +18,8 @@
 <body>
     <div id="pageContainer">
         <div id="pageContent">
-            <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/navbar.html" ?>
+            <?php include $_SERVER['DOCUMENT_ROOT'] .
+              "/moseholm/includes/navbar.html"; ?>
             <div class="container-lg">
                 <div class="row section">
                     <div class="col-12 col-lg-10 offset-lg-2">
@@ -37,7 +39,7 @@
                     </div>
 
                     <div class="col-12 col-lg-10">
-                        <div id="eventsContainer" class="row">
+                        <div id="eventsContainer" class="row g-3">
                         </div>
 
                         <div class="spinner hidden" id="eventSpinner">
@@ -47,7 +49,8 @@
                 </div>
             </div>
         </div>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] .
+          "/moseholm/includes/footer.html"; ?>
     </div>
 
     <script type="module">

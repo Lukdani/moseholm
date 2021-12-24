@@ -10,10 +10,14 @@ export class EventView {
     this.widthOnLarge = widthOnLarge;
   }
 
-  renderEvents = (events) => {
-    this.clearEvents();
+  renderEvents = (events, limitiedLoad) => {
+    if (!limitiedLoad) {
+      this.clearEvents();
+    }
+
     if (events?.length > 0) {
       events.forEach((eventItem) => {
+        console.log(eventItem);
         const eventContainer = createElement(
           "div",
           ["col-12", `col-lg-${this.widthOnLarge}`, "event-container"],
@@ -24,7 +28,11 @@ export class EventView {
         eventElement.setAttribute("itemtype", "https://schema.org/Event");
         eventContainer.appendChild(eventElement);
 
-        const flexItem = createElement("div", ["flexItem", "flexItem--inline"], null);
+        const flexItem = createElement(
+          "div",
+          ["flexItem", "flexItem--inline"],
+          null
+        );
         eventElement.appendChild(flexItem);
         const eventImage = createElement("img", ["event-item-image"], null);
         eventImage.alt = eventItem.eventImageName;
@@ -37,9 +45,9 @@ export class EventView {
         const eventDateIcon = createElement("i", ["far", "fa-calendar"], null);
         eventDate.appendChild(eventDateIcon);
         const eventDateText = createElement("span", null, null);
-        eventDateText.textContent =formatDate(eventItem.eventDate, true);
+        eventDateText.textContent = formatDate(eventItem.eventDate, true);
         eventDate.appendChild(eventDateText);
- 
+
         flexItem.appendChild(eventDate);
 
         const eventTitle = createElement("h3", ["event-item-title"], null);
@@ -162,5 +170,22 @@ export class EventView {
         this.handleOrderBy(e, orderByButtonItem, callback)
       );
     });
+  };
+
+  bindLoadMoreButton = (callback) => {
+    const loadMoreButton = document.getElementById("loadMoreEventsButton");
+    if (loadMoreButton) {
+      loadMoreButton.addEventListener("click", callback);
+    }
+  };
+
+  setLoadMoreButtonActive = (active) => {
+    const loadMoreButton = document.getElementById("loadMoreEventsButton");
+    if (loadMoreButton) {
+      loadMoreButton.disabled = !active;
+      if (!active) {
+        loadMoreButton.innerHTML = "Alt indlæst";
+      }
+    }
   };
 }
