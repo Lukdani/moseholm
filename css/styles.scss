@@ -5,6 +5,30 @@ $randomInt: percentage(random(100) / 100);
 
 // ANIMATIONS
 
+@keyframes fadeIn{
+  0% {
+    opacity: 0;
+  }
+  100% {
+   opacity: 1
+  }
+}
+
+@keyframes rotate3d {
+  0% {
+    transform: rotateY(360deg);
+  }
+  33% {
+    transform: rotateY(0deg);
+  }
+  66% {
+    transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
 @keyframes scale-up {
   0% {
   }
@@ -1073,5 +1097,110 @@ header.heroContainer video {
     @media (min-width: 992px) {
       font-size: 1.5rem;
     }
+  }
+}
+
+// EGG GAME;
+
+.eggGame-button {
+  min-height: 110px;
+  &:focus i {
+    animation: rotate3d 2s linear;
+  }
+  width: 100%;
+  background-color: $customSecondary;
+  padding: 1rem;
+  font-size: 2rem;
+  color: $customLight;
+  transition: background-color 1s ease-in;
+  i {
+    transition: all .15s ease-in-out;
+  }
+  &:hover {
+    transform: none;
+    i {
+      transform: scale(1.5);
+      color: $customPrimary;
+    }
+  }
+  .iconButton-decoyIcon {
+    display: none;
+    animation: fadeIn 1s linear;
+
+  }
+  &.iconButtonDecoy {
+    background-color: $custom-brown;
+    .iconButton-icon {
+      display: none;
+    }
+    .iconButton-decoyIcon {
+      display: inline-block;
+    }
+  }
+  & i.highlight-iconButton-icon {
+    font-size: 3rem;
+    color: green;
+  }
+
+  
+}
+.eggGame-col {
+  text-align: center;
+}
+#eggGame-instructions {
+  text-align: center;
+  display: inline-block;
+  padding: 2rem;
+  background-color: $custom-brown;
+}
+
+#eggGame-indicators {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#gamePanel {
+  padding: .5rem 0;
+}
+
+.gamePanel-item {
+  margin-right: 1rem;
+  display: inline-block;
+  .gamePanel-item-counter {
+    display: inherit;
+    padding: .25rem .5rem;
+    min-width: 30px;
+    background-color: $customPrimary;
+    text-align: center;
+    margin-left: .5rem;
+  }
+}
+
+#gameWonIndicator {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+  color: green;
+  i {
+    color: $customPrimary;
+    margin-right: .75rem;
+  }
+}
+
+#gameLostIndicator {
+  font-size: 1.25rem;
+  margin-left: 1rem;
+  color: $danger;
+  i {
+    color: $customPrimary;
+    margin-right: .75rem;
+  }
+
+}
+
+.eggGame {
+
+  @media (min-width: 992px) {
+    padding: 3rem 0;
   }
 }
