@@ -42,7 +42,7 @@
                             Besøg vores café og hils på vores skønne dyr.
 
                         </p>
-                        <a href="/moseholm/pages/products.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>Se vores produkter</a>
+                        <a href="/moseholm/pages/products.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>Shop nu</a>
                     </div>
                 </div>
             </header>

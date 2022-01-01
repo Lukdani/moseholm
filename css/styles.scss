@@ -347,7 +347,10 @@ img {
 // SECTION
 
 .section {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
+  @media (min-width: 992px) {
+    font-size: 2rem 0;
+  }
 }
 
 .section-header {
@@ -384,13 +387,13 @@ img {
   h1 {
     font-size: 1.5rem;
     @media (min-width: 992px) {
-      font-size: 2rem;
+      font-size: 2.25rem;
     }
   }
   p {
     font-size: 1rem;
     @media (min-width: 992px) {
-      font-size: 1.2rem;
+      font-size: 1.5rem;
     }
   }
 }
