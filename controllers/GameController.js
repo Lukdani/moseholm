@@ -2,14 +2,17 @@ export class GameController {
   constructor(gameModel, gameView) {
     this.gameModel = gameModel;
     this.gameView = gameView;
+
+    this.gameView.renderEmptyBoard(9);
+ 
+    this.gameView.renderInstructions();
     this.gameView.renderStartGameButton();
     this.gameView.bindStartGameButton(this.startGame);
-    this.gameView.renderEmptyBoard(9);
   }
 
   startGame = () => {
     const icons = this.gameModel.startGame();
-    this.gameView.renderGamePanel();
+    this.gameView.displayGamePanel();
     this.gameView.updateTriesLeft(this.gameModel.getTriesLeft());
     this.gameView.updateTargetsFound(this.gameModel.getTargetsFound());
     this.gameView.renderIcons(icons, this.handleIconButtonClicked);

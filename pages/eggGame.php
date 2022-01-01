@@ -31,31 +31,32 @@ foreach ($blogs as $blog){
             <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/navbar.html" ?>
             <div class="container-lg">
                 <div class="row eggGame">
-                    <div class="col-12 eggGame-col">
-                        <div id="eggGame-instructions">
-                            <h2>
-                                Hjælp Moster Oda!
-                            </h2>
-                            <p>
-                                Den frække skov-nisse er i fuld gang med at gemme Moster Odas æg.
-                                <br>
-                                Moster Oda har nu brug for din hjælp til at finde æggene.
-                                <br>
-                                Læg mærke til, hvor æggene bliver gemt, og prøv så at finde dem.
-                            </p>
+                    <h3>Hjælp Moster Oda - hvor er æggene?</h3>
+                    <div class="col-12" id="eggGame-indicators">
+                        <div id="gamePanel">
+                            <div class="gamePanel-item" id="triesLeftIndicator-container">
+                                <span>Forsøg tilbage: </span>
+                                <span id="triesLeftIndicator"></span>
+                            </div>
+
+                            <div class="gamePanel-item" id="targetsFoundIndicator-container">
+                                <span>Fundne æg</span>
+                                <span id="targetsFoundIndicator"></span>
+
+                            </div>
                         </div>
                     </div>
-                    <div class="col-12" id="eggGame-indicators">
 
 
-                    </div>
+
                     <div id="eggGame-container">
 
                     </div>
                 </div>
             </div>
         </div>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
+    </div>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
     </div>
     <script type="module" src="/moseholm/js/setShoppingCartCount.js">
     </script>

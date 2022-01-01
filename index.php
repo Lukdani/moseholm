@@ -42,7 +42,8 @@
                             Besøg vores café og hils på vores skønne dyr.
 
                         </p>
-                        <a href="/moseholm/pages/products.php" class="btn btn-primary"><i class="fas fa-shopping-cart"></i>Shop nu</a>
+                        <a href="/moseholm/pages/products.php" class="btn btn-primary"><i
+                                class="fas fa-shopping-cart"></i>Shop nu</a>
                     </div>
                 </div>
             </header>
@@ -191,13 +192,28 @@
                     </div>
                     <div class="row">
                         <div class="col-12" style="text-align: center;">
-                        <button id="loadMoreEventsButton" class="btnGray btn mt-4 me-2"><i
+                            <button id="loadMoreEventsButton" class="btnGray btn mt-4 me-2"><i
                                     class="fas fa-plus"></i>Indlæs 3 mere</button>
                             <a href="/moseholm/pages/events.php" class="btn-secondary btn mt-4"><i
                                     class="fas fa-calendar-week"></i>Se alle events</a>
                         </div>
                     </div>
 
+                </div>
+            </div>
+            <div class="section">
+
+                <div class="container-lg">
+                    <div class="row ">
+                        <h1 class="section-header">Hjælp Moster Oda!</h1>
+                        <div class="col-12 offset-lg-2 col-lg-8 eggGame-teaser">
+                            <p>Den frække skovisse er igang med at skjule Moster Odas 3 æg.
+                                <br>
+                                Hjælp Moster Oda med at få æggene tilbage, så hun kan bage!
+                            </p>
+                            <a class="btn btn-secondary mt-2" href="/moseholm/pages/eggGame.php">Jeg er klar!</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

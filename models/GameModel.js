@@ -43,7 +43,7 @@ const initialState = {
 
 export class GameModel {
   constructor() {
-    this.state = { ...initialState, pendingIcons: [], expeditedIcons: [] };
+    this.resetGame();
   }
 
   setPendingIcons = () => {
@@ -76,6 +76,7 @@ export class GameModel {
   }
 
   startGame = () => {
+    this.resetGame();
     this.state.timeStarted = new Date();
     this.setPendingIcons();
     this.state.gameStarted = true;
@@ -95,5 +96,9 @@ export class GameModel {
   endGame = () => {
     this.gameOver = true;
     return this.state.targetsFound === this.state.requiredToWin ? true : false;
+  }
+
+  resetGame = () => {
+    this.state = { ...initialState, pendingIcons: [], expeditedIcons: [] };
   }
 }

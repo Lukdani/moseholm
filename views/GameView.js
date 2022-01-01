@@ -8,7 +8,6 @@ export class GameView {
 
   renderEmptyBoard = (numberOfItems) => {
     if (numberOfItems > 0) {
-      console.log(numberOfItems)
       this.rootElement.innerHTML = "";
 
       const iconsRow = createElement("div", ["row", "g-2"], null);
@@ -56,32 +55,9 @@ export class GameView {
     }
   };
 
-  renderGamePanel = () => {
-    this.gameIndicatorRoot.innerHTML = "";
-    const gamePanel = createElement("div", null, "gamePanel");
-    this.gameIndicatorRoot.appendChild(gamePanel);
-
-    // TRIES LEFT;
-    const triesLeftContainer = createElement("span", ["gamePanel-item"], "triesLeftIndContainericatorContainer");
-    gamePanel.appendChild(triesLeftContainer);
-
-    const triesLeftLabel = createElement("span", null, null);
-    triesLeftLabel.textContent = "Forsøg tilbage:"
-    triesLeftContainer.appendChild(triesLeftLabel);
-
-    const triesLeftIndicator = createElement("span", ["gamePanel-item-counter"], "triesLeftIndicator");
-    triesLeftContainer.appendChild(triesLeftIndicator);
-
-    // FOUND TARGETS;
-
-    const foundTargetsContainer = createElement("span", ["gamePanel-item"], "triesLeftIndContainericatorContainer");
-    gamePanel.appendChild(foundTargetsContainer);
-
-    const foundTargetsLabel = createElement("span", null, null);
-    foundTargetsLabel.textContent = "Fundne æg:"
-    foundTargetsContainer.appendChild(foundTargetsLabel);
-    const targetsFoundIndicator = createElement("span", ["gamePanel-item-counter"], "targetsFoundIndicator");
-    foundTargetsContainer.appendChild(targetsFoundIndicator);
+  displayGamePanel = () => {
+    const gamePanel = document.getElementById("gamePanel");
+    gamePanel.style["visibility"] = "visible";
   }
 
   handleClickIconButton = (iconItem, callBack) => {
@@ -91,13 +67,31 @@ export class GameView {
   renderDecoys = () => {
     const iconButtons = document.querySelectorAll(".eggGame-button");
     iconButtons?.forEach((iconButton, index) => {
-      console.log(iconButton);
       iconButton.disabled = false;
       setTimeout(() => {
         iconButton.classList.add("iconButtonDecoy");
       }, index * 100);
       
     })
+  }
+
+  renderInstructions = () => {
+    const gameBoard = document.getElementById("eggGame-container");
+    if (gameBoard) {
+      const eggGameOverlay = createElement("div", null, "eggGame-container-overlay");
+      gameBoard.appendChild(eggGameOverlay);
+
+      const instructionsContainer = createElement("div", null, "eggGame-instructions");
+      eggGameOverlay.appendChild(instructionsContainer);
+
+      const instructionsHeader = createElement("h3", null, null);
+      instructionsHeader.textContent = "Hjælp moster Oda!";
+      instructionsContainer.appendChild(instructionsHeader);
+
+      const instructions = createElement("p", null, null);
+      instructions.innerHTML = "Den frække skov-nisse er i fuld gang med at gemme Moster Odas æg. <br>Moster Oda får derfor brug for din hjælp til at finde æggene. <br> Læg mærke til, hvor nissen gemmer æggene, og prøv så at finde dem."
+      instructionsContainer.appendChild(instructions);
+    }
   }
 
   disableIconButtons = () => {
@@ -130,34 +124,41 @@ export class GameView {
   }
 
   renderStartGameButton = (buttonText) => {
-    const button = createElement("button", ["btn", "btn-primary", "mt-2"], "startGameButton");
-    this.gameIndicatorRoot.appendChild(button);
-
-    const startGameIcon = createElement("i", ["fas", "fa-search"], null);
-    button.appendChild(startGameIcon);
-
-    const startGameText = createElement("span", null, null);
-    startGameText.textContent = buttonText || "Begynd";
-    button.appendChild(startGameText);
+    const gameBoard = document.getElementById("eggGame-container-overlay");
+    if (gameBoard) {
+      const button = createElement("button", ["btn", "btn-primary", "mt-2"], "startGameButton");
+      gameBoard.appendChild(button);
+  
+      const startGameIcon = createElement("i", ["fas", "fa-search"], null);
+      button.appendChild(startGameIcon);
+  
+      const startGameText = createElement("span", null, null);
+      startGameText.textContent = buttonText || "Begynd";
+      button.appendChild(startGameText);
+    }
+   
   }
 
   bindStartGameButton = (callback) => {
     const button = document.getElementById("startGameButton");
-
     if (button) {
       button.addEventListener("click", callback)
     }
   }
 
   displayGameWon = () => {
+    const gameBoard = document.getElementById("eggGame-container");
+    const eggGameOverlay = createElement("div", null, "eggGame-container-overlay");
+    gameBoard.appendChild(eggGameOverlay);
+
     const gameWon = createElement("span", null, "gameWonIndicator");
-    this.gameIndicatorRoot.appendChild(gameWon);
+    eggGameOverlay.appendChild(gameWon);
 
     const gameWonIcon = createElement("i", ["fas", "fa-award"], null);
     gameWon.appendChild(gameWonIcon);
 
     const gameWonText = createElement("span", null, null);
-    gameWonText.textContent = "Tillykke - du fandt alle Moster Odas æg!"
+    gameWonText.textContent = "Flot - du fandt alle Moster Odas æg!"
 
     gameWon.appendChild(gameWonText);
 
@@ -166,12 +167,16 @@ export class GameView {
     targets?.forEach(targetItem => {
       targetItem.classList.add("highlight-iconButton-icon")
     })
-    this.renderStartGameButton("Prøv igen");
+    this.renderStartGameButton("Spil igen");
   }
 
   displayGameLost = () => {
+    const gameBoard = document.getElementById("eggGame-container");
+    const eggGameOverlay = createElement("div", null, "eggGame-container-overlay");
+    gameBoard.appendChild(eggGameOverlay);
+
     const gameLost = createElement("span", null, "gameLostIndicator");
-    this.gameIndicatorRoot.appendChild(gameLost);
+    eggGameOverlay.appendChild(gameLost);
 
     const gameLostIcon = createElement("i", ["fas", "fa-sad-cry"], null);
     gameLost.appendChild(gameLostIcon);
@@ -185,7 +190,6 @@ export class GameView {
 
     targets?.forEach(targetItem => {
       const button = targetItem.closest("button")
-      console.log(button)
       button.classList.remove("iconButtonDecoy");
       targetItem.classList.add("highlight-iconButton-icon")
     })
