@@ -1,3 +1,9 @@
 export const insertLineBreak = (string) => {
-  return string.replace(/(\\n)/gm, "<br>");
+  try {
+    return string?.replace(/(\\n)/gm, "<br>");
+  }
+  catch(e) {
+    console.log(e);
+    return string;
+  }
 };

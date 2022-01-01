@@ -1,3 +1,9 @@
 export const removeLineBreaks = (string) => {
-  return string.replace(/(\\n)/gm, "");
+  try {
+    return string?.replace(/(\\n)/gm, "");
+  }
+  catch(e) {
+    console.log(e);
+    return string;
+  }
 };
