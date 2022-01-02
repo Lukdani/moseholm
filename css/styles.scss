@@ -758,7 +758,7 @@ header.heroContainer video {
   }
 
   .product-item-image {
-    max-height: 150px;
+    height: auto;
     width: 100%;
     object-fit: cover;
   }
@@ -826,7 +826,7 @@ header.heroContainer video {
   @media (min-width: 992px) {
     height: 100%;
     .event-item-image {
-      max-height: 150px;
+      height: auto;
       width: 100%;
       object-fit: cover;
     }
