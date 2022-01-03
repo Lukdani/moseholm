@@ -30,7 +30,7 @@
         <div id="pageContent">
 
             <div class="container-lg">
-                <div class="row section">
+                <div class="row">
 
 
                     <div class="col-10 offset-lg-2">

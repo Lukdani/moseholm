@@ -21,7 +21,7 @@
             <?php include $_SERVER['DOCUMENT_ROOT'] .
               "/moseholm/includes/navbar.html"; ?>
             <div class="container-lg">
-                <div class="row section">
+                <div class="row">
                     <div class="col-12 col-lg-10 offset-lg-2">
                         <h2 class="page-feature-header">
                             Giv familien en rigtig landoplevelse

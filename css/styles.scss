@@ -1,6 +1,5 @@
 @import "./bootstrap.scss";
-$heroHeightMobile: 400px;
-$heroHeightDesktop: 500px;
+
 $randomInt: percentage(random(100) / 100);
 
 // ANIMATIONS
@@ -230,6 +229,13 @@ img {
     }
   }
 }
+
+.customLink {
+  text-decoration: none;
+  color: $customSecondary;
+  font-weight: 500;
+}
+
 // NAVBAR
 
 .mobileNav {
@@ -362,9 +368,19 @@ img {
 }
 
 #pageContent {
+  padding-top: calc(#{$headerHeight--mobile} + 3rem);
+  padding-bottom: 1rem;
+  @media (min-width: 992px) {
+    padding-top: calc(#{$headerHeight--desktop} + 3rem);
+    padding-bottom: 1rem;
+  }
+ 
+}
+
+#pageContent.pageContent--disableSpacing {
   padding-top: $headerHeight--mobile;
   @media (min-width: 992px) {
-    padding-top: $headerHeight--desktop;
+    padding-top: $headerHeight--desktop !important;
   }
 }
 
@@ -455,6 +471,15 @@ header.heroContainer video {
 
 // UTIL;
 
+.navbar-spacer {
+  padding-top: calc(#{$headerHeight--mobile} );
+  margin-top: calc((-#{$headerHeight--mobile}));
+  @media (min-width: 992px) {
+   padding-top: calc(#{$headerHeight--desktop} );
+   margin-top: calc((-#{$headerHeight--desktop}));
+  }
+}
+
 .spinner {
   text-align: center;
   i {
@@ -478,6 +503,7 @@ header.heroContainer video {
 .overlay {
   position: relative;
 }
+
 .overlay::after {
   content: "";
   position: absolute;
@@ -1232,4 +1258,66 @@ header.heroContainer video {
   padding: 2rem;
   background-color: $customLight;
   text-align: center;
+}
+
+// ABOUT
+
+.about-header {
+  background-color: $custom-brown;
+  display: inline-block;
+  transform: translate(1rem, 50%);
+  padding: .5rem;
+  font-size: 1.2rem;
+  i {
+    margin-right: .5rem;
+    color: $customSecondary;
+  }
+  @media (min-width: 992px) {
+    font-size: 1.5rem;
+  }
+}
+
+.about-content {
+  background-color: lightgray;
+  padding: 1rem;
+  padding-top: 2rem;
+  background-size: cover;
+  @media (min-width: 992px) {
+    padding: 4rem;
+  }
+
+  .about-content-text {
+    background-color: $customLight;
+    max-width: 600px;
+    padding: 1rem;
+    h4 {
+      color: $customSecondary;
+    }
+  }
+}
+
+.about-content--moseholm {
+  background-image: url("/moseholm/images/featuresBackground.png");
+}
+
+
+.about-content--store {
+  background-image: url("/moseholm/images/store.png");
+}
+
+
+.about-content--cafe {
+  background-image: url("/moseholm/images/cafe.png");
+}
+
+#cafeen table td {
+  padding-bottom: .75rem;
+}
+
+#cafeen table tr:first-of-type td {
+  padding-top: .75rem;
+}
+#cafeen table td:first-of-type {
+  padding-right: 1rem;
+  font-weight: 500;
 }

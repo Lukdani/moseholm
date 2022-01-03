@@ -1,21 +1,10 @@
-<!--<?php
-/*require "settings/init.php";
-
-$blogs = $db->sql("SELECT * FROM blogs");
-
-foreach ($blogs as $blog){
-    echo $blog->blogName . "<br>";
-}
-*/
-?>-->
-
 <!DOCTYPE html>
 <html lang="da">
 
 <head>
     <meta charset="utf-8" />
 
-    <title>Moseholm - økologisk gårdbutik</title>
+    <title>Moseholm - Æggespillet</title>
 
     <meta name="robots" content="All" />
     <meta name="author" content="Udgiver" />
@@ -55,8 +44,8 @@ foreach ($blogs as $blog){
                 </div>
             </div>
         </div>
-    </div>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
+
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
     </div>
     <script type="module" src="/moseholm/js/setShoppingCartCount.js">
     </script>

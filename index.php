@@ -27,7 +27,7 @@
 <body>
     <div id="pageContainer">
         <?php include "./includes/navbar.html"; ?>
-        <div id="pageContent">
+        <div id="pageContent" class="pageContent--disableSpacing">
             <header class="heroContainer" role="banner">
                 <video id="heroVideo" loop muted autoplay>
                     <source src="/moseholm/videos/hero_desktop.mp4" type="video/mp4" />
