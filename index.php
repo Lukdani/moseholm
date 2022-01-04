@@ -30,7 +30,7 @@
         <div id="pageContent" class="pageContent--disableSpacing">
             <header class="heroContainer" role="banner">
                 <video id="heroVideo" loop muted autoplay>
-                    <source src="/moseholm/videos/hero_desktop.mp4" type="video/mp4" />
+                    <source id="heroVideoSource" src="/moseholm/videos/hero_mobile.mp4" type="video/mp4" />
                 </video>
 
                 <div class="hero overlay">
@@ -228,9 +228,27 @@
     const eventInitializer = new EventInitializer("4", false, "eventDate", "ASC", true);
     </script>
     <script type="module" src="/moseholm/js/setShoppingCartCount.js">
-
     </script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="module">
+    import {
+        WindowResizeHandler
+    } from "/moseholm/utils/WindowResizeHandler.js";
+
+    const handleResize = (isMobile) => {
+        const video = document.getElementById("heroVideo");
+        const videoSource = document.getElementById("heroVideoSource");
+        if (videoSource && video) {
+            video.pause();
+            videoSource.src = `/moseholm/videos/hero_${(isMobile ? "mobile" :"desktop")}.mp4`;
+            video.load();
+            video.play();
+        }
+    }
+
+    const windowResizeHandler = new WindowResizeHandler(handleResize, true);
+    </script>
 </body>
 
 </html>

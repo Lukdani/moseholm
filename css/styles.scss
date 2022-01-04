@@ -387,7 +387,7 @@ img {
 // SECTION
 
 .section {
-  padding: 1.5rem 0;
+  padding: 2rem 0;
   @media (min-width: 992px) {
     font-size: 2rem 0;
   }
@@ -1365,4 +1365,46 @@ header.heroContainer video {
       padding: .5rem;
     }
   }
+}
+
+//ANIMALS
+
+.animal-item {
+  background-size: cover;
+  position: relative;
+
+ 
+    .animal-item-name {
+      font-weight: 500;
+      background-color: $custom-brown;
+      font-family: $header-font;
+      display: inline-block;
+      position: absolute;
+      padding: 1rem;
+      margin-left: 1rem;
+      top: 1rem;
+    }
+
+    .animal-item-description {
+    position: absolute;
+    bottom: 1rem;
+    padding: 1rem;
+    background-color: $customLight;
+    display: inline-block;
+    width: 80%;
+    margin-left: 1rem;
+    transform: translateY(100%);
+    @media (min-width: 992px) {
+      transform: none;
+    }
+    }
+    .animal-item-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      i { 
+        margin: 0;
+      }
+    }
 }

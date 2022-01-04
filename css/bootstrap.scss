@@ -36,8 +36,12 @@ $custom-colors: (
   "secondary": $customSecondary,
   "light": $customLight,
 );
-$theme-colors: map-merge($theme-colors, $custom-colors);
+
 $headerHeight--mobile: 90px;
 $headerHeight--desktop: 100px;
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$utilities-text-colors: map-merge($utilities-text-colors, $custom-colors);
+$utilities-bg-colors: map-merge($utilities-bg-colors, $custom-colors);
 
 @import "../node_modules/bootstrap/scss/bootstrap";
