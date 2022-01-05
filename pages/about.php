@@ -4,14 +4,23 @@
 <head>
     <meta charset="utf-8" />
 
-    <title>Om Moseholm</title>
-
-    <meta name="robots" content="All" />
+    <title>Moseholm - Om Moseholm</title>
+    <meta name="robots" content="index,follow" />
     <meta name="author" content="Udgiver" />
     <meta name="copyright" content="Information om copyright" />
     <?php include  $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/dependencies.html" ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Oplysninger om Moseholms gårdbutik og cafe samt priser" />
+    <meta name="keywords" content="dyr, gårdbutik, familietur" />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Moseholm - økologisk gårdbutik" />
+    <meta property="og:image" content="" />
+    <meta property="og:description"
+        content="Moseholm er en økologisk gårdbutik, som sælger produkter fra egen produktion. Moseholm har også en café og afholder løbende events." />
+
 </head>
 
 <body>
@@ -39,6 +48,7 @@
                                     måde.
                                     <br>
                                     <br>
+                                </p>
                                 <ul>
                                     <li>Hvis vi giver tid til at lade afgrøderne modne.</li>
                                     <li>
@@ -49,11 +59,12 @@
                                         Hvis planter fylder mere i vores kost.
                                     </li>
                                 </ul>
-                                <br>
                                 <h4>Vores mission</h4>
-                                Formidlingen af det skønne ved vores stolte traditioner, respekten for gårdens dyr
-                                og fordybelse er en vigtig del af vores mission om at sprede kendskabet til
-                                økologisk fødevareproduktion.
+                                <br>
+                                <p>
+                                    Formidlingen af det skønne ved vores stolte traditioner, respekten for gårdens dyr
+                                    og fordybelse er en vigtig del af vores mission om at sprede kendskabet til
+                                    økologisk fødevareproduktion.
                                 </p>
                             </div>
                         </div>
@@ -106,7 +117,7 @@
                                 </p>
                                 <br>
                                 <h4>Priser</h4>
-                                <p>
+
                                 <table>
                                     <tbody>
                                         <tr>
@@ -134,28 +145,22 @@
                                         </tr>
                                     </tbody>
                                 </table>
-                                </p>
+
                             </div>
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-    </div>
-    </div>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
     </div>
     <script type="module" src="/moseholm/js/setShoppingCartCount.js">
-
     </script>
-    <script>
+    <script type="module">
     const headers = document.querySelectorAll(".about-header");
-    console.log(headers);
     headers?.forEach(headerItem => {
-        headerItem.style["margin-top"] = `-${headerItem.offsetHeight /2 }px`;
-        console.log(headerItem);
+        headerItem.style["margin-top"] =
+            `-${headerItem.offsetHeight /2 }px`; // Needed to compensate for transform:translateY - Lukas 05/01/21
     })
     </script>
 </body>

@@ -4,14 +4,24 @@
 <head>
     <meta charset="utf-8" />
 
-    <title>Praktisk info</title>
+    <title>Moseholm - praktisk info</title>
 
-    <meta name="robots" content="All" />
+    <meta name="robots" content="index,follow" />
     <meta name="author" content="Udgiver" />
     <meta name="copyright" content="Information om copyright" />
     <?php include  $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/dependencies.html" ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Praktisk info om besøg på Moseholm" />
+    <meta name="keywords" content="dyr, gårdbutik, familietur" />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Moseholm - økologisk gårdbutik" />
+    <meta property="og:image" content="" />
+    <meta property="og:description"
+        content="Moseholm er en økologisk gårdbutik, som sælger produkter fra egen produktion. Moseholm har også en café og afholder løbende events." />
+
 </head>
 
 <body>
@@ -33,9 +43,9 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
+
+
+        <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
     </div>
     <script type="module" src="/moseholm/js/setShoppingCartCount.js">
 
@@ -76,7 +86,6 @@
         },
     ]
     if (faqContainer) {
-
 
         faqItems?.forEach(faqItem => {
             const faqItemContainer = createElement("div", ["col-6", "col-lg-4"], null);

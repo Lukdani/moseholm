@@ -7,13 +7,14 @@
     <title>Moseholm - økologisk gårdbutik</title>
 
     <!--META -->
-    <meta name="robots" content="All" />
     <meta name="author" content="Udgiver" />
     <meta name="copyright" content="Information om copyright" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Forside med oversigt over produktkategorier og kommende events." />
     <meta name="keywords" content="økologi, gårdbutik, familie" />
     <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph -->
     <meta property="og:title" content="Moseholm - økologisk gårdbutik" />
     <meta property="og:image" content="" />
     <meta property="og:description"
@@ -28,8 +29,8 @@
     <div id="pageContainer">
         <?php include "./includes/navbar.html"; ?>
         <div id="pageContent" class="pageContent--disableSpacing">
-            <header class="heroContainer" role="banner">
-                <video id="heroVideo" loop muted autoplay>
+            <header class="heroContainer">
+                <video id="heroVideo" loop muted>
                     <source id="heroVideoSource" src="/moseholm/videos/hero_mobile.mp4" type="video/mp4" />
                 </video>
 
@@ -157,19 +158,19 @@
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td><i class="fas fa-check-square"></td>
+                                        <td><i class="fas fa-check-square"></i></td>
                                         <td>100% økologisk og lokalt fremstillede produkter</td>
                                     </tr>
                                     <tr>
-                                        <td><i class="fas fa-check-square"></td>
+                                        <td><i class="fas fa-check-square"></i></td>
                                         <td>Nyd en hyggelig stund i vores atmosfæriske café</td>
                                     </tr>
                                     <tr>
-                                        <td><i class="fas fa-check-square"></td>
+                                        <td><i class="fas fa-check-square"></i></td>
                                         <td>Besøg vores søde og nysgerrige dyr</td>
                                     </tr>
                                     <tr>
-                                        <td><i class="fas fa-check-square"></td>
+                                        <td><i class="fas fa-check-square"></i></td>
                                         <td>Deltag i et event og få en autentisk landoplevelse</td>
                                     </tr>
                                 </tbody>
@@ -177,7 +178,6 @@
                         </div>
                     </div>
                 </div>
-                </span>
             </div>
             <div class="events section">
                 <h1 class="section-header text-light">Kommende events</h1>

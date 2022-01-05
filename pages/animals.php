@@ -1,28 +1,25 @@
-<!--<?php
-/*require "settings/init.php";
-
-$blogs = $db->sql("SELECT * FROM blogs");
-
-foreach ($blogs as $blog){
-    echo $blog->blogName . "<br>";
-}
-*/
-?>-->
-
 <!DOCTYPE html>
 <html lang="da">
 
 <head>
     <meta charset="utf-8" />
 
-    <title>Moseholm - økologisk gårdbutik</title>
-
-    <meta name="robots" content="All" />
+    <title>Moseholm - vores dyr</title>
     <meta name="author" content="Udgiver" />
     <meta name="copyright" content="Information om copyright" />
     <?php include  $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/dependencies.html" ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Oplysninger om Moseholms dyr" />
+    <meta name="keywords" content="dyr, gårdbutik, familietur" />
+    <meta name="robots" content="index,follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Moseholm - økologisk gårdbutik" />
+    <meta property="og:image" content="" />
+    <meta property="og:description"
+        content="Moseholm er en økologisk gårdbutik, som sælger produkter fra egen produktion. Moseholm har også en café og afholder løbende events." />
+
 </head>
 
 <body>
@@ -125,8 +122,6 @@ foreach ($blogs as $blog){
             if (isMobile) {
                 animalElement.style["margin-bottom"] = `${animalDescription.offsetHeight}px`;
             }
-
-
         })
     }
 
