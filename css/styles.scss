@@ -310,7 +310,7 @@ img {
 }
 .nav-link {
   color: $customPrimary;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   border-top: 2px solid transparent;
   border-bottom: 2px solid transparent;
   font-family: $header-font;
@@ -355,6 +355,16 @@ img {
   i {
     position: relative;
     font-size: 2rem;
+  }
+}
+
+.nav-item--languageSelector {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .nav-link {
+    font-size: .9rem;
   }
 }
 

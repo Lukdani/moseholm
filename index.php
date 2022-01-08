@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
 
-    <title>Moseholm - økologisk gårdbutik</title>
+    <title data-translationkey="titleFrontPage">Moseholm - økologisk gårdbutik</title>
 
     <!--META -->
     <meta name="author" content="Udgiver" />
@@ -36,14 +36,17 @@
 
                 <div class="hero overlay">
                     <div class="overlay-text">
-                        <h1 class="mb-2">Landoplevelse for hele familien</h1>
+                        <h1 data-translationkey="heroHeader" class="mb-2">Landoplevelse for hele familien</h1>
                         <p class="mb-3">
-                            Moseholm er en 100% økologisk gårdbutik.
+                            <span data-translationkey="heroText1">
+                                Moseholm er en 100% økologisk gårdbutik.
+                            </span>
                             <br>
-                            Besøg vores café og hils på vores skønne dyr.
-
+                            <span data-translationkey="heroText2">
+                                Besøg vores café og hils på vores skønne dyr.
+                            </span>
                         </p>
-                        <a href="/moseholm/pages/products.php" class="btn btn-primary"><i
+                        <a data-translationkey="shopNow" href="/moseholm/pages/products.php" class="btn btn-primary"><i
                                 class="fas fa-shopping-cart"></i>Shop nu</a>
                     </div>
                 </div>
@@ -52,7 +55,7 @@
             <div class="section">
                 <div class="container-lg">
                     <div class="row space-evenly">
-                        <h1 class="section-header">Vores produkter</h1>
+                        <h1 class="section-header" data-translationkey="ourProducts">Vores produkter</h1>
                         <div class="col-12 col-lg-4 col-space category-overview-container">
                             <a href="/moseholm/pages/products.php?categories=colonial">
                                 <div class="category-overview-item">
@@ -63,7 +66,7 @@
                                     <i class="fas fa-seedling"></i>
                                     <i class="fas fa-seedling"></i>
                                     <i class="fas fa-seedling"></i>
-                                    <p>Kolonial</p>
+                                    <p data-translationkey="colonial">Kolonial</p>
                                 </div>
                             </a>
                         </div>
@@ -77,7 +80,7 @@
                                     <i class="fas fa-egg"></i>
                                     <i class="fas fa-egg"></i>
                                     <i class="fas fa-egg"></i>
-                                    <p>Mejeri</p>
+                                    <p data-translationkey="dairy">Mejeri</p>
                                 </div>
                             </a>
                         </div>
@@ -91,7 +94,7 @@
                                     <i class="fas fa-bread-slice"></i>
                                     <i class="fas fa-bread-slice"></i>
                                     <i class="fas fa-bread-slice"></i>
-                                    <p>Brød</p>
+                                    <p data-translationkey="bread">Brød</p>
                                 </div>
                             </a>
                         </div>
@@ -105,7 +108,7 @@
                                     <i class="fas fa-apple-alt"></i>
                                     <i class="fas fa-apple-alt"></i>
                                     <i class="fas fa-apple-alt"></i>
-                                    <p>Frugt</p>
+                                    <p data-translationkey="fruit">Frugt</p>
                                 </div>
                             </a>
                         </div>
@@ -119,7 +122,7 @@
                                     <i class="fas fa-carrot"></i>
                                     <i class="fas fa-carrot"></i>
                                     <i class="fas fa-carrot"></i>
-                                    <p>Grøntsager</p>
+                                    <p data-translationkey="vegetables">Grøntsager</p>
                                 </div>
                             </a>
                         </div>
@@ -133,7 +136,7 @@
                                     <i class="fas fa-drumstick-bite"></i>
                                     <i class="fas fa-drumstick-bite"></i>
                                     <i class="fas fa-drumstick-bite"></i>
-                                    <p>Kød</p>
+                                    <p data-translationkey="meat">Kød</p>
                                 </div>
                             </a>
                         </div>
@@ -142,8 +145,8 @@
                     </div>
                     <div class="row">
                         <div class="col-12" style="text-align: center;">
-                            <a href="/moseholm/pages/products.php" class="btn-secondary btn mt-4"><i
-                                    class="fas fa-shopping-cart"></i>Se alle produkter</a>
+                            <a data-translationkey="viewAllProducts" href="/moseholm/pages/products.php"
+                                class="btn-secondary btn mt-4"><i class="fas fa-shopping-cart"></i>Se alle produkter</a>
                         </div>
                     </div>
                 </div>
@@ -153,25 +156,29 @@
 
                 <div class="container-lg">
                     <div class="row overlay-text">
-                        <h1 class="section-header overlay-text">Besøg os fordi...</h1>
+                        <h1 data-translationkey="visitBecause" class="section-header overlay-text">Besøg os fordi...
+                        </h1>
                         <div class="col-12 offset-lg-2 col-lg-8 features-points-container overlay-text">
                             <table>
                                 <tbody>
                                     <tr>
                                         <td><i class="fas fa-check-square"></i></td>
-                                        <td>100% økologisk og lokalt fremstillede produkter</td>
+                                        <td data-translationkey="hundredOrganic">100% økologisk og lokalt fremstillede
+                                            produkter</td>
                                     </tr>
                                     <tr>
                                         <td><i class="fas fa-check-square"></i></td>
-                                        <td>Nyd en hyggelig stund i vores atmosfæriske café</td>
+                                        <td data-translationkey="enjoyCafe">Nyd en hyggelig stund i vores atmosfæriske
+                                            café</td>
                                     </tr>
                                     <tr>
                                         <td><i class="fas fa-check-square"></i></td>
-                                        <td>Besøg vores søde og nysgerrige dyr</td>
+                                        <td data-translationkey="visitAnimals">Besøg vores søde og nysgerrige dyr</td>
                                     </tr>
                                     <tr>
                                         <td><i class="fas fa-check-square"></i></td>
-                                        <td>Deltag i et event og få en autentisk landoplevelse</td>
+                                        <td data-translationkey="participateEvent">Deltag i et event og få en autentisk
+                                            landoplevelse</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -180,7 +187,7 @@
                 </div>
             </div>
             <div class="events section">
-                <h1 class="section-header text-light">Kommende events</h1>
+                <h1 data-translationkey="comingEvents" class="section-header text-light">Kommende events</h1>
                 <div class="container-lg">
 
 
@@ -192,10 +199,10 @@
                     </div>
                     <div class="row">
                         <div class="col-12" style="text-align: center;">
-                            <button id="loadMoreEventsButton" class="btnGray btn mt-4 me-2"><i
-                                    class="fas fa-plus"></i>Indlæs 3 mere</button>
-                            <a href="/moseholm/pages/events.php" class="btn-secondary btn mt-4"><i
-                                    class="fas fa-calendar-week"></i>Se alle events</a>
+                            <button data-translationkey="threeMore" id="loadMoreEventsButton"
+                                class="btnGray btn mt-4 me-2"><i class="fas fa-plus"></i>Indlæs 3 mere</button>
+                            <a data-translationkey="viewAllEvents" href="/moseholm/pages/events.php"
+                                class="btn-secondary btn mt-4"><i class="fas fa-calendar-week"></i>Se alle events</a>
                         </div>
                     </div>
 
@@ -208,17 +215,20 @@
 
                         <div class="col-12 offset-lg-2 col-lg-8 eggGame-teaser">
                             <span>
-                                <h1 class="section-header">Hjælp Moster Oda!</h1>
+                                <h1 data-translationkey="helpAuntOda" class="section-header">Hjælp Moster Oda!</h1>
                                 <div class="eggGame-teaser-textContainer">
                                     <img height="100" src="/moseholm/images/skovnisse.png"
                                         alt="Den frække skovnissen som har stjålet Moster Odas æg">
 
-                                    <p>Den frække skovnisse er igang med at skjule Moster Odas 3 æg.
-                                        <br>
-                                        Hjælp Moster Oda med at få æggene tilbage, så hun kan bage!
+                                    <p data-translationkey="naughtyGoblin">Den frække skovnisse er igang med at skjule
+                                        Moster Odas 3 æg.
+                                    </p>
+                                    </p data-translationkey="helpReturnEggs">
+                                    Hjælp Moster Oda med at få æggene tilbage, så hun kan bage!
                                     </p>
                                 </div>
-                                <a class="btn btn-secondary mt-2" href="/moseholm/pages/eggGame.php">Jeg er klar!</a>
+                                <a data-translationkey="imReady" class="btn btn-secondary mt-2"
+                                    href="/moseholm/pages/eggGame.php">Jeg er klar!</a>
                             </span>
                         </div>
                     </div>

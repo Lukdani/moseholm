@@ -80,13 +80,13 @@
                     ></i>
                   </a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown nav-item--languageSelector">
                   <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-globe"></i>
                   </a>
                   <div class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
-                    <button data-lang="en" class="dropdown-item languageButton" href="/moseholm/pages/about.php"><img src="/moseholm/images/localization/en.png" alt="English flag">English</button>
                     <button data-lang="da" class="dropdown-item languageButton" href="/moseholm/pages/about.php"><img src="/moseholm/images/localization/da.png" alt="Dansk flag">Dansk</button>
+                    <button data-lang="en" class="dropdown-item languageButton" href="/moseholm/pages/about.php"><img src="/moseholm/images/localization/en.png" alt="English flag">English</button>
                     <button data-lang="de" class="dropdown-item languageButton" href="/moseholm/pages/about.php"><img src="/moseholm/images/localization/de.png" alt="Deutsch flag">Deutsch</button>
                   </div>
                 </li>
@@ -99,37 +99,11 @@
   </div>
 </nav>
 <script type="module">
-  import {localizedStrings} from "/moseholm/localization/localization.js"
-
-const languageButtons = document.querySelectorAll(".languageButton");
-
-languageButtons?.forEach(languageButtonElement => {
+  import { LocalizationService} from "/moseholm/utils/localizationservice.js";
   
-  const selectedLanguage = languageButtonElement.getAttribute("data-lang");
-  languageButtonElement.addEventListener("click", () => changeLanguage(selectedLanguage, languageButtonElement))
-})
+  const localizationService = new LocalizationService();
 
-  const changeLanguage = (selectedLanguage, selectedLanguageButton) => {
-    languageButtons.forEach(langButton => langButton.classList.remove("languageButton--selected"));
-    selectedLanguageButton.classList.toggle("languageButton--selected");
-
-    localStorage.setItem("lang", selectedLanguage);
-    const itemsToTranslate = document.querySelectorAll("[data-translationkey]");
-    itemsToTranslate?.forEach(translatedElement => {
-      const translationKey = translatedElement.getAttribute("data-translationkey");
-
-      try {
-        translatedElement.textContent = localizedStrings[translationKey][selectedLanguage]
-      }
-      catch(err) {
-        console.log("The passed translation key was not found in the dictionary");
-        console.log(err);
-      }
-    })
-  }
-
-  const activeLanguage = document.querySelector(`.languageButton[data-lang="${localStorage.getItem("lang") || "da"}"]`);
-  changeLanguage(localStorage.getItem("lang") || "da", activeLanguage);
+  localizationService.bindLanguageButtons();
 
 </script>
 
