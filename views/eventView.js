@@ -40,6 +40,8 @@ export class EventView {
         eventImage.src = `/moseholm/images/events/${eventItem.eventImageName}`;
         flexItem.appendChild(eventImage);
 
+        const dateRelatedItem = createElement("div", ["event-date-container"], null);
+        flexItem.appendChild(dateRelatedItem);
         const eventDate = createElement("p", ["event-item-date"], null);
         eventDate.setAttribute("itemprop", "startDate");
         const eventDateIcon = createElement("i", ["far", "fa-calendar"], null);
@@ -48,7 +50,13 @@ export class EventView {
         eventDateText.textContent = formatDate(eventItem.eventDate, true);
         eventDate.appendChild(eventDateText);
 
-        flexItem.appendChild(eventDate);
+        dateRelatedItem.appendChild(eventDate);
+
+        if (eventItem.eventNotice) {
+          const eventNotice = createElement("p", ["event-item-notice"], null);
+          eventNotice.textContent = eventItem.eventNotice;
+          dateRelatedItem.appendChild(eventNotice);
+        }
 
         const eventTitle = createElement("h3", ["event-item-title"], null);
         eventTitle.setAttribute("itemprop", "name");

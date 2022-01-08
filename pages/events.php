@@ -27,10 +27,11 @@
                             Giv familien en rigtig landoplevelse
                         </h2>
                         <p class="page-feature-teaser">
-                            Bag et brød af mel, I selv har malet.
-                            Rør smør af mælk, I selv har malket.
+                            Du og familien kan altid <strong>kæle med gårdens dyr</strong> og komme med ud at
+                            <strong>fodre</strong>.
                             <br>
-                            Giv hele familien en autentisk landoplevelse.
+                            <br>
+                            Vi har derudover løbende <strong>særlige events</strong>:
                         </p>
                     </div>
 

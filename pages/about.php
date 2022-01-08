@@ -59,8 +59,9 @@
                                         Hvis planter fylder mere i vores kost.
                                     </li>
                                 </ul>
-                                <h4>Vores mission</h4>
                                 <br>
+                                <h4>Vores mission</h4>
+
                                 <p>
                                     Formidlingen af det skønne ved vores stolte traditioner, respekten for gårdens dyr
                                     og fordybelse er en vigtig del af vores mission om at sprede kendskabet til

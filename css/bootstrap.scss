@@ -21,6 +21,7 @@ $custom-brown: #cecbab;
 $custom-gray: #bfbfbf;
 $custom-gray--lighten: #eee;
 $custom-gray--darken: #b3b3b3;
+$customWhite: #fcfcfc;
 
 $font-family: "Open Sans", sans-serif;
 $header-font: "Josefin Sans", sans-serif;
@@ -36,6 +37,7 @@ $custom-colors: (
   "primary": $customPrimary,
   "secondary": $customSecondary,
   "light": $customLight,
+  "white": $customWhite,
 );
 
 $headerHeight--mobile: 90px;
