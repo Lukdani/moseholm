@@ -60,6 +60,52 @@ export class GameView {
     gamePanel.style["visibility"] = "visible";
   }
 
+  displayRunningTroll = () => {
+    let direction = "right";
+    const prevGoblin = document.getElementById("eggGame-goblin");
+    if (prevGoblin) prevGoblin.remove();
+
+    const goblinImage = createElement("img", ["eggGame-goblin"], "eggGame-goblin");
+    this.rootElement.appendChild(goblinImage);
+    goblinImage.src = "/moseholm/images/skovnisse.png";
+    let prevLeft = Math.floor(Math.random() * this.rootElement.clientWidth);
+    let prevTop = Math.floor(Math.random() * this.rootElement.clientHeight);
+    goblinImage.style.left = `${prevLeft}px`;
+    goblinImage.style.top = `${prevTop}px`;
+
+    const runningAnimation = () => {
+      if ((prevLeft + goblinImage.clientWidth)  >= this.rootElement.clientWidth || prevLeft <= 0) {
+        direction = direction === "right" ? "left" : "right";
+        prevLeft = 0;
+        if (direction === "right") {
+          goblinImage.style.right = "unset";
+        }
+        else if (direction ==="left") {
+          goblinImage.style.left = "unset";
+        }
+        goblinImage.style.transform = `rotateY(${direction === "right" ?  "0deg" : "180deg"})`
+      }
+      if (prevTop >= this.rootElement.clientHeight || prevTop <= 0) {
+        prevTop = Math.floor(Math.random() * this.rootElement.clientHeight)
+      }
+      prevLeft = (prevLeft + 40);
+      prevTop  = Math.random(0, 1) > .5 ?prevTop +5 : prevTop - 5;
+      direction === "right" ?  goblinImage.style.left = `${prevLeft}px` :  goblinImage.style.right = `${prevLeft}px` 
+   
+      goblinImage.style.top = `${prevTop}px`;
+      goblinImage.style.opacity = Math.random(0,1);
+    }
+
+    const animationInterval = setInterval(runningAnimation, 75);
+
+    setTimeout(() => {
+      clearInterval(animationInterval)
+      const prevGoblin = document.getElementById("eggGame-goblin");
+      if (prevGoblin) prevGoblin.remove();
+    }, 1500);
+
+  }
+
   handleClickIconButton = (iconItem, callBack) => {
     callBack(iconItem);
   }

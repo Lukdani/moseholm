@@ -30,7 +30,7 @@
         <div id="pageContent">
 
             <div class="container-lg">
-                <div class="row section" id="shoppingCartRow">
+                <div class="row" id="shoppingCartRow">
 
                     <div class="col-12" id="shopping-cart-header">
                         <h2 class="page-feature-header">

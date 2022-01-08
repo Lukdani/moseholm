@@ -32,6 +32,11 @@ export class GameController {
     this.gameView.updateTriesLeft(this.gameModel.getTriesLeft());
     this.gameView.updateTargetsFound(this.gameModel.getTargetsFound());
 
+    if (icon.split("-")[0] !== this.gameModel.state.target) {
+      this.gameView.displayRunningTroll();
+    }
+
+
     if (this.gameModel.gameWon()) {
       this.gameView.displayGameWon();
       this.gameView.disableIconButtons();

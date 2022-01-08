@@ -205,13 +205,21 @@
 
                 <div class="container-lg">
                     <div class="row ">
-                        <h1 class="section-header">Hjælp Moster Oda!</h1>
+
                         <div class="col-12 offset-lg-2 col-lg-8 eggGame-teaser">
-                            <p>Den frække skovisse er igang med at skjule Moster Odas 3 æg.
-                                <br>
-                                Hjælp Moster Oda med at få æggene tilbage, så hun kan bage!
-                            </p>
-                            <a class="btn btn-secondary mt-2" href="/moseholm/pages/eggGame.php">Jeg er klar!</a>
+                            <span>
+                                <h1 class="section-header">Hjælp Moster Oda!</h1>
+                                <div class="eggGame-teaser-textContainer">
+                                    <img height="100" src="/moseholm/images/skovnisse.png"
+                                        alt="Den frække skovnissen som har stjålet Moster Odas æg">
+
+                                    <p>Den frække skovisse er igang med at skjule Moster Odas 3 æg.
+                                        <br>
+                                        Hjælp Moster Oda med at få æggene tilbage, så hun kan bage!
+                                    </p>
+                                </div>
+                                <a class="btn btn-secondary mt-2" href="/moseholm/pages/eggGame.php">Jeg er klar!</a>
+                            </span>
                         </div>
                     </div>
                 </div>

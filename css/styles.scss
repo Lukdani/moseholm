@@ -485,6 +485,11 @@ header.heroContainer video {
 
 // UTIL;
 
+.td-fitContent {
+  white-space: nowrap;
+}
+
+
 .navbar-spacer {
   padding-top: calc(#{$headerHeight--mobile} );
   margin-top: calc((-#{$headerHeight--mobile}));
@@ -639,6 +644,34 @@ header.heroContainer video {
 
 .eggGame-teaser {
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+.eggGame-teaser-textContainer {
+  position:relative;
+  img {
+    height: 150px;
+    margin: auto;
+    margin-bottom: 1rem;
+
+    @media (min-width: 992px) {
+      position: absolute;
+      transform: translate(-100%, -50%);
+      padding-right: 1rem;
+      top: 50%;
+      left: 0;
+      margin-bottom: 0rem;
+    }
+  }
+}
+  @media (min-width: 992px) {
+    flex-direction: row;  
+  }
+  h3 {
+    text-align: center;
+  }
+
 }
 
 //CATEGORY-OVERVIEW
@@ -978,6 +1011,19 @@ header.heroContainer video {
 }
 
 // SHOPPING CART
+
+.product-summary-table td, .product-summary-table th  {
+  border-bottom: 0;
+}
+.product-summary-table tbody, .product-summary-table tfoot{
+border: 0 !important; 
+vertical-align: middle;
+}
+
+.product-summary-table thead, .product-summary-table tfoot{
+
+  }
+
 .product-amount-button {
   width: 24px;
   height: 24px;
@@ -991,12 +1037,22 @@ header.heroContainer video {
     margin-right: 0.5rem;
   }
   background-color: $custom-gray;
+  font-size: 1.5rem;
+  color: $customLight;
+  &:hover {
+    color: $customLight;
+  }
 }
 .product-amount-increase {
   @media (min-width: 992px) {
     margin-left: 0.5rem;
   }
   background-color: $customPrimary;
+  font-size: 1.5rem;
+  color: $customLight;
+  &:hover {
+    color: $customLight;
+  }
 }
 .product-summary {
   background-color: #fff;
@@ -1005,7 +1061,12 @@ header.heroContainer video {
 
 .product-amount-tag {
   display: inline-block;
-  width: 40px;
+  font-size: .8rem;
+  width: 30px;
+  @media (min-width: 992px) {
+    width: 40px;
+    font-size: 1rem;
+  }
 }
 .product-summary-table {
   td {
@@ -1033,46 +1094,50 @@ header.heroContainer video {
   }
 
   td:nth-child(1) {
-    width: 30%;
+
   }
   td:nth-child(2):not(:last-of-type) {
-    width: 20%;
-    text-align: center;
-    display: flex;
 
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+   vertical-align: middle;
     @media (min-width: 992px) {
       font-size: 0.9rem;
       flex-direction: row;
     }
   }
   td:nth-child(2):last-of-type {
-    width: 10%;
+
     text-align: right;
   }
   td:nth-child(3) {
-    width: 15%;
+
     text-align: right;
   }
   td:nth-child(4) {
-    width: 15%;
+ 
     text-align: right;
   }
 
-  tr:last-of-type td {
+  tfoot tr:last-of-type td {
     border-bottom: 0;
-    span {
-      display: block;
-      font-weight: bold;
-      border-bottom: 1px solid grey;
-      &::after {
-        content: "";
-        display: block;
-        border-bottom: 1px solid grey;
-      }
-    }
+    font-weight: bold;
+  }
+}
+
+.product-summary-productImage {
+display: none;
+  @media (min-width: 992px) {
+    width: 100px;
+    display: inline-block;
+    font-size: 0.9rem;
+    flex-direction: row;
+    margin-right: 1rem;
+  }
+}
+
+.product-summary-buttons {
+  text-align: right;
+  .btn:not(:last-of-type) {
+    margin-right: .5rem;
   }
 }
 
@@ -1201,6 +1266,14 @@ header.heroContainer video {
   position:relative;
 
 }
+
+#eggGame-goblin {
+  position: absolute;
+  height: 120px;
+  z-index: 1000;
+  transition: all .25s ease;
+}
+
 #eggGame-instructions {
 }
 

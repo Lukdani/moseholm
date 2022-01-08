@@ -1,8 +1,8 @@
 export class WindowResizeHandler {
-    constructor(onResize, initialCallOnResize = false) {
+    constructor(onResize, initiallyCallOnResize = false) {
         this.isMobile = this.checkForMobile();
         this.onResize = onResize;
-        if (initialCallOnResize) {
+        if (initiallyCallOnResize) {
             this.onResize(this.isMobile);
         }
         window.addEventListener("resize", this.handleResize);
@@ -12,7 +12,6 @@ export class WindowResizeHandler {
 
     handleResize = () => {
         const isNowMobile = this.checkForMobile();
-        console.log(isNowMobile);
 
         if (this.isMobile !== isNowMobile) {
             this.isMobile = isNowMobile;

@@ -81,13 +81,24 @@ export class ShoppingCartView {
         summaryTableBody.appendChild(productRow);
 
         const productName = createElement("td");
-        productName.textContent = !restrictedView
+
+        if (!restrictedView) {
+          const productImage = createElement("img", ["product-summary-productImage"], null);
+          productName.appendChild(productImage);
+          productImage.src = `/moseholm/images/products/${productLine.product.prodImageName}`;
+
+        }
+        const productNameText = createElement("span", null, null);
+        productNameText.textContent = !restrictedView
           ? productLine.product.prodTitle
           : `${productLine.product.prodTitle} (${productLine.count})`;
+          productName.appendChild(productNameText);
         productRow.appendChild(productName);
 
         if (!restrictedView) {
-          const productAmount = createElement("td");
+  
+
+          const productAmount = createElement("td", ["text-center", "td-fitContent", "td-fitContent--autoWidth"]);
 
           const productAmountDecrease = createElement(
             "button",
@@ -127,24 +138,28 @@ export class ShoppingCartView {
 
           productRow.appendChild(productAmount);
 
-          const productPrice = createElement("td");
+          const productPrice = createElement("td", ["td-fitContent"]);
           productPrice.textContent = formatCurrency(
             productLine.product.prodPrice,
             "kr."
           );
           productRow.appendChild(productPrice);
         }
-        const productTotalPrice = createElement("td");
+        const productTotalPrice = createElement("td", ["td-fitContent"]);
         productTotalPrice.textContent = formatCurrency(
           productLine.product.prodPrice * productLine.count,
           "kr."
         );
         productRow.appendChild(productTotalPrice);
       });
-      const summaryRow = createElement("tr");
-      summaryTableBody.appendChild(summaryRow);
 
-      const productName = createElement("td");
+      const summaryFooter = createElement("tfoot");
+      summaryTable.appendChild(summaryFooter);
+
+      const summaryRow = createElement("tr");
+      summaryFooter.appendChild(summaryRow);
+
+      const productName = createElement("td",);
       productName.textContent = "";
       summaryRow.appendChild(productName);
 
@@ -157,7 +172,7 @@ export class ShoppingCartView {
         productPrice.textContent = "";
         summaryRow.appendChild(productPrice);
       }
-      const productTotalPrice = createElement("td");
+      const productTotalPrice = createElement("td",  ["td-fitContent"]);
       const productPriceSpan = createElement("span");
       productPriceSpan.textContent = formatCurrency(totalPrice, "kr.");
       productTotalPrice.appendChild(productPriceSpan);
@@ -165,13 +180,15 @@ export class ShoppingCartView {
       summaryRow.appendChild(productTotalPrice);
 
       if (!restrictedView) {
+        const buttonsContainer = createElement("div", ["product-summary-buttons"], null);
+        productSummaryContainer.appendChild(buttonsContainer);
         const clearCartButton = createElement(
           "button",
           ["btn", "btn-secondary", "mt-2"],
           "clearCartButton"
         );
         clearCartButton.textContent = "Tøm kurv";
-        productSummaryContainer.appendChild(clearCartButton);
+        buttonsContainer.appendChild(clearCartButton);
 
         const checkOutButton = createElement(
           "button",
@@ -179,7 +196,7 @@ export class ShoppingCartView {
           "checkOutButton"
         );
         checkOutButton.textContent = "Gå til betaling";
-        productSummaryContainer.appendChild(checkOutButton);
+        buttonsContainer.appendChild(checkOutButton);
       }
     } else if (!Object.values(productLines)?.length) {
       const noItemsContainer = createElement(
