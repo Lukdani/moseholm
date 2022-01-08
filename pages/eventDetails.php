@@ -47,12 +47,12 @@
                         </div>
 
                         <div class="row">
-                            <h3 class="mb-2 text-secondary">Fortæl, hvad du synes</h3>
+                            <h3 class="mb-2 text-secondary mt-4 ">Fortæl, hvad du synes</h3>
                             <div class="col-12 col-lg-4">
 
                                 <form id="eventDetails-commentForm">
                                     <div class="form-group mb-2">
-                                        <label for="commentAuthor">Dit navn</label>
+                                        <label for="eventDetails-commentAuthor">Dit navn</label>
                                         <input name="ecomAuthor" type="text" required class="form-control"
                                             id="eventDetails-commentForm-author" placeholder="Indtast dit navn">
                                     </div>

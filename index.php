@@ -213,7 +213,7 @@
                                     <img height="100" src="/moseholm/images/skovnisse.png"
                                         alt="Den frække skovnissen som har stjålet Moster Odas æg">
 
-                                    <p>Den frække skovisse er igang med at skjule Moster Odas 3 æg.
+                                    <p>Den frække skovnisse er igang med at skjule Moster Odas 3 æg.
                                         <br>
                                         Hjælp Moster Oda med at få æggene tilbage, så hun kan bage!
                                     </p>
@@ -237,7 +237,6 @@
     </script>
     <script type="module" src="/moseholm/js/setShoppingCartCount.js">
     </script>
-    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 
     <script type="module">
     import {

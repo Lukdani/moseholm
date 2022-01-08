@@ -42,32 +42,32 @@
             <div class="col-auto">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" href="/moseholm/pages/products.php"
+                  <a data-translationkey="products" class="nav-link" href="/moseholm/pages/products.php"
                     >Produkter</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/moseholm/pages/events.php"
+                  <a data-translationkey="events" class="nav-link" href="/moseholm/pages/events.php"
                     >Events</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/moseholm/pages/animals.php"
+                  <a data-translationkey="ourAnimals" id="ourAnimals" class="nav-link" href="/moseholm/pages/animals.php"
                     >Vores dyr</a
                   >
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a data-translationkey="aboutMoseholm" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Om Moseholm
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="/moseholm/pages/about.php">Om Moseholm</a>
-                      <a class="dropdown-item" href="/moseholm/pages/about.php#butikken">Gårdbutikken</a>
-                      <a class="dropdown-item" href="/moseholm/pages/about.php#cafeen">Café og priser</a>
+                      <a data-translationkey="aboutMoseholm" class="dropdown-item" href="/moseholm/pages/about.php">Om Moseholm</a>
+                      <a data-translationkey="theStore"class="dropdown-item" href="/moseholm/pages/about.php#butikken">Gårdbutikken</a>
+                      <a data-translationkey="theCafe"class="dropdown-item" href="/moseholm/pages/about.php#cafeen">Café og priser</a>
                     </div>
                   </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/moseholm/pages/pracitalInfo.php"
+                  <a data-translationkey="practicalInfo" class="nav-link" href="/moseholm/pages/pracitalInfo.php"
                     >Praktisk info</a
                   >
                 </li>
@@ -80,6 +80,16 @@
                     ></i>
                   </a>
                 </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fas fa-globe"></i>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
+                    <button data-lang="en" class="dropdown-item languageButton" href="/moseholm/pages/about.php"><img src="/moseholm/images/localization/en.png" alt="English flag">English</button>
+                    <button data-lang="da" class="dropdown-item languageButton" href="/moseholm/pages/about.php"><img src="/moseholm/images/localization/da.png" alt="Dansk flag">Dansk</button>
+                    <button data-lang="de" class="dropdown-item languageButton" href="/moseholm/pages/about.php"><img src="/moseholm/images/localization/de.png" alt="Deutsch flag">Deutsch</button>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
@@ -88,7 +98,39 @@
     </div>
   </div>
 </nav>
+<script type="module">
+  import {localizedStrings} from "/moseholm/localization/localization.js"
+
+const languageButtons = document.querySelectorAll(".languageButton");
+
+languageButtons?.forEach(languageButtonElement => {
+  
+  const selectedLanguage = languageButtonElement.getAttribute("data-lang");
+  languageButtonElement.addEventListener("click", () => changeLanguage(selectedLanguage, languageButtonElement))
+})
+
+  const changeLanguage = (selectedLanguage, selectedLanguageButton) => {
+    languageButtons.forEach(langButton => langButton.classList.remove("languageButton--selected"));
+    selectedLanguageButton.classList.toggle("languageButton--selected");
+
+    localStorage.setItem("lang", selectedLanguage);
+    const itemsToTranslate = document.querySelectorAll("[data-translationkey]");
+    itemsToTranslate?.forEach(translatedElement => {
+      const translationKey = translatedElement.getAttribute("data-translationkey");
+
+      try {
+        translatedElement.textContent = localizedStrings[translationKey][selectedLanguage]
+      }
+      catch(err) {
+        console.log("The passed translation key was not found in the dictionary");
+        console.log(err);
+      }
+    })
+  }
+
+  const activeLanguage = document.querySelector(`.languageButton[data-lang="${localStorage.getItem("lang") || "da"}"]`);
+  changeLanguage(localStorage.getItem("lang") || "da", activeLanguage);
+
+</script>
+
 <script src="/moseholm/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

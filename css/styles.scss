@@ -358,6 +358,19 @@ img {
   }
 }
 
+
+.languageButton {
+  display: flex;
+  align-items: center;
+  img {
+    height: 20px;
+    margin-right: .5rem;
+  }
+  &.languageButton--selected {
+    background-color: $customLight;
+  }
+}
+
 // PAGE
 
 #pageContainer {
