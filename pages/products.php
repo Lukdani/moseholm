@@ -42,6 +42,10 @@
                             <br>
                             Vi ønsker at bekæmpe <strong>madspil</strong>, så hos os finder du krumme agurker og
                             skæve løg.
+                            <br>
+                            <br>
+                            Vores produkter kan købes i <strong>webshoppen</strong> eller <strong>fysisk</strong> i
+                            vores hyggelige gårdbutik.
                         </p>
                     </div>
 

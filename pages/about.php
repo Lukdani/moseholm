@@ -84,7 +84,7 @@
                                     Gårdbutikken har eksisteret siden 1962.
                                     <br>
                                     <br>
-                                    Den har altid fungeret som
+                                    Gårdbutikken har altid fungeret som
                                     udstillingsvindue for de
                                     skønne produkter, man kan skabe uden brug af pesticider, kunstig foder og
                                     manglende
@@ -104,58 +104,39 @@
                         </div>
                     </div>
                 </div>
-                <div id="cafeen" class="row mb-4 navbar-spacer">
-                    <div class="col-12">
-                        <h3 class="about-header"><i class="fas fa-coffee"></i> Caféen</h3>
-                        <div class="about-content about-content--cafe">
-                            <div class="about-content-text">
-                                <h4>Caféens historie</h4>
-                                <p>
-                                    Siden 2012 har vi haft en café på gården, som har åbent hver dag.
-                                    <br>
-                                    I caféen kan man smage mange af de produkter, vi sælger i gårdbutiken.
-                                    <br>
-                                    <br>
-                                    Derudover har vi følgende faste sortiment:
-                                </p>
-                                <br>
-                                <h4>Priser</h4>
 
-                                <table>
-                                    <tbody>
-                                        <tr>
-                                            <td>Filterkaffe</td>
-                                            <td>30 kr.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cafe Latte
-                                                <br>
-                                                <span class="text-muted">(Få også med havremælk)</span>
-                                            </td>
-                                            <td>50 kr.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Urte-te</td>
-                                            <td>25 kr.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Hjemmelavet æblekage</td>
-                                            <td>40 kr.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Dagens kage</td>
-                                            <td>40 kr.</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                <div id="animals" class="row mb-4 navbar-spacer">
+                    <div class="col-12">
+                        <h3 class="about-header about-header--alt"><i class="fas fa-paw"></i> Vores dyr</h3>
+                        <div class="about-content about-content--animals">
+                            <div class="about-content-text">
+                                <p class="mb-4 text-center">
+                                    Vi har flere dyr på gården, end vi kan vise her på siden.
+                                    <br>
+                                    Men nedenfor for kan du se et udsnit af vores dyr, som altid elsker at få besøg.
+                                    <br>
+                                    De mindste kan endda give dyrene en virtuel godbid.
+                                    <br>
+                                    <br>
+                                    Både Alf, Jytte, Helge og Simone er på gården og kan besøges.
+                                </p>
+                            </div>
+                            <div class="row g-3 mt-2" id="animalsContainer">
 
                             </div>
+
                         </div>
+
+
+
+
                     </div>
                 </div>
             </div>
         </div>
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
+    </div>
+    </div>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
     </div>
     <script type="module" src="/moseholm/js/setShoppingCartCount.js">
     </script>
@@ -165,6 +146,83 @@
         headerItem.style["margin-top"] =
             `-${headerItem.offsetHeight /2 }px`; // Needed to compensate for transform:translateY - Lukas 05/01/21
     })
+    </script>
+    <script type="module">
+    import {
+        createElement
+    } from "/moseholm/utils/createElement.js";
+    import {
+        WindowResizeHandler
+    } from "/moseholm/utils/WindowResizeHandler.js"
+
+    const animalsRoot = document.getElementById("animalsContainer");
+
+    const animals = [{
+            name: "Alf",
+            imageName: "alf",
+            soundName: "alf",
+            description: "Alf er vores søde lille lam, som blev født den 12. august 2021. <br> Alf er meget kontaktsøgende, men når han er søvnig, vil han kun have sin mor.",
+        },
+        {
+            name: "Jytte",
+            imageName: "pig",
+            soundName: "jytte",
+            description: "Jytte elsker børn, og hun elsker især at blive fodret af børn. Hendes livret er økologiske gulerødder eller enhver anden form for mad.",
+        },
+        {
+            name: "Helge",
+            imageName: "hen",
+            soundName: "helge",
+            description: "Helge leder altid efter nye venner. <br> Han kan hoppe højt og har altid en god historie.",
+        },
+        {
+            name: "Simone",
+            imageName: "cow",
+            soundName: "cow",
+            description: "Simone er meget nysgerrig og byder altid gæsterne velkommen. Hun har boet på Moseholm i 6 år.",
+        }
+    ]
+
+    const renderAnimals = (isMobile) => {
+        animalsRoot.innerHTML = "";
+        animals.forEach(animalItem => {
+            const animalContainer = createElement("div", ["col-12", "col-lg-6"], null);
+
+            animalsRoot.appendChild(animalContainer);
+            const animalElement = createElement("div", ["animal-item"], null);
+
+            animalElement.style["background-image"] =
+                `url(/moseholm/images/animals/${animalItem.imageName}.png)`;
+
+            animalContainer.appendChild(animalElement);
+            animalElement.style["height"] = `${animalElement.offsetWidth / 900 * 600}px`;
+
+            const animalName = createElement("h4", ["animal-item-name"], null);
+            animalName.textContent = animalItem.name;
+            animalElement.appendChild(animalName);
+
+            const animalButton = createElement("button", ["animal-item-button", "btn", "btn-primary"],
+                null);
+            animalButton.setAttribute("data-animal", animalItem.name);
+            animalButton.title = `Giv en virtuel godbid til ${animalItem.name}`;
+            const animalButtonIcon = createElement("i", ["fas", "fa-bone"], null);
+            animalButton.appendChild(animalButtonIcon);
+            animalButton.addEventListener("click", () => handleFeedButton(animalItem.soundName));
+            animalElement.appendChild(animalButton);
+
+            const animalDescription = createElement("p", ["animal-item-description"], null);
+            animalDescription.innerHTML = animalItem.description;
+            animalElement.appendChild(animalDescription);
+            if (isMobile) {
+                animalElement.style["margin-bottom"] = `${animalDescription.offsetHeight}px`;
+            }
+        })
+    }
+
+    const handleFeedButton = (soundName) => {
+        new Audio(`/moseholm/sounds/${soundName.toLowerCase()}.m4a`).play();
+    }
+    const windowResizeHandler = new WindowResizeHandler(renderAnimals, true);
     </script>
 </body>
 

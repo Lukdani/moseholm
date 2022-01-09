@@ -213,8 +213,20 @@ img {
     background-color: $custom-gray--darken;
   }
 }
+
 .btn:hover {
   transform: scale(1.05);
+}
+
+.dropdown-menu {
+  border-radius: 0;
+    border: 0;
+    padding: 0.5rem;
+    i {
+      margin-right: 1rem;
+      color: $customPrimary;
+      font-size: .9rem;
+    }
 }
 
 .shopping-cart-buy-button:hover i {
@@ -235,6 +247,8 @@ img {
   color: $customSecondary;
   font-weight: 500;
 }
+
+
 
 // NAVBAR
 
@@ -507,6 +521,13 @@ header.heroContainer video {
 }
 
 // UTIL;
+
+a.hyperlink {
+  color: $customSecondary !important;
+  &.hyperlink--light {
+    color: $customPrimary !important;
+  }
+}
 
 .td-fitContent {
   white-space: nowrap;
@@ -1379,6 +1400,13 @@ display: none;
 
 .about-header {
   background-color: $custom-brown;
+  &.about-header--alt {
+    background-color: $customPrimary !important;
+    color: $customLight;
+    i {
+      color: $customLight;
+    }
+  }
   display: inline-block;
   transform: translate(1rem, 50%);
   padding: .5rem;
@@ -1393,7 +1421,11 @@ display: none;
 }
 
 .about-content {
-  background-color: lightgray;
+  background-color: $custom-brown;
+  &.about-content--animals {
+    /*background-image: url("/moseholm/images/cafe.png");*/
+ 
+  }
   padding: 1rem;
   padding-top: 2rem;
   background-size: cover;
@@ -1419,7 +1451,6 @@ display: none;
 .about-content--store {
   background-image: url("/moseholm/images/store.png");
 }
-
 
 .about-content--cafe {
   background-image: url("/moseholm/images/cafe.png");
