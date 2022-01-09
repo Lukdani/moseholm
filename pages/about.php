@@ -44,7 +44,9 @@
                             <div class="about-content-text">
                                 <h4>Bæredygtige traditioner</h4>
                                 <p>
-                                    Hos Moseholm tror vi på, at vi kan dyrke de gamle traditioner på en bæredygtig
+                                    Moseholm har siden sin stiftelse i 1968 været drevet på en overbevisning om, at vi
+                                    kan
+                                    dyrke de gamle traditioner på en bæredygtig
                                     måde.
                                     <br>
                                     <br>

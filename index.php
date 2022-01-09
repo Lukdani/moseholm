@@ -223,8 +223,8 @@
                                     <p data-translationkey="naughtyGoblin">Den frække skovnisse er igang med at skjule
                                         Moster Odas 3 æg.
                                     </p>
-                                    </p data-translationkey="helpReturnEggs">
-                                    Hjælp Moster Oda med at få æggene tilbage, så hun kan bage!
+                                    <p data-translationkey="helpReturnEggs">
+                                        Hjælp Moster Oda med at få æggene tilbage, så hun kan bage!
                                     </p>
                                 </div>
                                 <a data-translationkey="imReady" class="btn btn-secondary mt-2"

@@ -1,4 +1,4 @@
-import { localizedStrings } from "../localization/localization.js";
+import { localizedStrings } from "/moseholm/localization/localization.js";
 
 export class LocalizationService {
     constructor() {
