@@ -41,6 +41,14 @@
                 </div>
                 <div class="row g-2" id="faqContainer">
                 </div>
+                <div class="row mt-5">
+                    <h3 class="text-secondary">Find os her:</h3>
+                    <div class=" col-12 col-lg-6">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2270.1235168650023!2d11.635662415913858!3d55.320929180440025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652983b9e69bdab%3A0x6ff71ef7900062db!2sGunderslevvej%202%2C%204250%20Fuglebjerg!5e0!3m2!1sda!2sdk!4v1641759947354!5m2!1sda!2sdk"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
             </div>
         </div>
 
