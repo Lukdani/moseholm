@@ -145,6 +145,7 @@ export class ShoppingCartController {
       products: Object.values(
         this.shoppingCartModel.state.products
       ).map((x) => ({ product: x.product, quantity: x.count })),
+      customer: this.shoppingCartModel.state.customer,
     });
     if (response) {
       const order = await fetchJsonApi(
