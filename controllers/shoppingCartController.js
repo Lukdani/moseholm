@@ -58,6 +58,7 @@ export class ShoppingCartController {
     }
   };
 
+  // METHOD TO HANDLE INCREASE OR DECREASE OF PRODUCTS;
   handleProductAmountChanged = (type, productId) => {
     if (type === "decrease") {
       const newAmount = this.shoppingCartModel.updateProductAmount(
@@ -76,6 +77,7 @@ export class ShoppingCartController {
     this.generateCartSummary();
   };
 
+  // METHOD TO RETRIEVE CACHED SHOPPING CART;
   getShoppingCartFromCache = () => {
     const items = localStorage.getItem("shoppingCart");
     let parsedItems = null;
@@ -92,6 +94,7 @@ export class ShoppingCartController {
     }
   };
 
+  // METHOD TO CACHE CART;
   cacheShoppingCart = () => {
     const items = this.shoppingCartModel.getProducts();
     if (items != null) {
@@ -107,6 +110,7 @@ export class ShoppingCartController {
     }
   };
 
+  // METHODS TO HANDLE ADDING OF PRODUCTS TO CART;
   updateShoppingCart = (product) => {
     this.getShoppingCartFromCache();
     if (product) {
@@ -135,12 +139,12 @@ export class ShoppingCartController {
     this.shoppingCartView.bindBuyButtons(this.addToCart);
   };
 
+  // METHOD TO CALL API ETC. WHEN ORDER IS BEING COMPLETED;
   completeOrder = async () => {
     const response = await postRequest("/moseholm/api/postOrder.php", {
       products: Object.values(
         this.shoppingCartModel.state.products
       ).map((x) => ({ product: x.product, quantity: x.count })),
-      customer: this.shoppingCartModel.state.customer,
     });
     if (response) {
       const order = await fetchJsonApi(
@@ -150,11 +154,11 @@ export class ShoppingCartController {
         this.shoppingCartView.generateOrderConfirmation(order);
         this.clearCart();
       }
-      console.log(order);
     }
     console.log(response);
   };
 
+  // METHOD TO CLEAR CART;
   clearCart = () => {
     this.shoppingCartModel.emptyCart();
     this.cacheShoppingCart();

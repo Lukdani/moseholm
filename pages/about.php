@@ -8,7 +8,8 @@
     <meta name="robots" content="index,follow" />
     <meta name="author" content="Udgiver" />
     <meta name="copyright" content="Information om copyright" />
-    <?php include  $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/dependencies.html" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] .
+      "/moseholm/includes/dependencies.html"; ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Oplysninger om Moseholms gårdbutik og cafe samt priser" />
@@ -24,7 +25,8 @@
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/navbar.html" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] .
+      "/moseholm/includes/navbar.html"; ?>
     <div id="pageContainer">
 
         <div id="pageContent">
@@ -136,7 +138,8 @@
         </div>
     </div>
     </div>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] .
+      "/moseholm/includes/footer.html"; ?>
     </div>
     <script type="module" src="/moseholm/js/setShoppingCartCount.js">
     </script>
@@ -144,7 +147,7 @@
     const headers = document.querySelectorAll(".about-header");
     headers?.forEach(headerItem => {
         headerItem.style["margin-top"] =
-            `-${headerItem.offsetHeight /2 }px`; // Needed to compensate for transform:translateY - Lukas 05/01/21
+            `-${headerItem.offsetHeight /2 }px`; // Needed to compensate for transform:translateY;
     })
     </script>
     <script type="module">

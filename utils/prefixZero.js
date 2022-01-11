@@ -1,5 +1,5 @@
 export const prefixZero = (item) => {
-  // Jeg wrapper i try/catch, fordi parsing til string måske vil fejle;
+  // Wrapping in try/catch since the parsing of the string might fail;
   try {
     const parstedString = item.toString();
     if (parstedString && parstedString.length < 2) {

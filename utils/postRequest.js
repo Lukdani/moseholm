@@ -7,6 +7,9 @@ export const postRequest = async (url = "", data = {}) => {
       },
       body: JSON.stringify(data),
     });
+
+    // This response is a promise and must be awaited;
+    // Consider to just await the result before returning;
     return response.json();
   }
 };

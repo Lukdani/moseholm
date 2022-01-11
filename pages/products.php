@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
 
-    <title>Moseholm - økologisk gårdbutik</title>
+    <title>Moseholm - Økologisk gårdbutik</title>
 
     <!--META -->
     <meta name="robots" content="All" />
@@ -19,8 +19,6 @@
     <meta property="og:description" content="Oversigt over produkter, som sælges i Moseholms gårdbutik" />
     <?php include $_SERVER['DOCUMENT_ROOT'] .
       "/moseholm/includes/dependencies.html"; ?>
-
-
 </head>
 
 <body>
@@ -31,7 +29,7 @@
 
             <div class="container-lg">
                 <div class="row">
-                    <div class="col-10 offset-lg-2">
+                    <div class="col-12 col-lg-10 offset-lg-2">
                         <h2 class="page-feature-header">
                             Økologisk og lokalt
 
@@ -68,7 +66,6 @@
     </div>
 
     <script type="module" src="/moseholm/js/products.js"></script>
-
 </body>
 
 </html>

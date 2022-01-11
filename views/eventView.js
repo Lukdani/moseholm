@@ -1,3 +1,5 @@
+// Class to handle rendering of event view;
+
 import { createElement } from "../utils/createElement.js";
 import { formatCurrency } from "../utils/formatCurrency.js";
 import { formatDate } from "../utils/formatDate.js";
@@ -11,13 +13,13 @@ export class EventView {
   }
 
   renderEvents = (events, limitiedLoad) => {
+    // If limitiedLoad is true, the events should be added to the view rather than replacing the current view;
     if (!limitiedLoad) {
       this.clearEvents();
     }
 
     if (events?.length > 0) {
       events.forEach((eventItem) => {
-        console.log(eventItem);
         const eventContainer = createElement(
           "div",
           ["col-12", `col-lg-${this.widthOnLarge}`, "event-container"],
@@ -40,7 +42,11 @@ export class EventView {
         eventImage.src = `/moseholm/images/events/${eventItem.eventImageName}`;
         flexItem.appendChild(eventImage);
 
-        const dateRelatedItem = createElement("div", ["event-date-container"], null);
+        const dateRelatedItem = createElement(
+          "div",
+          ["event-date-container"],
+          null
+        );
         flexItem.appendChild(dateRelatedItem);
         const eventDate = createElement("p", ["event-item-date"], null);
         eventDate.setAttribute("itemprop", "startDate");
@@ -171,6 +177,7 @@ export class EventView {
       callback(event.currentTarget.getAttribute("data-orderby"));
     }
   };
+
   bindOrderByButton = (callback) => {
     const orderByButtons = document.querySelectorAll(".order-by-button");
     orderByButtons?.forEach((orderByButtonItem) => {

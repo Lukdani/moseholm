@@ -16,13 +16,18 @@
     <div id="pageContainer">
 
         <div id="pageContent">
-            <div class="container-lg">
+            <div class="container-lg four0four-container">
                 <div class="col-12 text-center">
-                    <h2 class="section-header pb-0">
+                    <h3 class="section-header pb-0 text-center">
+                        404<br>
                         Siden blev ikke fundet
-                    </h2>
-                    <img width="200" src="/moseholm/images/animals/hen.png" alt="Billede af høne" style="margin:auto;">
-                    <a href="/moseholm/index.php" class="btn btn-primary">Tilbage til forsiden</a>
+                    </h3>
+                    <div class="four0four-img-container">
+                        <img class="four0four-img" src="/moseholm/images/404.png" alt="Billede af skovnisse">
+                        <img class="four0four-img" src="/moseholm/images/404.png" alt="Billede af skovnisse">
+                    </div>
+                    <p>De frække skovnisser kunne desværre ikke finde siden</p>
+                    <a href="/moseholm/index.php" class="btn btn-primary mt-4">Tilbage til forsiden</a>
                 </div>
             </div>
         </div>

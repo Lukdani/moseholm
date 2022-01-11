@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
 
-    <title data-translationkey="titleFrontPage">Moseholm - økologisk gårdbutik</title>
+    <title data-translationkey="titleFrontPage">Moseholm - Økologisk gårdbutik</title>
 
     <!--META -->
     <meta name="author" content="Udgiver" />

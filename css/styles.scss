@@ -1540,3 +1540,27 @@ display: none;
       }
     }
 }
+
+.four0four-container {
+  h3 {
+    font-size:1.5rem
+  }
+}
+
+.four0four-img-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 1.25rem 0;
+}
+.four0four-img {
+  display: inline-block;
+  margin-right: 2rem;
+  height: 200px;
+  &:nth-child(2) {
+    height: 120px;
+    margin-right: 0;
+    margin-left: 2rem;
+    transform: rotateY(180deg);
+  }
+}

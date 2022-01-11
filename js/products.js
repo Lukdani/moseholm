@@ -6,6 +6,6 @@ const categoryRoot = document.getElementById("categoriesContainer");
 const productsRoot = document.getElementById("productsContainer");
 
 const productsModel = new ProductModel();
-const productsView = new ProductsView(categoryRoot, productsRoot)
+const productsView = new ProductsView(categoryRoot, productsRoot);
 
 const productsController = new ProductController(productsModel, productsView);

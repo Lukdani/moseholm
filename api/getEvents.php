@@ -31,6 +31,7 @@ if (isset($_GET["eventId"])) {
   $events[0]->eventComments = $eventComments;
 
   // Return the result;
+  header('HTTP/1.1 200 OK');
   echo json_encode($events);
 } else {
   $sql =
@@ -45,6 +46,7 @@ if (isset($_GET["eventId"])) {
     $sql .= " LIMIT " . $_GET["take"] . " OFFSET " . $_GET["skip"];
   }
   $events = $db->sql($sql);
+  header('HTTP/1.1 200 OK');
   echo json_encode($events);
 }
 

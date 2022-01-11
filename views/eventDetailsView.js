@@ -1,3 +1,5 @@
+// Class to handle render of the event detail page;
+
 import { createElement } from "../utils/createElement.js";
 import { formatCurrency } from "../utils/formatCurrency.js";
 import { formatDate } from "../utils/formatDate.js";
@@ -19,6 +21,7 @@ export class EventDetailsView {
       const eventElement = createElement("div", ["eventDetails-item"], null);
       eventContainer.appendChild(eventElement);
 
+      // IMAGE;
       const eventImage = createElement(
         "div",
         ["eventDetails-item-image"],
@@ -27,6 +30,7 @@ export class EventDetailsView {
       eventImage.style.backgroundImage = `url(/moseholm/images/events/${event.eventImageName})`;
       eventElement.appendChild(eventImage);
 
+      // DATE;
       const dateContainer = createElement(
         "div",
         ["eventDetails-item-details", "overlay", "overlay--primary"],
@@ -49,6 +53,8 @@ export class EventDetailsView {
       eventDateText.textContent = formatDate(event.eventDate, true);
       eventDate.appendChild(eventDateText);
       dateContainer.appendChild(eventDate);
+
+      // EVENT TITLE;
       const headerContainer = createElement(
         "div",
         ["eventDetails-item-header", "overlay", "overlay--primary"],
@@ -64,6 +70,7 @@ export class EventDetailsView {
       eventTitle.textContent = event.eventTitle;
       headerContainer.appendChild(eventTitle);
 
+      // EVENT DESCRIPTION;
       const detailsContainer = createElement(
         "div",
         ["eventDetails-item-details", "overlay", "overlay--primary"],
@@ -75,6 +82,7 @@ export class EventDetailsView {
       eventDescription.innerHTML = insertLineBreak(event.eventDescription);
       headerContainer.appendChild(eventDescription);
 
+      // EVENT PRICE;
       const eventPrice = createElement(
         "p",
         ["eventDetails-item-price", "overlay-text"],
@@ -83,6 +91,7 @@ export class EventDetailsView {
       eventPrice.textContent = `${formatCurrency(event.eventPrice)} kr.`;
       detailsContainer.appendChild(eventPrice);
 
+      // SIGN UP BUTTON;
       const enrollButton = createElement(
         "button",
         ["btn", "btn-primary"],
@@ -133,7 +142,11 @@ export class EventDetailsView {
         eventCommentAuthorPrefix.textContent = "Skrevet af ";
         eventCommentAuthor.appendChild(eventCommentAuthorPrefix);
 
-        const eventCommentAuthorName = createElement("span", ["eventComent-item-author-name"], null);
+        const eventCommentAuthorName = createElement(
+          "span",
+          ["eventComent-item-author-name"],
+          null
+        );
         eventCommentAuthorName.textContent = `${commentItem.ecomAuthor}`;
 
         eventCommentAuthor.appendChild(eventCommentAuthorName);
@@ -152,6 +165,7 @@ export class EventDetailsView {
     }
   };
 
+  // Method to clear the form to post comments;
   clearForm = () => {
     const nameInput = document.getElementById(
       "eventDetails-commentForm-author"
@@ -166,6 +180,7 @@ export class EventDetailsView {
   bindFormSubmit = (callback) => {
     const form = document.getElementById("eventDetails-commentForm");
     form.addEventListener("submit", (e) => {
+      // Preventing default to hinder page reload;
       e.preventDefault();
       callback(e);
     });
