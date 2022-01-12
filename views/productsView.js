@@ -7,7 +7,7 @@ export class ProductsView {
     this.productRoot = productRoot;
   }
 
-  renderCategories = (categories, selectedCategories) => {  
+  renderCategories = (categories, selectedCategories) => {
     this.clearCategories();
     if (categories?.length > 0) {
       categories.forEach((categoryItem) => {
@@ -78,6 +78,17 @@ export class ProductsView {
         productTitle.textContent = productItem.prodTitle;
         flexItemContainer.appendChild(productTitle);
 
+        if (productItem.prodWeight) {
+          const productWeight = createElement(
+            "p",
+            ["product-item-weight", "text-muted"],
+            null
+          );
+          productWeight.title = "Nettovægt";
+          productWeight.setAttribute("itemprop", "weight");
+          productWeight.textContent = `${productItem.prodWeight} gram`;
+          flexItemContainer.appendChild(productWeight);
+        }
         const productDescription = createElement("p", [
           "product-item-description",
           null,
@@ -87,24 +98,27 @@ export class ProductsView {
         flexItemContainer.appendChild(productDescription);
 
         const priceContainer = createElement("span", [
-          "product-item-priceContainer", "flexItem"
+          "product-item-priceContainer",
+          "flexItem",
         ]);
         priceContainer.setAttribute("itemprop", "Offer");
         priceContainer.setAttribute("itemscope", "");
         priceContainer.setAttribute("itemtype", "https://schema.org/Offer");
         productElement.appendChild(priceContainer);
 
-
-        const flexItem = createElement("span", ["flexItem"], null);
+        const flexItem = createElement(
+          "span",
+          ["flexItem", "flexItem--reverseInline"],
+          null
+        );
         priceContainer.appendChild(flexItem);
-        if (productItem.inStock === "0") {
+        if (productItem.prodInStock === "0") {
           const shopNotification = createElement("span", [
             "product-item-shopNotification",
           ]);
           shopNotification.textContent = "Ikke på lager";
           flexItem.appendChild(shopNotification);
         }
-      
 
         const productPrice = createElement("p", ["product-item-price", null]);
 
@@ -115,14 +129,14 @@ export class ProductsView {
         )} `;
         productPrice.appendChild(productPriceAmount);
 
-        const productPriceCurrency= createElement("span", null, null);
+        const productPriceCurrency = createElement("span", null, null);
         productPriceCurrency.setAttribute("itemprop", "priceCurrency");
         productPriceCurrency.textContent = "kr";
         priceContainer.appendChild(productPrice);
         productPrice.appendChild(productPriceCurrency);
         const buyButton = generateBuyButton(productItem.prodId);
-  
-        if (productItem.inStock === "0") {
+
+        if (productItem.prodInStock === "0") {
           buyButton.disabled = true;
         }
 

@@ -4,12 +4,12 @@ $randomInt: percentage(random(100) / 100);
 
 // ANIMATIONS
 
-@keyframes fadeIn{
+@keyframes fadeIn {
   0% {
     opacity: 0;
   }
   100% {
-   opacity: 1
+    opacity: 1;
   }
 }
 
@@ -220,13 +220,13 @@ img {
 
 .dropdown-menu {
   border-radius: 0;
-    border: 0;
-    padding: 0.5rem;
-    i {
-      margin-right: 1rem;
-      color: $customPrimary;
-      font-size: .9rem;
-    }
+  border: 0;
+  padding: 0.5rem;
+  i {
+    margin-right: 1rem;
+    color: $customPrimary;
+    font-size: 0.9rem;
+  }
 }
 
 .shopping-cart-buy-button:hover i {
@@ -247,8 +247,6 @@ img {
   color: $customSecondary;
   font-weight: 500;
 }
-
-
 
 // NAVBAR
 
@@ -373,22 +371,20 @@ img {
 }
 
 .nav-item--languageSelector {
-
   display: flex;
   align-items: center;
   justify-content: center;
   .nav-link {
-    font-size: .9rem;
+    font-size: 0.9rem;
   }
 }
-
 
 .languageButton {
   display: flex;
   align-items: center;
   img {
     height: 20px;
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
   &.languageButton--selected {
     background-color: $customLight;
@@ -411,7 +407,6 @@ img {
     padding-top: calc(#{$headerHeight--desktop} + 2rem);
     padding-bottom: 2rem;
   }
- 
 }
 
 #pageContent.pageContent--disableSpacing {
@@ -511,13 +506,13 @@ header.heroContainer video {
 .dropdown-menu.show {
   background-color: $custom-brown;
   .dropdown-item {
-
-
-  &:hover, &:focus, &:active {
-    background-color: $customLight;
-    color: $customDark;
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $customLight;
+      color: $customDark;
+    }
   }
-}
 }
 
 // UTIL;
@@ -533,13 +528,12 @@ a.hyperlink {
   white-space: nowrap;
 }
 
-
 .navbar-spacer {
-  padding-top: calc(#{$headerHeight--mobile} );
+  padding-top: calc(#{$headerHeight--mobile});
   margin-top: calc((-#{$headerHeight--mobile}));
   @media (min-width: 992px) {
-   padding-top: calc(#{$headerHeight--desktop} );
-   margin-top: calc((-#{$headerHeight--desktop}));
+    padding-top: calc(#{$headerHeight--desktop});
+    margin-top: calc((-#{$headerHeight--desktop}));
   }
 }
 
@@ -642,6 +636,10 @@ a.hyperlink {
   align-items: flex-start;
 }
 
+.flexItem--reverseInline {
+  align-items: flex-end;
+}
+
 // FEATURES;
 
 .features {
@@ -692,30 +690,29 @@ a.hyperlink {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-.eggGame-teaser-textContainer {
-  position:relative;
-  img {
-    height: 150px;
-    margin: auto;
-    margin-bottom: 1rem;
+  .eggGame-teaser-textContainer {
+    position: relative;
+    img {
+      height: 150px;
+      margin: auto;
+      margin-bottom: 1rem;
 
-    @media (min-width: 992px) {
-      position: absolute;
-      transform: translate(-100%, -50%);
-      padding-right: 1rem;
-      top: 50%;
-      left: 0;
-      margin-bottom: 0rem;
+      @media (min-width: 992px) {
+        position: absolute;
+        transform: translate(-100%, -50%);
+        padding-right: 1rem;
+        top: 50%;
+        left: 0;
+        margin-bottom: 0rem;
+      }
     }
   }
-}
   @media (min-width: 992px) {
-    flex-direction: row;  
+    flex-direction: row;
   }
   h3 {
     text-align: center;
   }
-
 }
 
 //CATEGORY-OVERVIEW
@@ -880,8 +877,14 @@ a.hyperlink {
     object-fit: cover;
   }
   .product-item-title {
-    margin: 0.5rem 0;
+    margin: 0;
+    margin-top: 0.5rem;
     font-size: 1.2rem;
+  }
+  .product-item-weight {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
   }
   .product-item-price {
     padding: 0.5rem 0;
@@ -934,7 +937,8 @@ a.hyperlink {
     justify-content: space-between;
     width: 100%;
   }
-  .event-item-date, .event-item-notice {
+  .event-item-date,
+  .event-item-notice {
     display: inline-block;
     padding: 0 0.25rem;
     margin: 0.5rem 0;
@@ -1061,17 +1065,19 @@ a.hyperlink {
 
 // SHOPPING CART
 
-.product-summary-table td, .product-summary-table th  {
+.product-summary-table td,
+.product-summary-table th {
   border-bottom: 0;
 }
-.product-summary-table tbody, .product-summary-table tfoot{
-border: 0 !important; 
-vertical-align: middle;
+.product-summary-table tbody,
+.product-summary-table tfoot {
+  border: 0 !important;
+  vertical-align: middle;
 }
 
-.product-summary-table thead, .product-summary-table tfoot{
-
-  }
+.product-summary-table thead,
+.product-summary-table tfoot {
+}
 
 .product-amount-button {
   width: 24px;
@@ -1110,7 +1116,7 @@ vertical-align: middle;
 
 .product-amount-tag {
   display: inline-block;
-  font-size: .8rem;
+  font-size: 0.8rem;
   width: 30px;
   @media (min-width: 992px) {
     width: 40px;
@@ -1143,26 +1149,21 @@ vertical-align: middle;
   }
 
   td:nth-child(1) {
-
   }
   td:nth-child(2):not(:last-of-type) {
-
-   vertical-align: middle;
+    vertical-align: middle;
     @media (min-width: 992px) {
       font-size: 0.9rem;
       flex-direction: row;
     }
   }
   td:nth-child(2):last-of-type {
-
     text-align: right;
   }
   td:nth-child(3) {
-
     text-align: right;
   }
   td:nth-child(4) {
- 
     text-align: right;
   }
 
@@ -1173,7 +1174,7 @@ vertical-align: middle;
 }
 
 .product-summary-productImage {
-display: none;
+  display: none;
   @media (min-width: 992px) {
     width: 100px;
     display: inline-block;
@@ -1186,7 +1187,7 @@ display: none;
 .product-summary-buttons {
   text-align: right;
   .btn:not(:last-of-type) {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
   }
 }
 
@@ -1277,7 +1278,7 @@ display: none;
   color: $customLight;
   transition: background-color 1s ease-in;
   i {
-    transition: all .15s ease-in-out;
+    transition: all 0.15s ease-in-out;
   }
   &:hover {
     transform: none;
@@ -1289,7 +1290,6 @@ display: none;
   .iconButton-decoyIcon {
     display: none;
     animation: fadeIn 1s linear;
-
   }
   &.iconButtonDecoy {
     background-color: $custom-brown;
@@ -1304,23 +1304,20 @@ display: none;
     font-size: 3rem;
     color: green;
   }
-
-  
 }
 .eggGame-col {
   text-align: center;
 }
 
 #eggGame-container {
-  position:relative;
-
+  position: relative;
 }
 
 #eggGame-goblin {
   position: absolute;
   height: 120px;
   z-index: 1000;
-  transition: all .25s ease;
+  transition: all 0.25s ease;
 }
 
 #eggGame-instructions {
@@ -1335,7 +1332,7 @@ display: none;
 
 #gamePanel {
   visibility: hidden;
-  padding: .5rem 0;
+  padding: 0.5rem 0;
 }
 
 .gamePanel-item {
@@ -1343,11 +1340,11 @@ display: none;
   display: inline-block;
   .gamePanel-item-counter {
     display: inherit;
-    padding: .25rem .5rem;
+    padding: 0.25rem 0.5rem;
     min-width: 30px;
     background-color: $customPrimary;
     text-align: center;
-    margin-left: .5rem;
+    margin-left: 0.5rem;
   }
 }
 
@@ -1359,7 +1356,7 @@ display: none;
   flex-direction: column;
   i {
     color: $customPrimary;
-    margin-right: .75rem;
+    margin-right: 0.75rem;
   }
 }
 
@@ -1371,13 +1368,11 @@ display: none;
   flex-direction: column;
   i {
     color: $customPrimary;
-    margin-right: .75rem;
+    margin-right: 0.75rem;
   }
-
 }
 
 .eggGame {
-
   @media (min-width: 992px) {
     padding: 3rem 0;
   }
@@ -1389,7 +1384,7 @@ display: none;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  opacity: .92;
+  opacity: 0.92;
   font-size: 1rem;
   padding: 2rem;
   background-color: $customLight;
@@ -1409,10 +1404,10 @@ display: none;
   }
   display: inline-block;
   transform: translate(1rem, 50%);
-  padding: .5rem;
+  padding: 0.5rem;
   font-size: 1.2rem;
   i {
-    margin-right: .5rem;
+    margin-right: 0.5rem;
     color: $customSecondary;
   }
   @media (min-width: 992px) {
@@ -1424,7 +1419,6 @@ display: none;
   background-color: $custom-brown;
   &.about-content--animals {
     /*background-image: url("/moseholm/images/cafe.png");*/
- 
   }
   padding: 1rem;
   padding-top: 2rem;
@@ -1447,7 +1441,6 @@ display: none;
   background-image: url("/moseholm/images/featuresBackground.png");
 }
 
-
 .about-content--store {
   background-image: url("/moseholm/images/store.png");
 }
@@ -1457,11 +1450,11 @@ display: none;
 }
 
 #cafeen table td {
-  padding-bottom: .75rem;
+  padding-bottom: 0.75rem;
 }
 
 #cafeen table tr:first-of-type td {
-  padding-top: .75rem;
+  padding-top: 0.75rem;
 }
 #cafeen table td:first-of-type {
   padding-right: 1rem;
@@ -1469,10 +1462,9 @@ display: none;
 }
 
 // PRACTICAL INFO;
-  .praticalInfo-introduction {
-    text-align: center;
-  }
-
+.praticalInfo-introduction {
+  text-align: center;
+}
 
 #faqContainer {
   .faqItem {
@@ -1483,18 +1475,18 @@ display: none;
     align-items: center;
     padding: 1rem;
     height: 100%;
-    font-size: .9rem;
+    font-size: 0.9rem;
     @media (min-width: 992px) {
       font-size: 1rem;
     }
     h4 {
       color: $customSecondary;
-      padding: .25rem;
+      padding: 0.25rem;
     }
     i {
       font-size: 2rem;
       color: $customPrimary;
-      padding: .5rem;
+      padding: 0.5rem;
     }
   }
 }
@@ -1505,19 +1497,18 @@ display: none;
   background-size: cover;
   position: relative;
 
- 
-    .animal-item-name {
-      font-weight: 500;
-      background-color: $custom-brown;
-      font-family: $header-font;
-      display: inline-block;
-      position: absolute;
-      padding: 1rem;
-      margin-left: 1rem;
-      top: 1rem;
-    }
+  .animal-item-name {
+    font-weight: 500;
+    background-color: $custom-brown;
+    font-family: $header-font;
+    display: inline-block;
+    position: absolute;
+    padding: 1rem;
+    margin-left: 1rem;
+    top: 1rem;
+  }
 
-    .animal-item-description {
+  .animal-item-description {
     position: absolute;
     bottom: 1rem;
     padding: 1rem;
@@ -1529,21 +1520,21 @@ display: none;
     @media (min-width: 992px) {
       transform: none;
     }
+  }
+  .animal-item-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    i {
+      margin: 0;
     }
-    .animal-item-button {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      display: flex;
-      i { 
-        margin: 0;
-      }
-    }
+  }
 }
 
 .four0four-container {
   h3 {
-    font-size:1.5rem
+    font-size: 1.5rem;
   }
 }
 
