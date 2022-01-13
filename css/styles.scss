@@ -1469,6 +1469,12 @@ a.hyperlink {
   }
 }
 
+.about-content--animals {
+  .about-content-text {
+    margin: auto;
+  }
+}
+
 .about-content--moseholm {
   background-image: url("/moseholm/images/featuresBackground.png");
 }
@@ -1503,7 +1509,7 @@ a.hyperlink {
     background-color: $custom-brown;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 1rem;
     height: 100%;

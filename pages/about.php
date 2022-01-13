@@ -110,16 +110,18 @@
                         <h3 class="about-header about-header--alt"><i class="fas fa-paw"></i> Vores dyr</h3>
                         <div class="about-content about-content--animals">
                             <div class="about-content-text">
-                                <p class="mb-4 text-center">
+                                <p class="mb-4">
                                     Vi har flere dyr på gården, end vi kan vise her på siden.
                                     <br>
                                     <br>
-                                    Men nedenfor kan du se et udsnit af vores dyr, som elsker at få besøg.
+                                    Men nedenfor kan du se et udsnit af vores dyr, som <strong>elsker at få
+                                        besøg</strong>.
                                     <br>
                                     De mindste kan endda give dyrene en virtuel godbid.
                                     <br>
                                     <br>
-                                    Både Alf, Jytte, Helge og Simone er på gården og kan besøges.
+                                    Både <strong>Alf</strong>, <strong>Jytte</strong>, <strong>Helge</strong> og
+                                    <strong>Simone</strong> er på gården og kan besøges.
                                 </p>
                             </div>
                             <div class="row g-3 mt-2" id="animalsContainer">

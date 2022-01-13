@@ -9,7 +9,8 @@
     <meta name="robots" content="index,follow" />
     <meta name="author" content="Udgiver" />
     <meta name="copyright" content="Information om copyright" />
-    <?php include  $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/dependencies.html" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] .
+      "/moseholm/includes/dependencies.html"; ?>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Praktisk info om besøg på Moseholm" />
@@ -25,7 +26,8 @@
 </head>
 
 <body>
-    <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/navbar.html" ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] .
+      "/moseholm/includes/navbar.html"; ?>
     <div id="pageContainer">
         <div id="pageContent">
             <div class="container-lg praticalInfo">
@@ -42,18 +44,48 @@
                 <div class="row g-2" id="faqContainer">
                 </div>
                 <div class="row mt-5">
-                    <h3 class="text-secondary">Find os her:</h3>
+
                     <div class=" col-12 col-lg-6">
+                        <h3 class="text-secondary">Find os her:</h3>
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2270.1235168650023!2d11.635662415913858!3d55.320929180440025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4652983b9e69bdab%3A0x6ff71ef7900062db!2sGunderslevvej%202%2C%204250%20Fuglebjerg!5e0!3m2!1sda!2sdk!4v1641759947354!5m2!1sda!2sdk"
                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class=" col-12 col-lg-6">
+                        <h3 class="text-secondary">Kontakt:</h3>
+                        <p>
+                            <span class="iconLabel">
+                                <i class="fas fa-map-pin"></i>
+                                <a class="hyperlink" href="https://goo.gl/maps/B1nh3TsDH9H6SzQf7" target="_blank"
+                                    rel="noreferrer">Gunderslevvej 2, 4250 Fuglebjerg</a>
+                            </span>
+                        </p>
+                        <p> <span class="iconLabel">
+                                <i class="fas fa-phone"></i>
+                                55 28 12 12
+                            </span></p>
+                        <p>
+                            <span class="iconLabel">
+                                <i class="fas fa-envelope"></i>
+                                hej@moseholm.dk
+                            </span>
+                        </p>
+                        <p>
+                            <span class="iconLabel">
+                                <i class="fas fa-barcode"></i>
+                                CVR: 22103816
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <?php include $_SERVER['DOCUMENT_ROOT'] . "/moseholm/includes/footer.html" ?>
+
+
+        <?php include $_SERVER['DOCUMENT_ROOT'] .
+          "/moseholm/includes/footer.html"; ?>
     </div>
     <script type="module" src="/moseholm/js/setShoppingCartCount.js">
 
@@ -78,8 +110,8 @@
             icon: "fa-smoking-ban"
         },
         {
-            header: "Tid",
-            text: "Efter vores erfaring, bruger man typisk <strong>1-4 timer</strong> på et besøg på Moseholm",
+            header: "Åbningstider",
+            text: "Vores <strong>åbningstider</strong> er hverdage 10-20, lørdag 9-18 og søndag 9-15.",
             icon: "fa-clock"
         },
         {
