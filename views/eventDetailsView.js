@@ -27,7 +27,7 @@ export class EventDetailsView {
         ["eventDetails-item-image"],
         null
       );
-      eventImage.style.backgroundImage = `url(/moseholm/images/events/${event.eventImageName})`;
+      eventImage.style.backgroundImage = `url(/moseholm/images/events/${event.eventImageName}.png)`;
       eventElement.appendChild(eventImage);
 
       // DATE;

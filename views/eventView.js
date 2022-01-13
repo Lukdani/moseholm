@@ -39,7 +39,7 @@ export class EventView {
         const eventImage = createElement("img", ["event-item-image"], null);
         eventImage.alt = eventItem.eventImageName;
         eventImage.setAttribute("itemprop", "image");
-        eventImage.src = `/moseholm/images/events/${eventItem.eventImageName}`;
+        eventImage.src = `/moseholm/images/events/${eventItem.eventImageName}_miniature.png`;
         flexItem.appendChild(eventImage);
 
         const dateRelatedItem = createElement(

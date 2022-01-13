@@ -1,7 +1,5 @@
 @import "./bootstrap.scss";
 
-$randomInt: percentage(random(100) / 100);
-
 // ANIMATIONS
 
 @keyframes fadeIn {
@@ -642,9 +640,6 @@ a.hyperlink {
 
 // FEATURES;
 
-.features {
-}
-
 .features::before {
   content: "";
   position: absolute;
@@ -848,9 +843,6 @@ a.hyperlink {
     background-color: $customPrimary;
     color: $customLight;
   }
-}
-
-.product-container {
 }
 
 .product-item {
@@ -1075,10 +1067,6 @@ a.hyperlink {
   vertical-align: middle;
 }
 
-.product-summary-table thead,
-.product-summary-table tfoot {
-}
-
 .product-amount-button {
   width: 24px;
   height: 24px;
@@ -1148,8 +1136,6 @@ a.hyperlink {
     text-align: right;
   }
 
-  td:nth-child(1) {
-  }
   td:nth-child(2):not(:last-of-type) {
     vertical-align: middle;
     @media (min-width: 992px) {
@@ -1320,9 +1306,6 @@ a.hyperlink {
   transition: all 0.25s ease;
 }
 
-#eggGame-instructions {
-}
-
 #eggGame-indicators {
   display: flex;
   align-items: center;
@@ -1417,9 +1400,6 @@ a.hyperlink {
 
 .about-content {
   background-color: $custom-brown;
-  &.about-content--animals {
-    /*background-image: url("/moseholm/images/cafe.png");*/
-  }
   padding: 1rem;
   padding-top: 2rem;
   background-size: cover;

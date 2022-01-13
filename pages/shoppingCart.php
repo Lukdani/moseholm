@@ -11,7 +11,7 @@
     <meta name="author" content="Udgiver" />
     <meta name="copyright" content="Information om copyright" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Oversigt over produkter, som sælges i Moseholms gårdbutik" />
+    <meta name="description" content="Oversigt over produkter, som er lagt i kurven" />
     <meta name="keywords" content="økologi, gårdbutik, familie, shopping" />
     <meta name="robots" content="index,follow" />
     <meta property="og:title" content="Moseholm - økologisk gårdbutik" />
