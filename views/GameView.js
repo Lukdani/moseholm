@@ -117,8 +117,8 @@ export class GameView {
       if (prevTop >= this.rootElement.clientHeight || prevTop <= 0) {
         prevTop = Math.floor(Math.random() * this.rootElement.clientHeight);
       }
-      prevLeft = prevLeft + 40;
-      prevTop = Math.random(0, 1) > 0.5 ? prevTop + 5 : prevTop - 5;
+      prevLeft = prevLeft + 30;
+      prevTop = Math.random(0, 1) > 0.5 ? prevTop + 3 : prevTop - 3;
       direction === "right"
         ? (goblinImage.style.left = `${prevLeft}px`)
         : (goblinImage.style.right = `${prevLeft}px`);
@@ -127,7 +127,7 @@ export class GameView {
       goblinImage.style.opacity = Math.random(0, 1);
     };
 
-    const animationInterval = setInterval(runningAnimation, 75);
+    const animationInterval = setInterval(runningAnimation, 125);
 
     setTimeout(() => {
       clearInterval(animationInterval);

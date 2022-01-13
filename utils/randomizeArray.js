@@ -25,13 +25,13 @@ const tryInsert = (arrayItem, array, passedIndex) => {
   // If the method is called with a passedIndex, use that index rather than a random index;
   if (passedIndex) {
     const regulatedIndex =
-      passedIndex <= 0 ? (passedIndex = array.length) : passedIndex - 1;
+      passedIndex <= 0 ? array.length - 1 : passedIndex - 1;
     if (array[regulatedIndex] === null) {
       array[regulatedIndex] = arrayItem;
       return;
     } else {
       // If the index already contains an item, try again with a lower index;
-      tryInsert(arrayItem, array, regulatedIndex - 1);
+      tryInsert(arrayItem, array, regulatedIndex);
       return;
     }
   }
@@ -46,6 +46,6 @@ const tryInsert = (arrayItem, array, passedIndex) => {
   }
   // If the spot is taken, call tryInsert again, this time with an index to start at;
   else {
-    tryInsert(arrayItem, array, randomIndex);
+    tryInsert(arrayItem, array, randomIndex - 1);
   }
 };

@@ -34,7 +34,7 @@
                     <source id="heroVideoSource" src="/moseholm/videos/hero_mobile.mp4" type="video/mp4" />
                 </video>
 
-                <div class="hero overlay ">
+                <div class="hero overlay">
                     <div class="overlay-text">
                         <h1 data-translationkey="heroHeader" class="mb-2">Landoplevelse for hele familien</h1>
                         <p class="mb-3">

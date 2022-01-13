@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /includes/
+Disallow: /node_modules/
+Disallow: /.idea/
+Disallow: /api/
+Disallow: /classes/
+Disallow: /settings/
