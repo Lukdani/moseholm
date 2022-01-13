@@ -344,7 +344,7 @@ img {
       position: absolute;
       top: 0;
       display: block;
-      color: white;
+      color: $customWhite;
       transform: translate(100%, -50%);
       background-color: red;
       padding: 0.25rem;
@@ -722,7 +722,7 @@ a.hyperlink {
   background-color: $custom-brown;
   position: relative;
   padding: 1rem;
-  margin-bottom: 0.5rem;
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1055,6 +1055,15 @@ a.hyperlink {
   }
 }
 
+// CAFE
+
+.cafe-weeklyRecipe-container {
+  background-color: $custom-brown;
+}
+
+.cafe-weeklyRecipe a {
+}
+
 // SHOPPING CART
 
 .product-summary-table td,
@@ -1187,9 +1196,29 @@ a.hyperlink {
   padding: 0.25rem 0.5rem;
 }
 
+.order-summary-vat {
+  display: block;
+  font-weight: normal;
+  font-size: 0.9rem;
+}
+
 #order-submission-form {
-  background-color: white;
+  background-color: $customWhite;
   padding: 1rem;
+  margin-top: 1rem;
+  .form-group {
+    margin-bottom: 0.5rem;
+  }
+  .form-control {
+    border-radius: 0 !important;
+  }
+  h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+  }
+  @media (min-width: 992px) {
+    margin-top: 0;
+  }
 }
 // FOOTER
 
@@ -1197,11 +1226,12 @@ a.hyperlink {
   width: 100%;
   background-color: $customDark;
   color: $customLight;
-  padding: 2.5rem 0;
+  padding: 2.5rem 16px;
 
   .col-12:not(:first-of-type) {
-    @media (max-width: 991px) {
-      margin-top: 1rem;
+    margin-top: 1rem;
+    @media (min-width: 778px) {
+      margin-top: 0;
     }
   }
 
@@ -1217,7 +1247,7 @@ a.hyperlink {
   }
 
   .footer-some {
-    @media (min-width: 992px) {
+    @media (min-width: 778px) {
       text-align: right;
     }
 
@@ -1361,17 +1391,39 @@ a.hyperlink {
   }
 }
 
+#eggGame-instructions {
+  img {
+    height: 50px;
+    margin-right: 1rem;
+    margin: auto;
+    margin-bottom: 0.5rem;
+  }
+}
+
 #eggGame-container-overlay {
   position: absolute;
+  width: 90%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  opacity: 0.92;
+  opacity: 0.98;
   font-size: 1rem;
   padding: 2rem;
   background-color: $customLight;
   text-align: center;
+  @media (min-width: 992px) {
+    width: unset;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  span {
+    line-height: normal;
+  }
+  i {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
 }
 
 // ABOUT

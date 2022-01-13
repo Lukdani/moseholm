@@ -54,9 +54,9 @@
 
             <div class="section">
                 <div class="container-lg">
-                    <div class="row space-evenly">
+                    <div class="row space-evenly g-2">
                         <h1 class="section-header" data-translationkey="ourProducts">Vores produkter</h1>
-                        <div class="col-12 col-lg-4 col-space category-overview-container">
+                        <div class="col-12 col-md-6 col-lg-4 col-space category-overview-container">
                             <a href="/moseholm/pages/products.php?categories=colonial">
                                 <div class="category-overview-item">
                                     <i class="fas fa-seedling"></i>
@@ -70,7 +70,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-12 col-lg-4 col-space category-overview-container">
+                        <div class="col-12 col-md-6 col-lg-4 col-space category-overview-container">
                             <a href="/moseholm/pages/products.php?categories=dairy">
                                 <div class="category-overview-item">
                                     <i class="fas fa-egg"></i>
@@ -84,7 +84,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-12 col-lg-4 col-space category-overview-container">
+                        <div class="col-12 col-md-6 col-lg-4 col-space category-overview-container">
                             <a href="/moseholm/pages/products.php?categories=bread">
                                 <div class="category-overview-item">
                                     <i class="fas fa-bread-slice"></i>
@@ -98,7 +98,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-12 col-lg-4 col-space category-overview-container">
+                        <div class="col-12 col-md-6 col-lg-4 col-space category-overview-container">
                             <a href="/moseholm/pages/products.php?categories=fruit">
                                 <div class="category-overview-item">
                                     <i class="fas fa-apple-alt"></i>
@@ -112,7 +112,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-12 col-lg-4 col-space category-overview-container">
+                        <div class="col-12 col-md-6 col-lg-4 col-space category-overview-container">
                             <a href="/moseholm/pages/products.php?categories=vegetables">
                                 <div class="category-overview-item">
                                     <i class="fas fa-carrot"></i>
@@ -126,7 +126,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-12 col-lg-4 col-space category-overview-container">
+                        <div class="col-12 col-md-6 col-lg-4 col-space category-overview-container">
                             <a href="/moseholm/pages/products.php?categories=meat">
                                 <div class="category-overview-item">
                                     <i class="fas fa-drumstick-bite"></i>
@@ -158,7 +158,8 @@
                     <div class="row overlay-text">
                         <h1 data-translationkey="visitBecause" class="section-header overlay-text">Besøg os fordi...
                         </h1>
-                        <div class="col-12 offset-lg-2 col-lg-8 features-points-container overlay-text">
+                        <div
+                            class="col-12 col-md-10 offset-md-1 offset-lg-2 col-lg-8 features-points-container overlay-text">
                             <table>
                                 <tbody>
                                     <tr>

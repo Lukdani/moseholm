@@ -41,33 +41,32 @@
                 <div class="row mb-4">
 
                     <div class="col-12">
-                        <h3 class="about-header"><i class="fas fa-tractor"></i> Bæredygtige traditioner</h3>
+                        <h3 class="about-header"><i class="fas fa-tractor"></i> Moseholms historie</h3>
                         <div class="about-content about-content--moseholm">
                             <div class="about-content-text">
                                 <h4>Bæredygtige traditioner</h4>
                                 <p>
-                                    Moseholm har siden sin stiftelse i 1968 været drevet på en overbevisning om, at vi
-                                    kan
-                                    dyrke de gamle traditioner på en bæredygtig
-                                    måde.
+                                    Moseholm er en økologisk gård på Sjælland. Siden sin stiftelse i 1968, har Moseholm
+                                    været
+                                    drevet på en overbevisning om, at vi kan dyrke de gamle traditioner på en
+                                    bæredygtigmåde.
                                     <br>
                                     <br>
                                 </p>
                                 <ul>
-                                    <li>Hvis vi giver tid til at lade afgrøderne modne.</li>
                                     <li>
                                         Hvis vi kun dyrker det, vi spiser.
                                     </li>
-
                                     <li>
                                         Hvis planter fylder mere i vores kost.
                                     </li>
+                                    <li>Hvis der er harmoni mellem dyrevelfærd og fødevareproduktion</li>
                                 </ul>
                                 <br>
                                 <h4>Vores mission</h4>
 
                                 <p>
-                                    Formidlingen af det skønne ved vores stolte traditioner, respekten for gårdens dyr
+                                    Formidlingen vores stolte traditioner, respekten for vores landbrugsdyr
                                     og fordybelse er en vigtig del af vores mission om at sprede kendskabet til
                                     økologisk fødevareproduktion.
                                 </p>
@@ -96,8 +95,7 @@
                                 <br>
                                 <h4>Fremstilling af produkterne</h4>
                                 <p>
-                                    Alle varerne i gårdbutikken er fremstillet her på gården og afspejler
-                                    årstiden.
+                                    Alle varerne i gårdbutikken er fremstillet her på gården i harmoni med årstiderne.
                                     <br>
                                     <br>
                                     Vores produkter kan smages i vores <a class="customLink" href="#cafeen">café.</a>
@@ -115,7 +113,8 @@
                                 <p class="mb-4 text-center">
                                     Vi har flere dyr på gården, end vi kan vise her på siden.
                                     <br>
-                                    Men nedenfor for kan du se et udsnit af vores dyr, som altid elsker at få besøg.
+                                    <br>
+                                    Men nedenfor kan du se et udsnit af vores dyr, som elsker at få besøg.
                                     <br>
                                     De mindste kan endda give dyrene en virtuel godbid.
                                     <br>
@@ -128,10 +127,6 @@
                             </div>
 
                         </div>
-
-
-
-
                     </div>
                 </div>
             </div>

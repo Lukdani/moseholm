@@ -68,7 +68,7 @@ export class ShoppingCartView {
         headRow.appendChild(productPriceHead);
       }
 
-      const ProductTotalPriceHead = createElement("th");
+      const ProductTotalPriceHead = createElement("th", ["text-end"]);
       ProductTotalPriceHead.textContent = "I alt";
       headRow.appendChild(ProductTotalPriceHead);
 
@@ -83,22 +83,27 @@ export class ShoppingCartView {
         const productName = createElement("td");
 
         if (!restrictedView) {
-          const productImage = createElement("img", ["product-summary-productImage"], null);
+          const productImage = createElement(
+            "img",
+            ["product-summary-productImage"],
+            null
+          );
           productName.appendChild(productImage);
           productImage.src = `/moseholm/images/products/${productLine.product.prodImageName}`;
-
         }
         const productNameText = createElement("span", null, null);
         productNameText.textContent = !restrictedView
           ? productLine.product.prodTitle
           : `${productLine.product.prodTitle} (${productLine.count})`;
-          productName.appendChild(productNameText);
+        productName.appendChild(productNameText);
         productRow.appendChild(productName);
 
         if (!restrictedView) {
-  
-
-          const productAmount = createElement("td", ["text-center", "td-fitContent", "td-fitContent--autoWidth"]);
+          const productAmount = createElement("td", [
+            "text-center",
+            "td-fitContent",
+            "td-fitContent--autoWidth",
+          ]);
 
           const productAmountDecrease = createElement(
             "button",
@@ -159,7 +164,7 @@ export class ShoppingCartView {
       const summaryRow = createElement("tr");
       summaryFooter.appendChild(summaryRow);
 
-      const productName = createElement("td",);
+      const productName = createElement("td");
       productName.textContent = "";
       summaryRow.appendChild(productName);
 
@@ -172,15 +177,31 @@ export class ShoppingCartView {
         productPrice.textContent = "";
         summaryRow.appendChild(productPrice);
       }
-      const productTotalPrice = createElement("td",  ["td-fitContent"]);
+      const productTotalPrice = createElement("td", ["td-fitContent"]);
+
       const productPriceSpan = createElement("span");
       productPriceSpan.textContent = formatCurrency(totalPrice, "kr.");
       productTotalPrice.appendChild(productPriceSpan);
 
+      const productVatSpan = createElement(
+        "span",
+        ["text-muted", "order-summary-vat"],
+        null
+      );
+      productVatSpan.textContent = `heraf moms ${formatCurrency(
+        totalPrice * 0.2,
+        "kr."
+      )}`;
+      productTotalPrice.appendChild(productVatSpan);
+
       summaryRow.appendChild(productTotalPrice);
 
       if (!restrictedView) {
-        const buttonsContainer = createElement("div", ["product-summary-buttons"], null);
+        const buttonsContainer = createElement(
+          "div",
+          ["product-summary-buttons"],
+          null
+        );
         productSummaryContainer.appendChild(buttonsContainer);
         const clearCartButton = createElement(
           "button",
@@ -229,9 +250,14 @@ export class ShoppingCartView {
     if (prevFormContainer) {
       prevFormContainer.remove();
     }
+
     const shoppingCartRow = document.getElementById("shoppingCartRow");
     this.generateCartSummary(order.products, order.totalPrice, true);
-    const formContainer = createElement("div", ["col-9"], "formContainer");
+    const formContainer = createElement(
+      "div",
+      ["col-12", "col-lg-9"],
+      "formContainer"
+    );
     shoppingCartRow.appendChild(formContainer);
 
     const form = createElement(
@@ -241,6 +267,10 @@ export class ShoppingCartView {
     );
     form.addEventListener("submit", onSubmit);
     formContainer.appendChild(form);
+
+    const shoppingCartHeader = createElement("h3", null, null);
+    shoppingCartHeader.textContent = "Udfyld nedenstående";
+    form.appendChild(shoppingCartHeader);
 
     const inputFields = [
       {

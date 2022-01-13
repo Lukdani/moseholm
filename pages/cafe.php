@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
 
-    <title>Moseholm - caféen</title>
+    <title>Moseholm - Caféen</title>
     <meta name="robots" content="index,follow" />
     <meta name="author" content="Udgiver" />
     <meta name="copyright" content="Information om copyright" />
@@ -96,6 +96,37 @@
                             </div>
                         </div>
                     </div>
+                </div>
+                <div id="opskrift" class="row mb-4 cafe-weeklyRecipe-container">
+                    <div class="col-12 col-lg-6">
+                        <div class="cafe-weeklyRecipe p-4">
+                            <h3>Månedens opskrift</h3>
+                            <p>Hver måned afslører vi en af caféens opskrifter her på siden.
+                                <br>
+                                I denne måned er det vores lækre opskrift på smør!
+                            </p>
+                            <h5 class="mt-5">Tidligere opskrifter:</h5>
+                            <ul>
+                                <li>
+                                    <a href="javascript:void(0);" class="hyperlink">Æblekage (december 2021)</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="hyperlink">Kanelstang (oktober 2021)</a>
+                                </li>
+                                <li>
+                                    <a href="javascript:void(0);" class="hyperlink">Karamelstang (september 2021)</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-lg-6 p-4">
+                        <div class="cafe-weeklyRecipe-recipe">
+                            <img src="/moseholm/images/butter_recipe.png"
+                                alt="En grafisk illustration af en smøropskrift">
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
