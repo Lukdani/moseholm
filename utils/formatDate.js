@@ -5,7 +5,7 @@ export const formatDate = (passedDateTime, includeTime = false) => {
 
   // To fix date formatting issue on Safari, "YYYY-MM-DD hh:mm:ss" has to be replaced with "YYYY-MM-DDThh:mm:ss";
   const dateTime = new Date(passedDateTime.replace(/\s/g, "T"));
-  console.log(passedDateTime);
+  console.log(passedDateTime.replace(/\s/g, "T"));
 
   const year = dateTime.getFullYear();
 

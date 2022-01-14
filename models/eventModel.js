@@ -4,7 +4,6 @@ export class EventModel {
   }
 
   setEvents = (events, limitiedLoad) => {
-    console.log(events);
     if (limitiedLoad && events) {
       this.state.events = [...this.state.events, ...events];
       return;

@@ -156,7 +156,6 @@ export class ShoppingCartController {
         this.clearCart();
       }
     }
-    console.log(response);
   };
 
   // METHOD TO CLEAR CART;

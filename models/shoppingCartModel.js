@@ -1,20 +1,20 @@
 import { formatCurrency } from "../utils/formatCurrency.js";
 
 const initialData = {
-    products: {},
-    itemsCount: 0,
-    totalPrice: 0,
-    customer: {
-      name: "",
-      email: "",
-      address: "",
-      city: "",
-    },
-  };
+  products: {},
+  itemsCount: 0,
+  totalPrice: 0,
+  customer: {
+    name: "",
+    email: "",
+    address: "",
+    city: "",
+  },
+};
 
 export class ShoppingCartModel {
   constructor() {
-    this.state = {... initialData};
+    this.state = { ...initialData };
   }
 
   setProducts = (products) => {
@@ -73,10 +73,8 @@ export class ShoppingCartModel {
   };
 
   removeProduct = (productId) => {
-    console.log(Object.keys(this.state.products).length < 2);
     if (Object.keys(this.state.products).length < 2) {
       this.state.products = {};
-      console.log(this.state.products);
       return;
     }
     delete this.state.products[productId];
@@ -85,6 +83,6 @@ export class ShoppingCartModel {
   getProducts = () => this.state.products;
 
   emptyCart = () => {
-    this.state = {...initialData}
-  }
+    this.state = { ...initialData };
+  };
 }

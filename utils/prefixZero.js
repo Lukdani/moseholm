@@ -3,7 +3,6 @@ export const prefixZero = (item) => {
   try {
     const parstedString = item.toString();
     if (parstedString && parstedString.length < 2) {
-      console.log(parstedString + "test");
       return `0${parstedString}`;
     }
     return parstedString;

@@ -126,10 +126,7 @@ export class EventDetailsView {
           ["eventComment-item-date"],
           null
         );
-        eventCommentDate.textContent = formatDate(
-          new Date(commentItem.ecomDate).toString(),
-          true
-        );
+        eventCommentDate.textContent = formatDate(commentItem.ecomDate, true);
         eventCommentElement.appendChild(eventCommentDate);
 
         const eventCommentAuthor = createElement(
