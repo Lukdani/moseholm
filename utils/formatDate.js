@@ -1,6 +1,9 @@
 import { prefixZero } from "./prefixZero.js";
 
-export const formatDate = (passedDateTime, includeTime = false) => {
+export const formatDate = (
+  passedDateTime = new Date(),
+  includeTime = false
+) => {
   let dateString = "";
 
   // To fix date formatting issue on Safari, "YYYY-MM-DD hh:mm:ss" has to be replaced with "YYYY-MM-DDThh:mm:ss";
