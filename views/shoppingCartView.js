@@ -177,7 +177,7 @@ export class ShoppingCartView {
         productPrice.textContent = "";
         summaryRow.appendChild(productPrice);
       }
-      const productTotalPrice = createElement("td", ["td-fitContent"]);
+      const productTotalPrice = createElement("td", null);
 
       const productPriceSpan = createElement("span");
       productPriceSpan.textContent = formatCurrency(totalPrice, "kr.");
