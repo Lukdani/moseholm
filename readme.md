@@ -1,3 +1,3 @@
-# Kickstarter projekt med PHP
+# Eksamensprojekt ADU 2022
 
-Klon dette projekt og kom hurtigt i gang med dit næste projekt.
+Der ligger en eksportet database i roden i .txt-forma, som kan importeres i phpMyAdmin.
