@@ -58,7 +58,10 @@ export class EventDetailsController {
       this.eventDetailsModel.setEvents({
         ...this.eventDetailsModel.state.event,
         eventComments: [
-          { ...this.eventDetailsModel.state.comment, ecomDate: new Date() },
+          {
+            ...this.eventDetailsModel.state.comment,
+            ecomDate: new Date().toISOString(),
+          },
           ...this.eventDetailsModel.state.event.eventComments,
         ],
       });
