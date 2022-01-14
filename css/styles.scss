@@ -977,23 +977,26 @@ a.hyperlink {
   box-shadow: $boxShadow;
   @media (min-width: 992px) {
     height: 100%;
-    .eventDetails-item-image {
-      //height: 500px;
-      padding: 2rem 0;
-      width: 100%;
-      background-size: cover;
-      object-fit: scale-down;
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: flex-start; // Needed to make inline-block elements not take full width.
+  }
+  .eventDetails-item-image {
+    //height: 500px;
+    padding: 2rem 0;
+    width: 100%;
+    background-size: cover;
+    object-fit: scale-down;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start; // Needed to make inline-block elements not take full width.
+
+    color: $customLight;
+    @media (min-width: 992px) {
       padding-left: 3rem;
-      color: $customLight;
-      div {
-        margin-bottom: 0.5rem;
-        display: inline-block;
-        padding: 0.5rem;
-      }
+    }
+    div {
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      padding: 0.5rem;
     }
   }
 }
